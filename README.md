@@ -10,6 +10,7 @@ http://www.ticketek.com
 http://www.passline.com
 http://www.livepass.com.ar
 http://www.eticketglobal.com
+Todas las referencias fuerons seleccionadas por el tipo de servicio que brindan (Venta de entradas). Todas ellas apuntan a un mercado global, permitiendo que se publiquen entradas de cualquier tipo de vento. Deporteando solo estará orientada al mercado deportivo.
 
 Descripción personal de Julian Caloggi:
 
