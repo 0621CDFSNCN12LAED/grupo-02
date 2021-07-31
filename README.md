@@ -10,3 +10,11 @@ http://www.ticketek.com
 http://www.passline.com
 http://www.livepass.com.ar
 http://www.eticketglobal.com
+
+Descripción personal de Julian Caloggi:
+
+Descripción personal de Geronimo Salgado:
+
+Descripción personal de Guido Ruiz:
+
+Descripción personal de Ariel Mangino:
