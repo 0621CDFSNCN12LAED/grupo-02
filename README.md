@@ -1,6 +1,6 @@
 # grupo-02
 
-Deportea es un Servicio de venta digital de entradas a espectaculos deportivos.
+Deporteando es un Servicio de venta digital de entradas a espectaculos deportivos.
 
 Nuestros clientes serán los espectadores y deportistas que participen de las actividades según su condición.
 
