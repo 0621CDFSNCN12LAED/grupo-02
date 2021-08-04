@@ -11,10 +11,15 @@ http://www.passline.com
 http://www.livepass.com.ar
 http://www.eticketglobal.com
 
+
+
 Descripción personal de Julian Caloggi:
 
 Descripción personal de Geronimo Salgado:
 
 Descripción personal de Guido Ruiz:
+Entusiaste aprendiz de programación, licenciado en administración de organizaciones, analista financiero.
+Trato de ponerle onda a todo, me gusta aprender pero no soy muy autodidacta. Me considero bastante detallista y perfeccionista, a su vez suelo tener mucha paciencia.
+Amante de futbol y los perros.
 
 Descripción personal de Ariel Mangino:
