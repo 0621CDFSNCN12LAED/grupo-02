@@ -17,6 +17,7 @@ Todas las referencias fuerons seleccionadas por el tipo de servicio que brindan 
 Descripción personal de Julian Caloggi:
 
 Descripción personal de Geronimo Salgado:
+Tengo 18 años, actualmente estudio ingles y  desarrollo web, me gusta mucho los deportes, principalmente del futbol, y nada ahora disfrutando de esta etapa.
 
 Descripción personal de Guido Ruiz:
 Entusiaste aprendiz de programación, licenciado en administración de organizaciones, analista financiero.
