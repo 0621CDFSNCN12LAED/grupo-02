@@ -14,7 +14,8 @@ Todas las referencias fuerons seleccionadas por el tipo de servicio que brindan 
 
 
 
-Descripción personal de Julian Caloggi:
+Descripción personal de Julian Caloggi: 
+Tengo 23 años soy amante de la lectura,aprendiz en programacion y amante de la musica
 
 Descripción personal de Geronimo Salgado:
 Tengo 18 años, actualmente estudio ingles y  desarrollo web, me gusta mucho los deportes, principalmente del futbol, y nada ahora disfrutando de esta etapa.
