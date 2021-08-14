@@ -1,7 +1,46 @@
-.B-categoria {
-    text-align: center;
+.h-contenedor-header {
+  background-color: #5ce1e6;
+  height: 5%;
+  padding: 10px;
 }
 
-.B-muestra-ticket{
-    text-align: center;
+.h-contenedor-logo {
+  width: 50%;
+  text-align: center;
+}
+
+.logo {
+  width: 100%;
+  height: 124.7px;
+}
+.text-center {
+  width: 50%;
+  text-align: center;
+  align-self: center;
+  color: #998550;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.h-icon-design {
+  font-size: 20px;
+  width: 100%;
+  text-align: center;
+  color: #998550;
+  font-size: 24px;
+}
+.fa-bars {
+  font-size: xx-large;
+}
+
+.banner {
+  width: 100%;
+}
+
+.B-categoria {
+  text-align: center;
+}
+
+.B-muestra-ticket {
+  text-align: center;
 }
