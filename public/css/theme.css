@@ -8,7 +8,7 @@
   color: #094253;
 }
 .t-llb-text {
-  color: #6cadbf;
+  color: #5ce1e6;
 }
 .t-green-text {
   color: #72d079;
@@ -30,7 +30,7 @@
   background-color: #094253;
 }
 .t-llb-bg {
-  background-color: #6cadbf;
+  background-color: #5ce1e6;
 }
 .t-green-bg {
   background-color: #72d079;
@@ -46,9 +46,9 @@
 }
 
 /*Complemantario*/
-.t-darkrrange-text {
-  color: #cc7a25;
+.t-darkrgold-text {
+  color: #998550;
 }
-.t-Orange-bg {
-  background-color: #e6b37e;
+.t-darkgold-bg {
+  background-color: #998550;
 }
