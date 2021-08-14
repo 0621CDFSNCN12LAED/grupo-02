@@ -1,0 +1,32 @@
+/*Tablets Min Width 480px*/
+
+.display-flex-sm {
+  display: flex;
+
+  margin-top: 10px;
+  font-weight: bolder;
+  text-decoration: none;
+  border: dotted 2px blue;
+  width: 100%;
+}
+.display-flex-sm ul {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  list-style-type: none;
+  padding-left: 0;
+}
+.display-flex-sm a {
+  text-decoration: none;
+  color: #998550;
+  font-size: 16px;
+}
+
+.display-flex-sm li {
+  margin: 0px 5px;
+}
+
+.display-none-sm {
+  display: none;
+  width: 100%;
+}
