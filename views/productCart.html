@@ -1,22 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- links para iconos  -->
-    <script src="https://kit.fontawesome.com/dbca3ea2a9.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/dbca3ea2a9.js"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- hoja de estilos -->
-    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="/css/utils.css" />
+    <link rel="stylesheet" href="/css/theme.css" />
+    <link rel="stylesheet" href="./css/style.css" />
 
-    <title>Product Cart</title>
-</head>
+    <link
+      rel="stylesheet"
+      href="/css/styles-sm.css"
+      media="(min-width:480px)"
+    />
+    <link
+      rel="stylesheet"
+      href="/css/styles-md.css"
+      media="(min-width:768px)"
+    />
+    <link
+      rel="stylesheet"
+      href="/css/styles-lg.css"
+      media="(min-width:1280px)"
+    />
 
-<body>
+    <title>Comprá tu evento</title>
+  </head>
 
-</body>
+  <body>
+    <!-- encabezado de la pagina -->
 
+    <header class="h-contenedor-header">
+      <div class="display-flex">
+        <div class="h-contenedor-logo">
+          <img class="logo" src="./imagenes/Deporteando-2.png" alt="logo" />
+        </div>
+        <h2 class="text-center">Tu sitio de eventos deportivos</h2>
+        <div class="h-icon-design display-none-sm">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+      <nav class="display-none display-flex-sm navbar-sm">
+        <ul>
+          <li>
+            <a href="/Registro"
+              >Creá tu cuenta <i class="far fa-id-card"></i
+            ></a>
+          </li>
+          <li>
+            <a href="/Login">Ingresá <i class="fas fa-sign-in-alt"></i></a>
+          </li>
+          <li>
+            <a href="/Carrito"
+              >Mi Carrito <i class="fas fa-shopping-basket"></i
+            ></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+  </body>
 </html>
