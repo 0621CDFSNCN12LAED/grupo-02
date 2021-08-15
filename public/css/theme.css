@@ -52,3 +52,9 @@
 .t-darkgold-bg {
   background-color: #998550;
 }
+
+/*Font Family*/
+body {
+  font-family: "Rubik";
+  font-size: 12px;
+}
