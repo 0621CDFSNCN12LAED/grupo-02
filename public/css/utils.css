@@ -16,3 +16,16 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
+.w-100 {
+  width: 100%;
+}
+.pad-5px {
+  padding: 5px;
+}
+.margingbut-10px {
+  margin-bottom: 10px;
+}
+
+.align-left {
+  text-align: left;
+}

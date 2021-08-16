@@ -30,3 +30,9 @@
   display: none;
   width: 100%;
 }
+
+/*Producto*/
+.descrip-moreinf {
+  display: flex;
+  flex-wrap: wrap;
+}
