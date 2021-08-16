@@ -34,11 +34,6 @@
       href="/css/styles-md.css"
       media="(min-width:768px)"
     />
-    <link
-      rel="stylesheet"
-      href="/css/styles-lg.css"
-      media="(min-width:1280px)"
-    />
 
     <title>Deporteando</title>
   </head>
@@ -78,33 +73,28 @@
     <!-- carrusel de la pagina -->
 
     <section>
-      <article>
+      <article class="art-banner-style">
         <img
           src="./imagenes/imagen-fondo-usuario-2.jpg"
           alt="banner"
           class="banner"
         />
-        <h3></h3>
-        <p></p>
+        <div class="searchBox">
+            <div class="search-container">
+            <form>
+             <input type="text" placeholder="Buscar eventos" class="imput-content" />
+             <button>
+              <i class="fa fa-search"></i>
+             </button>
+              </form>
+            </div>
+        </div>
       </article>
-
-      <article>
-        <img src="" alt="" />
-        <h3></h3>
-        <p></p>
-      </article>
-
-      <article>
-        <img src="" alt="" />
-        <h3></h3>
-        <p></p>
-      </article>
-    </section>
 
     <!-- productos de la pagina -->
 
     <main>
-      <section class="B-categoria">
+      <section class="B-categoria display-flex">
         <button>Futbol</button>
         <button>Rugby</button>
         <button>Voley</button>
