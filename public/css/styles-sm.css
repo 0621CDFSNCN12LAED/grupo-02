@@ -32,7 +32,11 @@
 }
 
 /*Producto*/
-.descrip-moreinf {
-  display: flex;
-  flex-wrap: wrap;
+.content-event-description {
+  width: 49%;
+  margin-right: 2%;
+}
+
+.content-event-moreinformation {
+  width: 49%;
 }
