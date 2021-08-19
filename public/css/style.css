@@ -10,11 +10,9 @@
 
 .logo {
   width: 100%;
-<<<<<<< HEAD
   height: 200px;
-=======
->>>>>>> 2a5b02b938c53eda4ad533c3f3edd1ed5e1bf4ec
 }
+
 .text-center {
   width: 50%;
   text-align: center;
@@ -28,13 +26,10 @@
   width: 100%;
   text-align: center;
   color: #998550;
-<<<<<<< HEAD
   font-size: 24px;
   margin-top: -40px;
-=======
-  font-size: 15px;
->>>>>>> 2a5b02b938c53eda4ad533c3f3edd1ed5e1bf4ec
 }
+
 .fa-bars {
   font-size: 20px;
 }
