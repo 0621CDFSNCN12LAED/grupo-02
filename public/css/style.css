@@ -1,7 +1,6 @@
 .h-contenedor-header {
   background-color: #5ce1e6;
-  height: 5%;
-  padding: 10px;
+  padding: 8px;
 }
 
 .h-contenedor-logo {
@@ -11,37 +10,123 @@
 
 .logo {
   width: 100%;
+<<<<<<< HEAD
   height: 200px;
+=======
+>>>>>>> 2a5b02b938c53eda4ad533c3f3edd1ed5e1bf4ec
 }
 .text-center {
   width: 50%;
   text-align: center;
   align-self: center;
   color: #998550;
-  font-size: 24px;
+  font-size: 15px;
   font-weight: bold;
 }
 
 .h-icon-design {
-  font-size: 20px;
   width: 100%;
   text-align: center;
   color: #998550;
+<<<<<<< HEAD
   font-size: 24px;
   margin-top: -40px;
+=======
+  font-size: 15px;
+>>>>>>> 2a5b02b938c53eda4ad533c3f3edd1ed5e1bf4ec
 }
 .fa-bars {
-  font-size: xx-large;
+  font-size: 20px;
+}
+
+.art-banner-style {
+  position: relative;
+  margin-bottom: 20px;
 }
 
 .banner {
   width: 100%;
 }
 
+.searchBox {
+  position: absolute;
+  bottom: 45%;
+}
+
 .B-categoria {
   text-align: center;
+  justify-content: space-around;
 }
 
 .B-muestra-ticket {
   text-align: center;
+}
+
+/*Producto*/
+#main-seccion-center {
+  text-align: center;
+  margin-top: 10px;
+  padding: 0px 10px;
+}
+
+.content-event-general {
+  border: 2px solid #998550;
+}
+.content-event-general p {
+  text-align: left;
+  margin-bottom: 5px;
+}
+.content-event-general i {
+  margin-right: 5px;
+  padding-left: 3px;
+}
+.product-title {
+  background-color: #094253;
+  color: #998550;
+  font-weight: bolder;
+}
+
+.content-event-price {
+  display: flex;
+  flex-wrap: wrap;
+  border: 2px solid #998550;
+  justify-content: space-between;
+}
+.price-contenedor {
+  width: 50%;
+  text-align: left;
+  padding: 3px 0px 3px 5px;
+}
+
+.buy-contenedor {
+  background-color: #094253;
+  width: 50%;
+  text-align: center;
+}
+.buy-buttom {
+  background-color: #094253;
+  border-style: none;
+  padding: 3px 0px;
+}
+.buy-buttom a {
+  color: #72d079;
+  text-decoration: none;
+  font-weight: bolder;
+}
+.content-event-ubication {
+  border: 2px solid #998550;
+}
+
+.content-event-description {
+  border: 2px solid #998550;
+}
+
+.description-style {
+  text-align: left;
+  padding: 3px 3px;
+  font-size: 10px;
+}
+.content-event-moreinformation {
+  border: 2px solid #998550;
+  width: 100%;
 }

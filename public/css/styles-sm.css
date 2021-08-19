@@ -32,6 +32,17 @@
   width: 100%;
 }
 
+<<<<<<< HEAD
 .logo{
   width: 100%;
+=======
+/*Producto*/
+.content-event-description {
+  width: 49%;
+  margin-right: 2%;
+}
+
+.content-event-moreinformation {
+  width: 49%;
+>>>>>>> 2a5b02b938c53eda4ad533c3f3edd1ed5e1bf4ec
 }
