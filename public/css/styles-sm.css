@@ -8,6 +8,7 @@
   text-decoration: none;
   border: dotted 2px blue;
   width: 100%;
+  margin-top: -22px;
 }
 .display-flex-sm ul {
   display: flex;
@@ -28,5 +29,9 @@
 
 .display-none-sm {
   display: none;
+  width: 100%;
+}
+
+.logo{
   width: 100%;
 }
