@@ -27,3 +27,4 @@ Trato de ponerle onda a todo, me gusta aprender pero no soy muy autodidacta. Me 
 Amante de futbol y los perros.
 
 Descripción personal de Ariel Mangino:
+Soy Tec. Agropecuario, me encanta el campo , cuando tengo tiempo me voy de viaje, vivi en el sur y por eso amo al sur. Estudie programacion hace mucho tiempo atras y siempre dije que retomaria esta profecion. Hoy estoy muy contento de haber elegido esta carrera.
