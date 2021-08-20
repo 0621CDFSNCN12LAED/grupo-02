@@ -123,7 +123,27 @@
   border: 2px solid #998550;
   width: 100%;
 }
+/* imagen evento */
 
+#main-content {
+  padding: 0 10%;
+}
+
+.product {
+  border: 1px solid #2fafcf;
+}
+
+.product-wrapper {
+  padding: 5px;
+}
+
+.product-img {
+  border-bottom: 1px solid #ebebeb;
+}
+
+.product-content {
+  position: relative;
+}
 /*Carrito*/
 .carrit-tickets {
   width: 90%;
