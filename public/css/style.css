@@ -11,6 +11,7 @@
 .logo {
   width: 100%;
 }
+
 .text-center {
   width: 50%;
   text-align: center;
@@ -26,6 +27,7 @@
   color: #998550;
   font-size: 15px;
 }
+
 .fa-bars {
   font-size: 20px;
 }
@@ -190,4 +192,86 @@
 .buy-contenedor-mp {
   background-color: #094253;
   text-align: center;
+}
+/*footer*/
+
+.f-footer {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  background-color: #998550;
+}
+
+.f-links {
+  text-decoration: none;
+  color: aqua;
+}
+
+.f-links-social {
+  text-decoration: none;
+  color: aqua;
+  padding: 0px 5px;
+}
+
+.f-copy {
+  text-decoration: none;
+  color: aqua;
+}
+
+.f-primero {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  display: block;
+}
+
+.f-segundo {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+}
+
+.f-tercero {
+  width: 100%;
+  text-align: center;
+  padding: 10px 0px 10px 0px;
+}
+
+.f-cuarto {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  display: block;
+}
+
+.f-info {
+  padding: 4px;
+}
+
+.f-contacto {
+  padding: 4px;
+}
+
+.f-100 {
+  padding: 4px;
+}
+
+/*animacion titulos-footer*/
+
+@keyframes latidos {
+  from {
+    transform: none;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  to {
+    transform: none;
+  }
+}
+
+.f-titulo {
+  color: hsl(187, 100%, 50%);
+  animation: latidos 0.9s infinite;
+  margin: 10px 0px;
 }

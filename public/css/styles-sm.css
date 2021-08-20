@@ -30,7 +30,11 @@
   width: 100%;
 }
 
+.logo{
+  width: 100%;
 /*Producto*/
+}
+
 .content-event-description {
   width: 49%;
   margin-right: 2%;
