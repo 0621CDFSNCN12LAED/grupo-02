@@ -6,19 +6,23 @@
   margin-top: 10px;
   font-weight: bolder;
   text-decoration: none;
-  width: 100%;
+  width: 50%;
 }
 .display-flex-sm ul {
   display: flex;
   justify-content: space-between;
   width: 100%;
   list-style-type: none;
-  padding-left: 0;
+  padding-right: 15px;
 }
 .display-flex-sm a {
   text-decoration: none;
-  color: #998550;
-  font-size: 16px;
+  color: #ffff;
+  font-size: 12px;
+  font-weight: bold;
+}
+.display-flex-sm a:hover{
+  color: #ffb700;
 }
 
 .display-flex-sm li {
@@ -30,9 +34,7 @@
   width: 100%;
 }
 
-.logo{
-  width: 100%;
-/*Producto*/
+  /*Producto*/
 }
 
 .content-event-description {
