@@ -295,3 +295,22 @@
   animation: latidos 0.9s infinite;
   margin: 10px 0px;
 }
+
+/*Search*/
+
+.searchBox {
+  width: 100%;
+}
+
+.search-container {
+  text-align: center;
+  width: 90%;
+  margin: auto;
+}
+
+.search-container form {
+  width: 100%;
+}
+.imput-content {
+  width: 90%;
+}
