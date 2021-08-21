@@ -1,4 +1,9 @@
 /* Colors ====================  */
+/*nuevos
+bkg= #333
+buttom yellow = #ffb700
+
+*/
 
 /*Suplementarios*/
 .t-lb-text {
@@ -55,6 +60,6 @@
 
 /*Font Family*/
 body {
-  font-family: "Rubik";
+  font-family: Helvetica;
   font-size: 12px;
 }

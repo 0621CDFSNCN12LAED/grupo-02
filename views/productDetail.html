@@ -42,36 +42,27 @@
     <!-- encabezado de la pagina -->
 
     <header class="h-contenedor-header">
-      <div class="display-flex">
+      <div class="display-flex .space-between item-center">
         <div class="h-contenedor-logo">
-          <img
-            class="logo"
-            src="./imagenes/Deporteando-4.png"
-            alt="logo"
-          />
+          <img class="logo" src="./imagenes/deporteandoLogo.png" alt="logo" />
         </div>
-        <h2 class="text-center">Tu sitio de eventos deportivos</h2>
         <div class="h-icon-design display-none-sm">
           <i class="fas fa-bars"></i>
         </div>
+        <nav class="display-none display-flex-sm navbar-sm">
+          <ul>
+            <li>
+              <a href="/Registro">Creá tu cuenta </a>
+            </li>
+            <li>
+              <a href="/Login">Ingresá </a>
+            </li>
+            <li>
+              <a href="/Carrito">Mi Carrito </a>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <nav class="display-none display-flex-sm navbar-sm">
-        <ul>
-          <li>
-            <a href="/Registro"
-              >Creá tu cuenta <i class="far fa-id-card"></i
-            ></a>
-          </li>
-          <li>
-            <a href="/Login">Ingresá <i class="fas fa-sign-in-alt"></i></a>
-          </li>
-          <li>
-            <a href="/Carrito"
-              >Mi Carrito <i class="fas fa-shopping-basket"></i
-            ></a>
-          </li>
-        </ul>
-      </nav>
     </header>
     <main>
       <img src="/imagenes/evento1.jpg" alt="running-cba" class="w-100" />
