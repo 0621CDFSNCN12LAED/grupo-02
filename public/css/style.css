@@ -50,6 +50,7 @@
 }
 
 /*Producto*/
+
 #main-seccion-center {
   text-align: center;
   margin-top: 10px;
@@ -117,6 +118,7 @@
   border: 2px solid #998550;
   width: 100%;
 }
+
 /* imagen evento */
 
 #main-content {
@@ -138,7 +140,9 @@
 .product-content {
   position: relative;
 }
+
 /*Carrito*/
+
 .carrit-tickets {
   width: 90%;
   margin: auto;
@@ -207,29 +211,30 @@
   background-color: #094253;
   text-align: center;
 }
+
 /*footer*/
 
 .f-footer {
   display: flex;
   flex-wrap: wrap;
   margin-top: 20px;
-  background-color: #998550;
+  background-color: #333;
 }
 
 .f-links {
   text-decoration: none;
-  color: aqua;
+  color: white;
 }
 
 .f-links-social {
   text-decoration: none;
-  color: aqua;
+  color: white;
   padding: 0px 5px;
 }
 
 .f-copy {
   text-decoration: none;
-  color: aqua;
+  color: #ffb700;
 }
 
 .f-primero {
@@ -285,9 +290,38 @@
 }
 
 .f-titulo {
-  color: hsl(187, 100%, 50%);
+  color: #ffb700;
   animation: latidos 0.9s infinite;
   margin: 10px 0px;
+}
+
+/*logos de redes sociales*/
+
+
+.fa {
+  padding: 15px;
+  font-size: 15px;
+  width: 46px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+}
+
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Facebook */
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
 }
 
 /*Search*/
