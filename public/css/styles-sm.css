@@ -1,32 +1,52 @@
 /*Tablets Min Width 480px*/
 
+.h-contenedor-logo {
+  width: 26%;
+
+  text-align: left;
+}
+
+.h-content-nav-sm {
+  display: block;
+  width: 74%;
+}
+
 .display-flex-sm {
   display: flex;
-
   margin-top: 10px;
-  font-weight: bolder;
   text-decoration: none;
-  width: 50%;
+  width: 100%;
 }
 .display-flex-sm ul {
   display: flex;
-  justify-content: space-between;
   width: 100%;
   list-style-type: none;
   padding-right: 15px;
+  justify-content: right;
 }
 .display-flex-sm a {
   text-decoration: none;
   color: #ffff;
-  font-size: 12px;
-  font-weight: bold;
+  font-size: 11px;
+  width: auto;
+  white-space: nowrap;
+  font-weight: 400;
+  text-align: center;
+  padding: 10px 10px;
+  border-radius: 50px;
 }
 .display-flex-sm a:hover {
   color: #ffb700;
 }
-
-.display-flex-sm li {
-  margin: 0px 5px;
+.boton-menu {
+  border: #fff 1px solid;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 50px;
+}
+.boton-menu:hover {
+  border: #ffb700 1px solid;
+  color: #ffb700;
 }
 
 .display-none-sm {

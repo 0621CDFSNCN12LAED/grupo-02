@@ -9,7 +9,7 @@
 }
 
 .logo {
-  width: 50%;
+  width: 116px;
 }
 
 .h-icon-design {
@@ -143,7 +143,7 @@
   position: relative;
 }
 
-.m-botton-compra{
+.m-botton-compra {
   font-size: 11px;
   width: 100%;
   height: 35px;
@@ -153,36 +153,36 @@
   border-radius: 6px;
 }
 
-.m-botton-compra a{
+.m-botton-compra a {
   text-decoration: none;
   color: black;
   font-size: 16px;
   font-weight: 600;
 }
 
-.s-gris{
+.s-gris {
   background-color: #ececec;
 }
 
-.ticket{
-  margin:0px 5px 0px 0px;
+.ticket {
+  margin: 0px 5px 0px 0px;
 }
 
-.product-content h3{
+.product-content h3 {
   border-bottom: 1px solid #dcdcdc;
   text-align: center;
   margin: 5px 0px 5px 0px;
   padding-bottom: 5px;
 }
 
-.product-content p{
+.product-content p {
   margin: 5px 0px 5px 0px;
   padding-top: 5px;
   font-weight: 600;
   color: #3e3e3e;
 }
 
-main{
+main {
   margin: 5px 15px;
 }
 
@@ -191,12 +191,12 @@ main{
   transition: 0.3s;
 }
 
-.m-botton-compra:hover .ticket{
+.m-botton-compra:hover .ticket {
   color: rgb(255, 255, 255);
-} 
+}
 
-.m-botton-compra:hover a{
-  color: rgb(255, 255, 255)
+.m-botton-compra:hover a {
+  color: rgb(255, 255, 255);
 }
 
 /*Carrito*/
@@ -355,7 +355,6 @@ main{
 
 /*logos de redes sociales*/
 
-
 .fa {
   padding: 15px;
   font-size: 15px;
@@ -365,20 +364,19 @@ main{
   border-radius: 50%;
 }
 
-
 .fa:hover {
   opacity: 0.7;
 }
 
 /* Facebook */
 .fa-facebook {
-  background: #3B5998;
+  background: #3b5998;
   color: white;
 }
 
 /* Twitter */
 .fa-twitter {
-  background: #55ACEE;
+  background: #55acee;
   color: white;
 }
 
