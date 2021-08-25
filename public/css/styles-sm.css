@@ -22,7 +22,7 @@
   width: 100%;
   list-style-type: none;
   padding-right: 15px;
-  justify-content: right;
+  justify-content: flex-end;
 }
 .display-flex-sm a {
   text-decoration: none;
