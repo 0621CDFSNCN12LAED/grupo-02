@@ -97,11 +97,10 @@
 #main-seccion-center {
   text-align: center;
   margin-top: 10px;
-  padding: 0px 10px;
 }
 
 .content-event-general {
-  border: 2px solid #998550;
+  border: 2px solid #333;
 }
 .content-event-general p {
   text-align: left;
@@ -112,15 +111,15 @@
   padding-left: 3px;
 }
 .product-title {
-  background-color: #094253;
-  color: #998550;
+  background-color: #333;
+  color: #fff;
   font-weight: bolder;
 }
 
 .content-event-price {
   display: flex;
   flex-wrap: wrap;
-  border: 2px solid #998550;
+  border: 2px solid #333;
   justify-content: space-between;
 }
 .price-contenedor {
@@ -129,27 +128,38 @@
   padding: 3px 0px 3px 5px;
 }
 
-.buy-contenedor {
-  background-color: #094253;
-  width: 50%;
-  text-align: center;
-}
 .buy-buttom {
-  background-color: #094253;
+  text-align: center;
+  width: 50%;
+  background-color: #ffb700;
   border-style: none;
   padding: 3px 0px;
+  border-radius: 6px;
 }
 .buy-buttom a {
-  color: #72d079;
+  color: #000;
   text-decoration: none;
   font-weight: bolder;
 }
+
+.buy-contenedor:hover {
+  background: #eb2055;
+  transition: 0.3s;
+}
+.buy-buttom:hover {
+  background: #eb2055;
+  transition: 0.3s;
+}
+.buy-buttom:hover a {
+  color: rgb(255, 255, 255);
+}
+
 .content-event-ubication {
-  border: 2px solid #998550;
+  border: 2px solid #333;
 }
 
 .content-event-description {
-  border: 2px solid #998550;
+  border: 2px solid #333;
 }
 
 .description-style {
@@ -158,7 +168,7 @@
   font-size: 10px;
 }
 .content-event-moreinformation {
-  border: 2px solid #998550;
+  border: 2px solid #333;
   width: 100%;
 }
 
@@ -221,7 +231,7 @@
   color: #3e3e3e;
 }
 
-main {
+.main {
   margin: 5px 15px;
 }
 
@@ -244,7 +254,7 @@ main {
   width: 90%;
   margin: auto;
   margin-top: 15px;
-  border: 2px solid #998550;
+  border: 2px solid #333;
   justify-content: space-between;
 }
 
@@ -262,17 +272,17 @@ main {
 .selector-carrito {
   width: 100%;
   text-align: center;
-  color: #998550;
+  color: #000;
   font-weight: bolder;
-  background-color: #094253;
+  background-color: #fff;
   border-style: none;
   border-radius: 10px;
 }
 
 .temporizador-cart {
   margin-top: 15px;
-  border-top: 2px solid #998550;
-  border-bottom: 2px solid #998550;
+  border-top: 2px solid #333;
+  border-bottom: 2px solid #333;
   text-align: center;
   padding: 10px;
 }
@@ -281,7 +291,7 @@ main {
   width: 90%;
   margin: auto;
   margin-top: 15px;
-  border: 2px solid #998550;
+  border: 2px solid #333;
   justify-content: space-between;
 }
 
@@ -296,19 +306,19 @@ main {
 }
 .warning-carrit {
   margin-top: 15px;
-  border-top: 2px solid #998550;
-  border-bottom: 2px solid #998550;
+  border-top: 2px solid #333;
+  border-bottom: 2px solid #333;
   padding: 10px;
   text-align: center;
 }
 .fa-exclamation {
   font-size: 20px;
 }
-.buy-contenedor-mp {
-  background-color: #094253;
-  text-align: center;
-}
+.buy-buttom-c {
+  width: 100%;
 
+  margin-bottom: 1px;
+}
 /*footer*/
 
 .f-footer {
