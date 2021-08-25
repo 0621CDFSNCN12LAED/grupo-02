@@ -21,7 +21,7 @@
   font-size: 12px;
   font-weight: bold;
 }
-.display-flex-sm a:hover{
+.display-flex-sm a:hover {
   color: #ffb700;
 }
 
@@ -34,8 +34,7 @@
   width: 100%;
 }
 
-  /*Producto*/
-}
+/*Producto*/
 
 .content-event-description {
   width: 49%;
