@@ -6,6 +6,9 @@ buttom yellow = #ffb700
 */
 
 /*Suplementarios*/
+.t-grey-text {
+  color: #333;
+}
 .t-lb-text {
   color: #4ea6bf;
 }
@@ -26,6 +29,13 @@ buttom yellow = #ffb700
 }
 .t-darkviolet-text {
   color: #29338d;
+}
+
+.t-grey-bg {
+  background-color: #333;
+}
+.s-gris {
+  background-color: #ececec;
 }
 
 .t-lb-bg {

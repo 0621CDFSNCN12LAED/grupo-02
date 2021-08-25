@@ -1,5 +1,4 @@
 .h-contenedor-header {
-  background-color: #333;
   padding: 8px;
 }
 
@@ -28,19 +27,63 @@
 
 .art-banner-style {
   position: relative;
-  margin-bottom: 20px;
 }
 
 .banner {
   width: 100%;
 }
 
-.searchBox {
-  position: absolute;
-  bottom: 45%;
+.buscador2 {
+  width: 98%;
+  overflow: hidden;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 4);
+  border-radius: 5px;
+  background-color: #fff;
+  z-index: 999;
+  position: relative;
+  display: flex;
+  margin: 0px 8px 8px 0px;
+}
+.buscador2 input[type="text"] {
+  background: #fff;
+  border: none;
+  color: #333;
+  display: block;
+  float: left !important;
+  height: 50px;
+  padding: 0 0 0 1%;
+  transition-duration: 0.3s;
+  width: 100%;
+  font-size: 16px;
+}
+.buscador2 select {
+  background: #fff;
+  border: none;
+  color: #333;
+  display: block;
+  float: left !important;
+  height: 50px;
+  padding: 0 0 0 2%;
+  transition-duration: 0.3s;
+  width: 90%;
+  font-size: 16px;
+}
+.categori-buttom {
+  font-weight: bold !important;
+  color: #000 !important;
+  background: #ffb700 !important;
+  border: none;
+  display: block;
+  float: left !important;
+  height: 50px;
+  padding: 0 0 0 0%;
+  transition-duration: 0.3s;
+  width: 50%;
+  font-size: 14px;
 }
 
 .B-categoria {
+  padding: 1% 7%;
   text-align: center;
   justify-content: space-around;
 }
@@ -160,10 +203,6 @@
   font-weight: 600;
 }
 
-.s-gris {
-  background-color: #ececec;
-}
-
 .ticket {
   margin: 0px 5px 0px 0px;
 }
@@ -276,7 +315,6 @@ main {
   display: flex;
   flex-wrap: wrap;
   margin-top: 20px;
-  background-color: #333;
 }
 
 .f-links {
@@ -384,17 +422,41 @@ main {
 
 .searchBox {
   width: 100%;
+  position: absolute;
+  bottom: 25%;
 }
 
 .search-container {
-  text-align: center;
   width: 90%;
   margin: auto;
 }
-
 .search-container form {
   width: 100%;
+  background-color: white;
+  opacity: 0.7;
+  border-radius: 10px;
 }
-.imput-content {
+
+.imput-box {
   width: 90%;
+  opacity: 0.7;
+  border-radius: 10px 0px 0px 10px;
+  border-style: none;
+  text-align: center;
+}
+
+.imput-box:focus-visible {
+  border-color: white;
+}
+
+.button-box {
+  width: 10%;
+  opacity: 0.7;
+  border-radius: 0px 10px 10px 0px;
+  border-style: none;
+}
+.search-container button:hover {
+  opacity: 1;
+  background-color: #eb2055;
+  color: #ffb700;
 }
