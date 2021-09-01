@@ -1,0 +1,48 @@
+const products = [
+  {
+    id: 1,
+    title: "Running Villa María Cordoba",
+    location: " Puente Andino, Villa María, Córdoba, Argentina",
+    date: "Sábado 19 de Septiembre 2021",
+    schedule: "9 A.M.",
+    price: "U$S 300",
+    img: "/imagenes/evento1.jpg",
+    desc: "¡LANZAMOS NUESTRA 2° EDICIÓN! ¡Nos preparamos para volver a vivir momentos únicos rodeados de naturaleza y enoturismo! ¿¡Están listos!?",
+    more_inf: "http://running-cba.com.ar",
+  },
+  {
+    id: 2,
+    title: "",
+    location: "",
+    date: "",
+    schedule: "",
+    price: "U$S ",
+    img: "/images/",
+    desc: "",
+    more_inf: "",
+  },
+  {
+    id: 3,
+    title: "",
+    location: "",
+    date: "",
+    schedule: "",
+    price: "U$S ",
+    img: "/images/",
+    desc: "",
+    more_inf: "",
+  },
+  {
+    id: 4,
+    title: "",
+    location: "",
+    date: "",
+    schedule: "",
+    price: "U$S ",
+    img: "/images/",
+    desc: "",
+    more_inf: "",
+  },
+];
+
+module.exports = products;
