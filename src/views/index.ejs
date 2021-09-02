@@ -16,6 +16,7 @@
     <main>
       <section class="B-muestra-ticket display-flex">
         <% for (product of products){%>
+        <a href="/Producto/<%=product.id%>">
         <div class="product-wrapper">
           <article class="product">
             <img
@@ -28,8 +29,9 @@
             <div class="product-content">
               <h3><%=product.title%></h3>
               <p><%=product.location%> <%=product.price%></p>
+        </a>
               <button class="m-botton-compra">
-                <a href="#"><i class="fas fa-ticket-alt ticket"></i>Comprar</a>
+                <a href="/Carrito/<%=product.id%>"><i class="fas fa-ticket-alt ticket"></i>Comprar</a>
               </button>
             </div>
           </article>
