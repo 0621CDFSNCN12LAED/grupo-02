@@ -7,5 +7,8 @@ router.get("/Carrito/:id", mainController.carrito);
 router.get("/Producto/:id", mainController.producto);
 router.get("/Login", mainController.login);
 router.get("/Registro", mainController.register);
+router.get("/CreateProcut", mainController.creacionProducto);
+
+
 
 module.exports = router;

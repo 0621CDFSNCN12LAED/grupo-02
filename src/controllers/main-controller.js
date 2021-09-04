@@ -69,4 +69,8 @@ module.exports = {
   register: (req, res) => {
     res.render("register");
   },
+
+  creacionProducto: (req, res) => {
+    res.render("CreateProduct");
+  },
 };

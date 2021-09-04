@@ -2,18 +2,9 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include("partials/head-login")%>
 
-    <!-- links para iconos  -->
-    <script src="https://kit.fontawesome.com/dbca3ea2a9.js" crossorigin="anonymous"></script>
-
-    <!-- hoja de estilos -->
-    <link rel="stylesheet" href="./css/normalize.css">
-    <link rel="stylesheet" href="./css/usuario.css">
-
-    <title>Login</title>
+    <title>Ingresar</title>
 </head>
 
 <body>
@@ -27,32 +18,32 @@
         <div class="contentbx">
 
             <div class="formbx">
-                <h2>Login</h2>
+                <h2>Registrate</h2>
 
                 <form action="">
 
                     <div class="inputbx">
-                        <span>Username</span>
+                        <span>Nombre de usuario</span>
                         <input type="text" name="Username" required>
                     </div>
 
                     <div class="inputbx">
-                        <span>Paswsword</span>
+                        <span>Contraseña</span>
                         <input type="password" name="password" required>
                     </div>
 
                     <div class="remember">
                         <label for="">
-                            <input type="checkbox">Remember me</label>
+                            <input type="checkbox">Recordar</label>
                     </div>
 
                     <div class="inputbx">
-                        <input type="submit" value="sign in" name="">
+                        <input type="submit" value="Aceptar" name="">
                     </div>
 
                     <div class="inputbx">
-                        <p>Dont have a acount <a href="#">Sign</a></p>
-                        <p>Forgot your password? <a href="#"> Click here</a></p>
+                        <p>No tienes cuenta ve <a href="/Registro"> Aqui</a></p>
+                        <p>No recuerdad tu contraseña? <a href="#"> Aprieta aqui</a></p>
                     </div>
 
                 </form>

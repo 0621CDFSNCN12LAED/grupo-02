@@ -16,3 +16,9 @@ app.set("view engine", "ejs");
 app.listen(3000, () => {
   console.log("servidor corriendo en el puerto 3000");
 });
+
+app.use((req, res, next) => {
+  res.status(404).render("error");
+ })
+ 
+ 
