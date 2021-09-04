@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../partials/head-createProduct")%>
+    <title>Creacion de un producto</title>
+  </head>
+
+  <body>
+    <!-- encabezado de la pagina -->
+    <%- include("../partials/header")%>
+
+    <section>
+      <div class="imgbox">
+        <img src="imagenes/banner-registro.jpg" alt="" />
+      </div>
+
+      <div class="contentbx">
+        <div class="formbx">
+          <form class="forms" action="">
+            <div class="inputbx">
+              <input type="text" placeholder="Nombre del evento" required />
+            </div>
+
+            <div class="inputbx caja-options">
+              <select
+                class="selectores"
+                name="provincia"
+                id="provincia"
+                required
+              >
+                <option value="">Por Provincia</option>
+                <option value="1">Buenos Aires</option>
+                <option value="2">Capital Federal</option>
+                <option value="3">Catamarca</option>
+                <option value="4">Chaco</option>
+                <option value="5">Chubut</option>
+                <option value="6">Córdoba</option>
+                <option value="7">Corrientes</option>
+                <option value="8">Entre Ríos</option>
+                <option value="9">Formosa</option>
+                <option value="10">Jujuy</option>
+                <option value="11">La Pampa</option>
+                <option value="12">La Rioja</option>
+                <option value="13">Mendoza</option>
+                <option value="14">Misiones</option>
+                <option value="15">Neuquén</option>
+                <option value="16">Río Negro</option>
+                <option value="17">Salta</option>
+                <option value="18">San Juan</option>
+                <option value="19">San Luis</option>
+                <option value="20">Santa Cruz</option>
+                <option value="21">Santa Fé</option>
+                <option value="22">Santiago del Estero</option>
+                <option value="23">Tierra del Fuego</option>
+                <option value="24">Tucumán</option>
+              </select>
+            </div>
+
+            <div class="inputbx caja-options">
+              <select
+                class="selectores"
+                name="localidad"
+                id="locacalidad"
+                required
+              >
+                <option value="">Por Localidad</option>
+              </select>
+            </div>
+
+            <div class="inputbx">
+              <input type="" placeholder="Direccion" required />
+            </div>
+
+            <div class="inputbx">
+              <input
+                type="text"
+                placeholder="Direcion y Lugar del evento"
+                required
+              />
+            </div>
+
+            <div class="inputbx">
+              <input
+                type="text"
+                placeholder="Fecha y hora de inicio"
+                required
+              />
+            </div>
+
+            <div class="inputbx">
+              <input
+                type="password"
+                placeholder="Fecha y hora de finalizacion"
+                required
+              />
+            </div>
+
+            <div class="inputbx">
+              <input type="number" placeholder="Precio de entrada" required />
+            </div>
+
+            <div class="inputbx">
+              <input
+                type="number"
+                placeholder="Descripcion del evento"
+                required
+              />
+            </div>
+
+            <div class="inputbx">
+              <input type="number" placeholder="Mas informacion" required />
+            </div>
+
+            <div class="inputbx">
+              <label class="main-label">Imagen del evento:</label>
+              <input type="file" name="avatar" accept=".jpg" />
+            </div>
+
+            <div class="inputbx">
+              <input type="submit" value="Crear Eevento" name="" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- pie de pagina -->
+    <%- include("../partials/footer")%>
+  </body>
+</html>

@@ -55,22 +55,22 @@ module.exports = {
     res.render("index", { title: "Deporteando", products: products });
   },
   carrito: (req, res) => {
-    res.render("productCart");
+    res.render("products/productCart");
   },
   producto: (req, res) => {
     const product = products.find((product) => {
       return product.id == req.params.id;
     });
-    res.render("productDetail", { product: product });
+    res.render("products/productDetail", { product: product });
   },
   login: (req, res) => {
-    res.render("login");
+    res.render("users/login");
   },
   register: (req, res) => {
-    res.render("register");
+    res.render("users/register");
   },
 
   creacionProducto: (req, res) => {
-    res.render("CreateProduct");
+    res.render("products/CreateProduct");
   },
 };
