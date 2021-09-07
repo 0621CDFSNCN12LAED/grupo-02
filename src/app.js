@@ -1,6 +1,5 @@
 const express = require("express");
 const path = require("path");
-const methodOverride = require("method-override");
 
 const app = express();
 
@@ -35,12 +34,7 @@ app.locals.toThousand = (n) =>
     .replace(".", ",")
     .replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
-// vista y encapculacion para datos de registro de usuario y otros
-app.use(express.urlencoded({extended: false}));
-app.use(express.json());
 
-// utilizacion de de la dependecia method (para PUT y DELETE )
-app.use(methodOverride("_method"));
 //Registro de datos de forma segura method POST
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
