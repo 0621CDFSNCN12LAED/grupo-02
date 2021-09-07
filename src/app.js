@@ -10,6 +10,10 @@ app.use(express.static(publicPath));
 const mainRouter = require("./routes/main-routes");
 app.use(mainRouter);
 
+// Dependencia de node para el uso de los method Put&Delete
+const methodOverride = require("method-override");
+app.use(methodOverride("_method"));
+
 // view engine setup (Para renderizar ejs)
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -37,3 +41,6 @@ app.use(express.json());
 
 // utilizacion de de la dependecia method (para PUT y DELETE )
 app.use(methodOverride("_method"));
+//Registro de datos de forma segura method POST
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
