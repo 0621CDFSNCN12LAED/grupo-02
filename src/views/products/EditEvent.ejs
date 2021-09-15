@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../partials/head-createProduct")%>
+    <title>Edicion de un producto</title>
+  </head>
+
+  <body>
+    <!-- encabezado de la pagina -->
+    <%- include("../partials/header")%>
+
+    <section>
+      <div class="imgbox">
+        <img src="<%=product.banner%>" alt="" />
+      </div>
+
+      <div class="contentbx">
+        <div class="formbx">
+          <form
+            class="forms"
+            method="POST"
+            action="/products/CreateProduct?_method=PUT"
+          >
+            <div class="inputbx">
+              <P>Título del evento</P>
+              <input
+                type="text"
+                value="<%=product.nombre%>"
+                name="nombre"
+                required
+              />
+            </div>
+            <div class="inputbx">
+              <P>Imagen del evento</P>
+              <input type="file" name="banner" />
+            </div>
+
+            <div class="inputbx caja-options">
+              <select
+                class="selectores"
+                name="provincia"
+                id="provincia"
+                required
+              >
+                <option value="<%=product.provincia%>">Provincia</option>
+                <option value="1">Buenos Aires</option>
+                <option value="2">Capital Federal</option>
+                <option value="3">Catamarca</option>
+                <option value="4">Chaco</option>
+                <option value="5">Chubut</option>
+                <option value="6">Córdoba</option>
+                <option value="7">Corrientes</option>
+                <option value="8">Entre Ríos</option>
+                <option value="9">Formosa</option>
+                <option value="10">Jujuy</option>
+                <option value="11">La Pampa</option>
+                <option value="12">La Rioja</option>
+                <option value="13">Mendoza</option>
+                <option value="14">Misiones</option>
+                <option value="15">Neuquén</option>
+                <option value="16">Río Negro</option>
+                <option value="17">Salta</option>
+                <option value="18">San Juan</option>
+                <option value="19">San Luis</option>
+                <option value="20">Santa Cruz</option>
+                <option value="21">Santa Fé</option>
+                <option value="22">Santiago del Estero</option>
+                <option value="23">Tierra del Fuego</option>
+                <option value="24">Tucumán</option>
+              </select>
+            </div>
+            <div class="inputbx">
+              <P>Localidad</P>
+              <input
+                type="text"
+                placeholder="Localidad"
+                name="localidad"
+                value="<%=product.localidad%>"
+                required
+              />
+            </div>
+
+            <div class="inputbx">
+              <P>Dirección</P>
+              <input
+                type="text"
+                value="<%=product.direccion%>"
+                required
+                name="direccion"
+              />
+            </div>
+
+            <div class="inputbx">
+              <P>Fecha</P>
+              <input
+                type="date"
+                value="<%=product.fecha%>"
+                name="fecha"
+                required
+              />
+            </div>
+
+            <div class="inputbx">
+              <p>Hora de Inicio</p>
+              <input
+                type="time"
+                value="<%=product.horaI%>"
+                name="horaI"
+                required
+              />
+            </div>
+            <div class="inputbx">
+              <p>Hora de Finalización</p>
+              <input
+                type="time"
+                placeholder="Hora de finalizacion"
+                value="<%=product.horaF%>"
+                name="horaF"
+                required
+              />
+            </div>
+
+            <div class="inputbx">
+              <p>Precio de entrada:</p>
+              <input
+                type="text"
+                value="<%=product.precio%>"
+                name="precio"
+                required
+              />
+            </div>
+
+            <div class="inputbx">
+              <p>Descripcion del evento:</p>
+              <textarea name="descripcion" required class="inputbx">
+<%= product.descripcion %>
+              </textarea>
+            </div>
+
+            <div class="inputbx">
+              <p>Mas informacion:</p>
+              <input
+                type="text"
+                value="<%= product.masInformacion %>"
+                name="mas-informacion"
+                required
+              />
+            </div>
+
+            <div class="inputbx">
+              <a href="#">
+                <input type="submit" value="Guardar" name="" />
+              </a>
+            </div>
+            <div class="inputbx">
+              <a href="#">
+                <input type="submit" value="Eliminar Evento" name="" />
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- pie de pagina -->
+    <%- include("../partials/footer")%>
+  </body>
+</html>

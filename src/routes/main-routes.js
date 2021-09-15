@@ -11,7 +11,7 @@ router.get("/", mainController.index);
 router.get("/Carrito/:id", mainController.carrito);
 
 // router para ver la informacion de un evento en especifico
-router.get("/Producto/:id", mainController.producto);
+router.get("/Evento/:id", mainController.detail);
 
 // router para que un usuiario inicie sesion
 router.get("/Login", mainController.login);
@@ -27,9 +27,9 @@ router.post("/Registro", mainController.createUser);
 //////////////////////CREACION Y EDICION DE PRODUCTOS////////////////////////
 
 // router para la creacion de un producto
-router.get("/CreateProduct", mainController.creacionProducto);
+router.get("/CrearEvento", mainController.creacionEvento);
 
 // router para la edicion de un producto
-router.get("/editProduct/:id", mainController.edit);
+router.get("/Evento/:id/editar", mainController.edit);
 
 module.exports = router;

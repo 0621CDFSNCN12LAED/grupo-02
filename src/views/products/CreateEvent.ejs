@@ -18,7 +18,12 @@
         <div class="formbx">
           <form class="forms" action="">
             <div class="inputbx">
-              <input type="text" placeholder="Nombre del evento" required />
+              <input
+                type="text"
+                placeholder="Nombre del evento"
+                name="nombre"
+                required
+              />
             </div>
 
             <div class="inputbx caja-options">
@@ -28,7 +33,7 @@
                 id="provincia"
                 required
               >
-                <option value="">Por Provincia</option>
+                <option value="">Provincia</option>
                 <option value="1">Buenos Aires</option>
                 <option value="2">Capital Federal</option>
                 <option value="3">Catamarca</option>
@@ -56,21 +61,11 @@
               </select>
             </div>
 
-            <div class="inputbx caja-options">
-              <select
-                class="selectores"
+            <div class="inputbx">
+              <input
+                type="text"
+                placeholder="Localidad"
                 name="localidad"
-                id="locacalidad"
-                required
-              >
-                <option value="">Por Localidad</option>
-              </select>
-            </div>
-
-            <div class="inputbx">
-              <input
-                type="text"
-                placeholder="Direcion y Lugar del evento"
                 required
               />
             </div>
@@ -78,42 +73,70 @@
             <div class="inputbx">
               <input
                 type="text"
-                placeholder="Fecha y hora de inicio"
+                placeholder="Dirección"
+                name="direccion"
                 required
               />
             </div>
 
             <div class="inputbx">
               <input
-                type="text"
-                placeholder="Fecha y hora de finalizacion"
+                type="date"
+                placeholder="Fecha"
+                value="22/08/2022"
+                name="fecha"
                 required
               />
             </div>
 
             <div class="inputbx">
-              <input type="number" placeholder="Precio de entrada" required />
+              <input type="time" value="11:30" name="horaI" required />
             </div>
 
             <div class="inputbx">
               <input
-                type="text"
+                type="time"
+                placeholder="Hora de finalizacion"
+                value="14:30"
+                name="horaF"
+                required
+              />
+            </div>
+
+            <div class="inputbx">
+              <input
+                type="number"
+                placeholder="Precio de entrada"
+                name="precio"
+                required
+              />
+            </div>
+
+            <div class="inputbx">
+              <textarea
                 placeholder="Descripcion del evento"
+                name="descripcion"
                 required
-              />
+                class="inputbx"
+              ></textarea>
             </div>
 
             <div class="inputbx">
-              <input type="text" placeholder="Mas informacion" required />
+              <input
+                type="text"
+                placeholder="Mas informacion"
+                name="mas-informacion"
+                required
+              />
             </div>
 
             <div class="inputbx">
               <label class="main-label">Imagen del evento:</label>
-              <input type="file" name="avatar" accept=".jpg" />
+              <input type="file" name="banner" accept="image/jpeg,image/png" />
             </div>
 
             <div class="inputbx">
-              <input type="submit" value="Crear Eevento" name="" />
+              <input type="submit" value="Crear Eevento" />
             </div>
           </form>
         </div>

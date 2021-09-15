@@ -9,24 +9,40 @@
     <%- include("../partials/header")%>
 
     <main class="main">
-      <img src="<%=product.img%>" alt="running-cba" class="img-content" />
+      <img src="<%=product.banner%>" alt="running-cba" class="img-content" />
       <section class="main-seccion-center-md">
+        <div class="edit-contenedor">
+          <button class="edit-buttom"><a href="/Evento/<%=product.id%>/editar">Editar Evento</a></button>
+          <button class="edit-buttom"><a href="#">Eliminar Evento</a></button>
+          <!--Enviar mensaje de si está seguro que quiere eliminar el evento y si está seguro activar el metodo delete-->
+          </div>
         <div class="content-event-general">
-          <p class="product-title pad-5px"><%=product.title%></p>
+          <p class="product-title pad-5px"><%=product.nombre%></p>
           <p>
             <i class="fas fa-map-marker"></i>
-            <%=product.location%>
+            <%=product.provincia%>
           </p>
-          <p><i class="fas fa-calendar-alt"></i><%=product.longDate%></p>
-          <p><i class="far fa-clock"></i><%=product.schedule%></p>
+          <p>
+            <i class="fas fa-map-marker"></i>
+            <%=product.localidad%>
+          </p>
+          <p>
+            <i class="fas fa-map-marker"></i>
+            <%=product.direccion%>
+          </p>
+          <p><i class="fas fa-calendar-alt"></i><%=product.fecha%></p>
+          <p><i class="far fa-clock"></i><%=product.horaI%></p>
+          <p><i class="far fa-clock"></i><%=product.horaF%></p>
         </div>
         <div class="content-event-price">
           <div class="price-contenedor">
-            <p></i><%=product.price%></p>
+            <p></i><%=product.precio%></p>
           </div>
           <button class="buy-buttom">
-            <a href="#"><i class="fas fa-ticket-alt ticket"></i>Comprar</a>
-          </button>
+            <a href="/Carrito/:id">
+            <i class="fas fa-ticket-alt ticket"></i>Comprar
+          </a>
+        </button>
         </div>
         <div class="content-event-ubication">
           <p class="product-title pad-5px align-left">Ubicación</p>
@@ -41,11 +57,11 @@
             <p class="product-title pad-5px align-left">
               Descripción del evento
             </p>
-            <p class="description-style"><%=product.desc%></p>
+            <p class="description-style"><%=product.descripcion%></p>
           </div>
           <div class="content-event-moreinformation">
             <p class="product-title pad-5px align-left">Más Información</p>
-            <p class="description-style"><%=product.more_inf%></p>
+            <p class="description-style"><%=product.masInformacion%></p>
           </div>
         </div>
       </section>

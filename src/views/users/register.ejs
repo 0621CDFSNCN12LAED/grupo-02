@@ -14,17 +14,49 @@
 
       <div class="contentbx">
         <div class="formbx">
-          <h2>Suscribete</h2>
+          <h2>Registrate</h2>
 
           <form method="POST" action="/users/register">
             <div class="inputbx">
-              <span>Nombre de usuario</span>
-              <input type="text" name="Username" required />
+              <span>Nombre</span>
+              <input type="text" name="nombre" required />
             </div>
-
+            <div class="inputbx">
+              <span>Apellido</span>
+              <input type="text" name="apellido" required />
+            </div>
+            <div class="inputbx">
+              <span>Fecha de Nacimiento</span>
+              <input type="date" name="nacimiento" required />
+            </div>
             <div class="inputbx">
               <span>E-mail</span>
               <input type="email" name="email" required />
+            </div>
+            <div class="inputbx">
+              <span>Genero</span>
+              <input type="text" name="genero" required />
+            </div>
+            <div class="inputbx">
+              <span>Tipo de Usuario</span>
+              <div class="flexCheck">
+                <input
+                  type="checkbox"
+                  name="tipoDeUsuario"
+                  value="Participante"
+                  checked
+                  required
+                />
+                <label for="Participante">Participante</label>
+
+                <input
+                  type="checkbox"
+                  name="tipoDeUsuario"
+                  value="Organizador"
+                  required
+                />
+                <label for="Organizador">Organizador</label>
+              </div>
             </div>
 
             <div class="inputbx">
@@ -38,7 +70,7 @@
             </div>
 
             <div class="inputbx">
-              <input type="submit" value="Aceptar"/>
+              <input type="submit" value="Aceptar" />
             </div>
           </form>
         </div>
