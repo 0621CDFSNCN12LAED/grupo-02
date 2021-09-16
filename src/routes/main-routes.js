@@ -1,10 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const mainController = require("../controllers/main-controller");
+const { body } = require("express-validator");
 
 //////////////////////VISUALIZAR LAS PAGINAS PEDIDAS////////////////////////
 
-// router para pagina de inicio
+// router para pagina de inicionp
 router.get("/", mainController.index);
 
 // router para entrar a la compra de tickets
