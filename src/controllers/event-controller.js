@@ -129,44 +129,27 @@ const products = [
 ];
 
 module.exports = {
-  //////////////////////VISUALIZAR LAS PAGINAS PEDIDAS////////////////////////
+  detail: (req, res) => {
+    const event = events.find((event) => {
+      return event.id == req.params.id;
+    });
+    res.render("products/EventDetail", { event });
+  },
 
-  index: (req, res) => {
-    res.render("index", { title: "Deporteando", products: products });
+  //////////////////////CREACION// Y EDICION DE PRODUCTOS (BACK)////////////////////////
+
+  creacionEvento: (req, res) => {
+    res.render("products/CreateEvent");
+  },
+
+  edit: (req, res) => {
+    const event = events.find((event) => {
+      return event.id == req.params.id;
+    });
+    res.render("products/EditEvent", { event });
   },
 
   carrito: (req, res) => {
     res.render("products/EventCart");
-  },
-
-  //////////////////////VALIDAR DATOS DEL USUARIO (BACK)////////////////////////
-
-  login: (req, res) => {
-    res.render("users/login");
-  },
-
-  //////////////////////REGISTRACION Y VALIDACION DE DATOS (BACK)////////////////////////
-
-  register: (req, res) => {
-    res.render("users/register");
-  },
-
-  createUser: (req, res) => {
-    //const newUser = {
-    // username: req.body.username,
-    // email: req.body.email,
-    // password: req.body.password,
-    // Repeat_password: req.body.Repeat-password
-    // };
-    //res.send(req.body)
-  },
-  delete: (req, res) => {
-    const product = products.find((product) => {
-      return product.id == req.params.id;
-    });
-    product.delete = true;
-
-    fs.writeFileSync(productsFilePath, JSON.stringify(products));
-    res.redirect("/products");
   },
 };

@@ -9,28 +9,24 @@ const { body } = require("express-validator");
 router.get("/", mainController.index);
 
 // router para entrar a la compra de tickets
-router.get("/Carrito/:id", mainController.carrito);
-
-// router para ver la informacion de un evento en especifico
-router.get("/Evento/:id", mainController.detail);
+router.get("/Carrito/:id", mainController.carrito); //evento
 
 // router para que un usuiario inicie sesion
-router.get("/Login", mainController.login);
+router.get("/Login", mainController.login); //de usuario
+
+//////////////////////CREACION Y EDICION DE PRODUCTOS////////////////////////
 
 //////////////////////REGISTRACION Y VALIDACION DE DATOS////////////////////////
 
 // router para que un usuario se registre
-router.get("/Registro", mainController.register);
+router.get("/Registro", mainController.register); //de usuario
 
 // post enviar los datos del usuario
-router.post("/Registro", mainController.createUser);
+router.post("/Registro", mainController.createUser); //de usuario
 
 //////////////////////CREACION Y EDICION DE PRODUCTOS////////////////////////
 
-// router para la creacion de un producto
-router.get("/CrearEvento", mainController.creacionEvento);
-
-// router para la edicion de un producto
-router.get("/Evento/:id/editar", mainController.edit);
+// borrar evento
+router.delete("/:id", mainController.delete);
 
 module.exports = router;

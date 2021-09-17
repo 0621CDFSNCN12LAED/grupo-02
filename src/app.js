@@ -7,7 +7,11 @@ const publicPath = path.resolve(__dirname, "../public");
 app.use(express.static(publicPath));
 
 const mainRouter = require("./routes/main-routes");
-app.use(mainRouter);
+const eventRouter = require("./routes/event-routes");
+const userRouter = require("./routes/user-routes");
+
+app.use("/", mainRouter);
+app.use("/Evento", eventRouter);
 
 // Dependencia de node para el uso de los method Put&Delete
 const methodOverride = require("method-override");
@@ -33,7 +37,6 @@ app.locals.toThousand = (n) =>
     .toString()
     .replace(".", ",")
     .replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
 
 //Registro de datos de forma segura method POST
 app.use(express.urlencoded({ extended: false }));

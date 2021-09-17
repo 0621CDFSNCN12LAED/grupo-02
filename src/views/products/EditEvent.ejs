@@ -11,7 +11,7 @@
 
     <section>
       <div class="imgbox">
-        <img src="<%=product.banner%>" alt="" />
+        <img src="<%=event.banner%>" alt="" />
       </div>
 
       <div class="contentbx">
@@ -25,7 +25,7 @@
               <P>Título del evento</P>
               <input
                 type="text"
-                value="<%=product.nombre%>"
+                value="<%=event.nombre%>"
                 name="nombre"
                 required
               />
@@ -42,7 +42,7 @@
                 id="provincia"
                 required
               >
-                <option value="<%=product.provincia%>">Provincia</option>
+                <option value="<%=event.provincia%>">Provincia</option>
                 <option value="1">Buenos Aires</option>
                 <option value="2">Capital Federal</option>
                 <option value="3">Catamarca</option>
@@ -75,7 +75,7 @@
                 type="text"
                 placeholder="Localidad"
                 name="localidad"
-                value="<%=product.localidad%>"
+                value="<%=event.localidad%>"
                 required
               />
             </div>
@@ -84,7 +84,7 @@
               <P>Dirección</P>
               <input
                 type="text"
-                value="<%=product.direccion%>"
+                value="<%=event.direccion%>"
                 required
                 name="direccion"
               />
@@ -94,7 +94,7 @@
               <P>Fecha</P>
               <input
                 type="date"
-                value="<%=product.fecha%>"
+                value="<%=event.fecha%>"
                 name="fecha"
                 required
               />
@@ -104,7 +104,7 @@
               <p>Hora de Inicio</p>
               <input
                 type="time"
-                value="<%=product.horaI%>"
+                value="<%=event.horaI%>"
                 name="horaI"
                 required
               />
@@ -114,7 +114,7 @@
               <input
                 type="time"
                 placeholder="Hora de finalizacion"
-                value="<%=product.horaF%>"
+                value="<%=event.horaF%>"
                 name="horaF"
                 required
               />
@@ -124,7 +124,7 @@
               <p>Precio de entrada:</p>
               <input
                 type="text"
-                value="<%=product.precio%>"
+                value="<%=event.precio%>"
                 name="precio"
                 required
               />
@@ -133,7 +133,7 @@
             <div class="inputbx">
               <p>Descripcion del evento:</p>
               <textarea name="descripcion" required class="inputbx">
-<%= product.descripcion %>
+<%= event.descripcion %>
               </textarea>
             </div>
 
@@ -141,7 +141,7 @@
               <p>Mas informacion:</p>
               <input
                 type="text"
-                value="<%= product.masInformacion %>"
+                value="<%= event.masInformacion %>"
                 name="mas-informacion"
                 required
               />
