@@ -28,3 +28,19 @@ Amante de futbol y los perros.
 
 Descripción personal de Ariel Mangino:
 Soy Tec. Agropecuario, me encanta el campo , cuando tengo tiempo me voy de viaje, vivi en el sur y por eso amo al sur. Estudie programacion hace mucho tiempo atras y siempre dije que retomaria esta profecion. Hoy estoy muy contento de haber elegido esta carrera.
+
+{
+id: 1,
+nombre: "Running 10K",
+provincia: "Texas",
+localidad: "Katy",
+direccion: "017 Brown Court",
+fecha: "2021-07-09",
+horaI: "05:33", //ver con pablo el 0
+horaF: "11:29",
+precio: 2729.45,
+banner: "/imagenes/evento4.jpg",
+descripcion: "Felty's syndrome, knee",
+masInformacion: "tamu.edu",
+estado: "open",
+},

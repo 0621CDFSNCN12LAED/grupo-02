@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <%- include("../partials/head-createProduct")%>
-    <title>Edicion de un producto</title>
+    <title>Creacion de un producto</title>
   </head>
 
   <body>
@@ -11,28 +11,24 @@
 
     <section>
       <div class="imgbox">
-        <img src="<%=event.banner%>" alt="" />
+        <img src="/imagenes/banner-registro.jpg" alt="" />
       </div>
 
       <div class="contentbx">
         <div class="formbx">
           <form
             class="forms"
+            action="/Evento"
             method="POST"
-            action="/products/CreateProduct?_method=PUT"
+            enctype="multipart/form-data"
           >
             <div class="inputbx">
-              <P>Título del evento</P>
               <input
                 type="text"
-                value="<%=event.nombre%>"
+                placeholder="Nombre del evento"
                 name="nombre"
                 required
               />
-            </div>
-            <div class="inputbx">
-              <P>Imagen del evento</P>
-              <input type="file" name="banner" />
             </div>
 
             <div class="inputbx caja-options">
@@ -42,7 +38,7 @@
                 id="provincia"
                 required
               >
-                <option value="<%=event.provincia%>">Provincia</option>
+                <option value="">Provincia</option>
                 <option value="1">Buenos Aires</option>
                 <option value="2">Capital Federal</option>
                 <option value="3">Catamarca</option>
@@ -69,93 +65,83 @@
                 <option value="24">Tucumán</option>
               </select>
             </div>
+
             <div class="inputbx">
-              <P>Localidad</P>
               <input
                 type="text"
                 placeholder="Localidad"
                 name="localidad"
-                value="<%=event.localidad%>"
                 required
               />
             </div>
 
             <div class="inputbx">
-              <P>Dirección</P>
               <input
                 type="text"
-                value="<%=event.direccion%>"
-                required
+                placeholder="Dirección"
                 name="direccion"
+                required
               />
             </div>
 
             <div class="inputbx">
-              <P>Fecha</P>
               <input
                 type="date"
-                value="<%=event.fecha%>"
+                placeholder="Fecha"
+                value="22/08/2022"
                 name="fecha"
                 required
               />
             </div>
 
             <div class="inputbx">
-              <p>Hora de Inicio</p>
-              <input
-                type="time"
-                value="<%=event.horaI%>"
-                name="horaI"
-                required
-              />
+              <input type="time" value="11:30" name="horaI" required />
             </div>
+
             <div class="inputbx">
-              <p>Hora de Finalización</p>
               <input
                 type="time"
                 placeholder="Hora de finalizacion"
-                value="<%=event.horaF%>"
+                value="14:30"
                 name="horaF"
                 required
               />
             </div>
 
             <div class="inputbx">
-              <p>Precio de entrada:</p>
               <input
-                type="text"
-                value="<%=event.precio%>"
+                type="number"
+                placeholder="Precio de entrada"
                 name="precio"
                 required
               />
             </div>
 
             <div class="inputbx">
-              <p>Descripcion del evento:</p>
-              <textarea name="descripcion" required class="inputbx">
-<%= event.descripcion %>
-              </textarea>
+              <textarea
+                placeholder="Descripcion del evento"
+                name="descripcion"
+                required
+                class="inputbx"
+              ></textarea>
             </div>
 
             <div class="inputbx">
-              <p>Mas informacion:</p>
               <input
                 type="text"
-                value="<%= event.masInformacion %>"
+                placeholder="Mas informacion"
                 name="mas-informacion"
                 required
               />
             </div>
 
             <div class="inputbx">
-              <a href="#">
-                <input type="submit" value="Guardar" name="" />
-              </a>
+              <label class="main-label">Imagen del evento:</label>
+              <input type="file" name="banner" accept="image/jpeg,image/png" />
             </div>
+
             <div class="inputbx">
-              <a href="#">
-                <input type="submit" value="Eliminar Evento" name="" />
-              </a>
+              <input type="submit" value="Crear Eevento" />
             </div>
           </form>
         </div>

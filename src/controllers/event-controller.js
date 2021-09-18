@@ -5,151 +5,55 @@ const path = require("path");
 const eventsFilePath = path.join(__dirname, "../data/eventDataBase.json");
 const events = JSON.parse(fs.readFileSync(eventsFilePath, "utf-8"));
 
-const products = [
-  {
-    id: 1,
-    nombre: "Running 10K",
-    provincia: "Texas",
-    localidad: "Katy",
-    direccion: "017 Brown Court",
-    fecha: "2021-07-09",
-    horaI: "05:33", //ver con pablo el 0
-    horaF: "11:29",
-    precio: 2729.45,
-    banner: "/imagenes/evento1.jpg",
-    descripcion: "Felty's syndrome, knee",
-    masInformacion: "tamu.edu",
-    estado: "open",
-  },
-  {
-    id: 1,
-    nombre: "Running 10K",
-    provincia: "Texas",
-    localidad: "Katy",
-    direccion: "017 Brown Court",
-    fecha: "2021-07-09",
-    horaI: "05:33", //ver con pablo el 0
-    horaF: "11:29",
-    precio: 2729.45,
-    banner: "/imagenes/evento3.jpg",
-    descripcion: "Felty's syndrome, knee",
-    masInformacion: "tamu.edu",
-    estado: "open",
-  },
-  {
-    id: 1,
-    nombre: "Running 10K",
-    provincia: "Texas",
-    localidad: "Katy",
-    direccion: "017 Brown Court",
-    fecha: "2021-07-09",
-    horaI: "05:33", //ver con pablo el 0
-    horaF: "11:29",
-    precio: 2729.45,
-    banner: "/imagenes/evento4.jpg",
-    descripcion: "Felty's syndrome, knee",
-    masInformacion: "tamu.edu",
-    estado: "open",
-  },
-  {
-    id: 1,
-    nombre: "Running 10K",
-    provincia: "Texas",
-    localidad: "Katy",
-    direccion: "017 Brown Court",
-    fecha: "2021-07-09",
-    horaI: "05:33", //ver con pablo el 0
-    horaF: "11:29",
-    precio: 2729.45,
-    banner: "/imagenes/evento5.jpg",
-    descripcion: "Felty's syndrome, knee",
-    masInformacion: "tamu.edu",
-    estado: "open",
-  },
-  {
-    id: 1,
-    nombre: "Running 10K",
-    provincia: "Texas",
-    localidad: "Katy",
-    direccion: "017 Brown Court",
-    fecha: "2021-07-09",
-    horaI: "05:33", //ver con pablo el 0
-    horaF: "11:29",
-    precio: 2729.45,
-    banner: "/imagenes/evento4.jpg",
-    descripcion: "Felty's syndrome, knee",
-    masInformacion: "tamu.edu",
-    estado: "open",
-  },
-  {
-    id: 1,
-    nombre: "Running 10K",
-    provincia: "Texas",
-    localidad: "Katy",
-    direccion: "017 Brown Court",
-    fecha: "2021-07-09",
-    horaI: "05:33", //ver con pablo el 0
-    horaF: "11:29",
-    precio: 2729.45,
-    banner: "/imagenes/evento3.jpg",
-    descripcion: "Felty's syndrome, knee",
-    masInformacion: "tamu.edu",
-    estado: "open",
-  },
-  {
-    id: 1,
-    nombre: "Running 10K",
-    provincia: "Texas",
-    localidad: "Katy",
-    direccion: "017 Brown Court",
-    fecha: "2021-07-09",
-    horaI: "05:33", //ver con pablo el 0
-    horaF: "11:29",
-    precio: 2729.45,
-    banner: "/imagenes/evento1.jpg",
-    descripcion: "Felty's syndrome, knee",
-    masInformacion: "tamu.edu",
-    estado: "open",
-  },
-  {
-    id: 1,
-    nombre: "Running 10K",
-    provincia: "Texas",
-    localidad: "Katy",
-    direccion: "017 Brown Court",
-    fecha: "2021-07-09",
-    horaI: "05:33", //ver con pablo el 0
-    horaF: "11:29",
-    precio: 2729.45,
-    banner: "/imagenes/evento4.jpg",
-    descripcion: "Felty's syndrome, knee",
-    masInformacion: "tamu.edu",
-    estado: "open",
-  },
-];
-
 module.exports = {
+  //controlador de EventDetail
   detail: (req, res) => {
     const event = events.find((event) => {
       return event.id == req.params.id;
     });
-    res.render("products/EventDetail", { event });
+    res.render("events/EventDetail", { event });
   },
 
-  //////////////////////CREACION// Y EDICION DE PRODUCTOS (BACK)////////////////////////
-
-  creacionEvento: (req, res) => {
-    res.render("products/CreateEvent");
+  //controladores de CreateEvent
+  creatEvent: (req, res) => {
+    res.render("events/CreateEvent");
   },
 
+  storeEvent: (req, res) => {
+    const lastEvent = events[events.length - 1];
+    const biggestEventId = events.length > 0 ? lastEvent.id : 1;
+    const event = {
+      ...req.body,
+      id: biggestEventId + 1,
+      precio: Number(req.body.precio),
+      banner: req.file.filename,
+      estado: "open",
+    };
+    events.push(event);
+    fs.writeFileSync(eventsFilePath, JSON.stringify(events));
+    res.redirect("/");
+  },
+  //controladores de EditEvent
   edit: (req, res) => {
     const event = events.find((event) => {
       return event.id == req.params.id;
     });
-    res.render("products/EditEvent", { event });
+    res.render("events/EditEvent", { event });
   },
 
+  delete: (req, res) => {
+    const event = events.find((event) => {
+      if (event.id == req.params.id) {
+        event.estado = "closed";
+        return;
+      }
+    });
+    events.push(event);
+    fs.writeFileSync(eventsFilePath, JSON.stringify(events));
+    res.redirect("/");
+  },
+  //controlador del EventCart
   carrito: (req, res) => {
-    res.render("products/EventCart");
+    res.render("events/EventCart");
   },
 };

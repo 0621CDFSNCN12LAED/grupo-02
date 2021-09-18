@@ -12,6 +12,7 @@ const userRouter = require("./routes/user-routes");
 
 app.use("/", mainRouter);
 app.use("/Evento", eventRouter);
+app.use("/Usuario", userRouter);
 
 // Dependencia de node para el uso de los method Put&Delete
 const methodOverride = require("method-override");

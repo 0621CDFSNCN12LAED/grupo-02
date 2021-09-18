@@ -9,11 +9,13 @@
     <%- include("../partials/header")%>
 
     <main class="main">
-      <img src="<%=event.banner%>" alt="running-cba" class="img-content" />
+      <img src="/imagenes/<%=event.banner%>" alt="running-cba" class="img-content" />
       <section class="main-seccion-center-md">
         <div class="edit-contenedor">
           <button class="edit-buttom"><a href="/Evento/<%=event.id%>/editar">Editar Evento</a></button>
-          <button class="edit-buttom"><a href="#">Eliminar Evento</a></button>
+          <form action="/Evento/<%=event.id%>?_method=PUT" method="POST">
+          <button type="submit" class="edit-buttom">Eliminar Evento</button>
+          </form>
           <!--Enviar mensaje de si está seguro que quiere eliminar el evento y si está seguro activar el metodo delete-->
           </div>
         <div class="content-event-general">
@@ -36,7 +38,7 @@
         </div>
         <div class="content-event-price">
           <div class="price-contenedor">
-            <p></i><%=event.precio%></p>
+            <p></i>$<%=event.precio%></p>
           </div>
           <button class="buy-buttom">
             <a href="/Carrito/:id">

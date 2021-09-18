@@ -1,32 +1,24 @@
 const express = require("express");
 const router = express.Router();
 const mainController = require("../controllers/main-controller");
+const path = require("path");
+//Para tomar files y almacenarlos
+const multer = require("multer");
+const storage = multer.diskStorage({
+  destination: path.join(__dirname, "../../public/imagenes"),
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + file.originalname);
+  },
+});
+//ejecuto la callback y le paso sin ningun error(null) el nombre del archivo
+//el path.extname lo que hace es devolver la extensión desde el ultimo punto(si es un string jpg devuelve solo jpg, si no tiene extención devuelve un string vacío)
+const uploader = multer({ storage });
+
 const { body } = require("express-validator");
 
 //////////////////////VISUALIZAR LAS PAGINAS PEDIDAS////////////////////////
 
-// router para pagina de inicionp
+// router para index
 router.get("/", mainController.index);
-
-// router para entrar a la compra de tickets
-router.get("/Carrito/:id", mainController.carrito); //evento
-
-// router para que un usuiario inicie sesion
-router.get("/Login", mainController.login); //de usuario
-
-//////////////////////CREACION Y EDICION DE PRODUCTOS////////////////////////
-
-//////////////////////REGISTRACION Y VALIDACION DE DATOS////////////////////////
-
-// router para que un usuario se registre
-router.get("/Registro", mainController.register); //de usuario
-
-// post enviar los datos del usuario
-router.post("/Registro", mainController.createUser); //de usuario
-
-//////////////////////CREACION Y EDICION DE PRODUCTOS////////////////////////
-
-// borrar evento
-router.delete("/:id", mainController.delete);
 
 module.exports = router;
