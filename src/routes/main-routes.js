@@ -14,8 +14,6 @@ const storage = multer.diskStorage({
 //el path.extname lo que hace es devolver la extensión desde el ultimo punto(si es un string jpg devuelve solo jpg, si no tiene extención devuelve un string vacío)
 const uploader = multer({ storage });
 
-const { body } = require("express-validator");
-
 //////////////////////VISUALIZAR LAS PAGINAS PEDIDAS////////////////////////
 
 // router para index

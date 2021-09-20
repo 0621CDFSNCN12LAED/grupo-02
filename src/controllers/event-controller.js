@@ -2,12 +2,21 @@ const fs = require("fs");
 const path = require("path");
 
 //--------------DataBase.Json---------------------------//
-const eventsFilePath = path.join(__dirname, "../data/eventDataBase.json");
-const events = JSON.parse(fs.readFileSync(eventsFilePath, "utf-8"));
+let eventsFilePath = path.join(__dirname, "../data/eventDataBase.json");
+let events = JSON.parse(fs.readFileSync(eventsFilePath, "utf-8"));
 
 module.exports = {
+  index: (req, res) => {
+    //filterByStatus
+    const openEvents = events.filter((event) => {
+      return event.estado == "open";
+    });
+    res.render("events", { openEvents });
+  },
+
   //controlador de EventDetail
   detail: (req, res) => {
+    //filterByID
     const event = events.find((event) => {
       return event.id == req.params.id;
     });
@@ -20,37 +29,66 @@ module.exports = {
   },
 
   storeEvent: (req, res) => {
+    //CreatOneEvent
     const lastEvent = events[events.length - 1];
     const biggestEventId = events.length > 0 ? lastEvent.id : 1;
     const event = {
       ...req.body,
       id: biggestEventId + 1,
       precio: Number(req.body.precio),
-      banner: req.file.filename,
+      banner: req.file ? req.file.filename : "evento1.jpg",
       estado: "open",
     };
     events.push(event);
+
+    //Save
     fs.writeFileSync(eventsFilePath, JSON.stringify(events));
-    res.redirect("/");
+    res.redirect("/Evento");
   },
   //controladores de EditEvent
   edit: (req, res) => {
+    //filterByID
     const event = events.find((event) => {
       return event.id == req.params.id;
     });
     res.render("events/EditEvent", { event });
   },
 
-  delete: (req, res) => {
-    const event = events.find((event) => {
-      if (event.id == req.params.id) {
-        event.estado = "closed";
-        return;
-      }
+  update: (req, res) => {
+    //filterByID
+    const editEvent = events.find((event) => {
+      return event.id == req.params.id;
     });
-    events.push(event);
+
+    //EditOneEvent
+    editEvent.nombre = req.body.nombre;
+    editEvent.provincia = req.body.provincia;
+    editEvent.localidad = req.body.localidad;
+    editEvent.direccion = req.body.direccion;
+    editEvent.fecha = req.body.fecha;
+    editEvent.horaI = req.body.horaI;
+    editEvent.horaF = req.body.horaF;
+    editEvent.precio = Number(req.body.precio);
+    editEvent.banner = req.file ? req.file.filename : editEvent.banner;
+    editEvent.descripcion = req.body.descripcion;
+    editEvent.masInformacion = req.body.masInformacion;
+
+    //Save
     fs.writeFileSync(eventsFilePath, JSON.stringify(events));
-    res.redirect("/");
+    res.redirect("/Evento");
+  },
+
+  delete: (req, res) => {
+    //filterByID
+    const event = events.find((event) => {
+      return event.id == req.params.id;
+    });
+    //DeleteOneEvent
+    event.estado = "close";
+
+    //Save
+    fs.writeFileSync(eventsFilePath, JSON.stringify(events));
+    res.redirect("/Evento");
   },
   //controlador del EventCart
   carrito: (req, res) => {

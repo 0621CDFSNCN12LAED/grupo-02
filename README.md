@@ -31,16 +31,16 @@ Soy Tec. Agropecuario, me encanta el campo , cuando tengo tiempo me voy de viaje
 
 {
 id: 1,
-nombre: "Running 10K",
-provincia: "Texas",
-localidad: "Katy",
-direccion: "017 Brown Court",
-fecha: "2021-07-09",
-horaI: "05:33", //ver con pablo el 0
-horaF: "11:29",
-precio: 2729.45,
-banner: "/imagenes/evento4.jpg",
-descripcion: "Felty's syndrome, knee",
-masInformacion: "tamu.edu",
-estado: "open",
+nombre:
+provincia:
+localidad:
+direccion:
+fecha:
+horaI:
+horaF:
+precio:
+banner:
+descripcion:
+masInformacion:
+estado:
 },
