@@ -25,7 +25,11 @@ router.get("/:id", eventController.detail);
 
 //routes para EditEvent
 router.get("/:id/editar", eventController.edit);
-//falta router.put para editar
+
+//router para guardar la informacion editada
+router.put("/:id", eventController.updateEdit);
+
+//router de delete event
 router.delete("/:id", eventController.delete);
 
 // router para EventCart

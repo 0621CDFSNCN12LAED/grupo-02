@@ -7,9 +7,8 @@
 section {
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 109vh;
   display: flex;
-  margin: 25px 0px;
 }
 
 section .imgbox::before {
@@ -63,7 +62,8 @@ section .contentbx .formbx h2 {
 }
 
 section .contentbx .formbx .inputbx {
-  margin-bottom: 13px;
+  margin-bottom: 8px;
+  display: flex;
 }
 
 section .contentbx .formbx .inputbx input {
@@ -79,7 +79,7 @@ section .contentbx .formbx .inputbx input {
   border-radius: 8px;
 }
 section .contentbx .formbx .inputbx textarea {
-  height: 140px;
+  height: 60px;
   width: 100%;
   padding: 10px 20px;
   outline: none;
@@ -116,6 +116,7 @@ section .contentbx .formbx .inputbx p {
   color: #000000;
   font-size: 16px;
   font-weight: bold;
+  width: 20%;
 }
 
 section .contentbx .formbx .inputbx p a {
@@ -179,5 +180,25 @@ section .contentbx .formbx .inputbx p a {
   letter-spacing: 1px;
 }
 .main-label {
-  font-size: 18px;
+  font-size: 16px;
+  width: 30%;
+  margin: 0px 8px 0px 0px;
+  text-align: initial;
+}
+
+.botones-edit {
+  margin: 0px 10px;
+  width: 100%;
+}
+
+label {
+  font-size: medium;
+  text-align: inherit;
+  color: black;
+  padding: 0px 10px;
+}
+
+.botones-edicion {
+  margin: 0px 10px;
+  width: 100%;
 }

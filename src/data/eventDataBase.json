@@ -39,10 +39,10 @@
     "horaI": "17:02",
     "horaF": "23:03",
     "precio": 9699.14,
-    "banner": "evento1.jpg",
+    "banner": "evento5.jpg",
     "descripcion": "Other keratoconjunctivitis, unspecified eye",
     "masInformacion": "ucla.edu",
-    "estado": "close"
+    "estado": "open"
   },
   {
     "id": 4,
@@ -748,63 +748,5 @@
     "descripcion": "Unspecified injury of intrinsic muscle, fascia and tendon of thumb at wrist and hand level",
     "masInformacion": "bluehost.com",
     "estado": "close"
-  },
-  {
-    "nombre": "dasd",
-    "provincia": "1",
-    "localidad": "dasda",
-    "direccion": "dsadas",
-    "fecha": "2022-10-19",
-    "horaI": "11:30",
-    "horaF": "14:30",
-    "precio": 31231,
-    "descripcion": "dsad",
-    "mas-informacion": "213",
-    "id": 51,
-    "banner": "1631879807180evento1.jpg"
-  },
-  {
-    "nombre": "Futsal",
-    "provincia": "1",
-    "localidad": "CABA",
-    "direccion": "Milito 22",
-    "fecha": "2022-07-15",
-    "horaI": "22:22",
-    "horaF": "23:30",
-    "precio": 2215,
-    "descripcion": "Racing - Indesingente",
-    "mas-informacion": "@racingfutsalvdp",
-    "id": 52,
-    "banner": "1631881736720racingFutsal.png"
-  },
-  {
-    "nombre": "Futsal",
-    "provincia": "1",
-    "localidad": "CABA",
-    "direccion": "Milito 22",
-    "fecha": "2022-07-15",
-    "horaI": "22:22",
-    "horaF": "23:30",
-    "precio": 2215,
-    "descripcion": "Racing - Indesingente",
-    "mas-informacion": "@racingfutsalvdp",
-    "id": 53,
-    "banner": "1631881919617racingFutsal.png",
-    "estado": "Open"
-  },
-  {
-    "nombre": "sda",
-    "provincia": "2",
-    "localidad": "dasfas",
-    "direccion": "fasfasd",
-    "fecha": "2023-10-18",
-    "horaI": "11:30",
-    "horaF": "14:30",
-    "precio": 21341,
-    "descripcion": "dasdfga",
-    "mas-informacion": "dasdfa",
-    "id": 54,
-    "banner": "1631927767537gato.jpg",
-    "estado": "open"
   }
 ]

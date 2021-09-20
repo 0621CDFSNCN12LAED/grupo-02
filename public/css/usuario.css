@@ -63,7 +63,7 @@ section .contentbx .formbx h2 {
 }
 
 section .contentbx .formbx .inputbx {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 section .contentbx .formbx .inputbx span {
@@ -150,9 +150,7 @@ section .contentbx .formbx .inputbx p a {
 
 .flexCheck label {
   display: block;
-  width: 90% !important;
-  padding: 5px 0px;
-  margin: 5px 0px;
+  margin: 2px -2px;
   font-size: 16px;
   color: #ffb700;
   padding-left: 5px;

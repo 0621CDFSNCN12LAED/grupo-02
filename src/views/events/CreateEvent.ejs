@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include("../partials/head-createProduct")%>
-    <title>Creacion de un producto</title>
-  </head>
 
-  <body>
-    <!-- encabezado de la pagina -->
-    <%- include("../partials/header")%>
+<head>
+  <%- include("../partials/head-createProduct")%>
+    <title>Creacion de un producto</title>
+</head>
+
+<body>
+  <!-- encabezado de la pagina -->
+  <%- include("../partials/header")%>
 
     <section>
       <div class="imgbox">
@@ -23,21 +24,11 @@
             enctype="multipart/form-data"
           >
             <div class="inputbx">
-              <input
-                type="text"
-                placeholder="Nombre del evento"
-                name="nombre"
-                required
-              />
+              <input type="text" placeholder="Nombre del evento" name="nombre" required />
             </div>
 
             <div class="inputbx caja-options">
-              <select
-                class="selectores"
-                name="provincia"
-                id="provincia"
-                required
-              >
+              <select class="selectores" name="provincia" id="provincia" required>
                 <option value="">Provincia</option>
                 <option value="1">Buenos Aires</option>
                 <option value="2">Capital Federal</option>
@@ -67,31 +58,15 @@
             </div>
 
             <div class="inputbx">
-              <input
-                type="text"
-                placeholder="Localidad"
-                name="localidad"
-                required
-              />
+              <input type="text" placeholder="Localidad" name="localidad" required />
             </div>
 
             <div class="inputbx">
-              <input
-                type="text"
-                placeholder="Dirección"
-                name="direccion"
-                required
-              />
+              <input type="text" placeholder="Dirección" name="direccion" required />
             </div>
 
             <div class="inputbx">
-              <input
-                type="date"
-                placeholder="Fecha"
-                value="22/08/2022"
-                name="fecha"
-                required
-              />
+              <input type="date" placeholder="Fecha" value="22/08/2022" name="fecha" required />
             </div>
 
             <div class="inputbx">
@@ -99,40 +74,19 @@
             </div>
 
             <div class="inputbx">
-              <input
-                type="time"
-                placeholder="Hora de finalizacion"
-                value="14:30"
-                name="horaF"
-                required
-              />
+              <input type="time" placeholder="Hora de finalizacion" value="14:30" name="horaF" required />
             </div>
 
             <div class="inputbx">
-              <input
-                type="number"
-                placeholder="Precio de entrada"
-                name="precio"
-                required
-              />
+              <input type="number" placeholder="Precio de entrada" name="precio" required />
             </div>
 
             <div class="inputbx">
-              <textarea
-                placeholder="Descripcion del evento"
-                name="descripcion"
-                required
-                class="inputbx"
-              ></textarea>
+              <textarea placeholder="Descripcion del evento" name="descripcion" required class="inputbx"></textarea>
             </div>
 
             <div class="inputbx">
-              <input
-                type="text"
-                placeholder="Mas informacion"
-                name="mas-informacion"
-                required
-              />
+              <input type="text" placeholder="Mas informacion" name="mas-informacion" required />
             </div>
 
             <div class="inputbx">
@@ -150,5 +104,6 @@
 
     <!-- pie de pagina -->
     <%- include("../partials/footer")%>
-  </body>
+</body>
+
 </html>

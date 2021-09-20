@@ -41,14 +41,35 @@ module.exports = {
     res.render("events/EditEvent", { event });
   },
 
+  updateEdit: (req, res) => {
+    const event = events.find((event) => {
+      return event.id == req.params.id;
+    });
+
+    event.nombre = req.body.nombre;
+    event.provincia = req.body.provincia;
+    event.localidad = req.body.localidad;
+    event.direccion = req.body.direccion;
+    event.fecha = req.body.fecha;
+    event.horaI = req.body.horaI;
+    event.horaF = req.body.horaF;
+    event.precio = Number(req.body.precio);
+    event.banner = req.file ? req.file.filename : event.banner;
+    event.descripcion = req.body.descripcion;
+    event.masInformacion = req.body.masInformacion;
+
+    fs.writeFileSync(productsFilePath, JSON.stringify(products));
+    res.redirect("/");
+  },
+
   delete: (req, res) => {
     const event = events.find((event) => {
       if (event.id == req.params.id) {
-        event.estado = "closed";
+        event.estado = "close";
         return;
       }
     });
-    events.push(event);
+
     fs.writeFileSync(eventsFilePath, JSON.stringify(events));
     res.redirect("/");
   },
