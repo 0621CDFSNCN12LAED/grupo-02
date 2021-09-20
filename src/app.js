@@ -10,13 +10,12 @@ const mainRouter = require("./routes/main-routes");
 const eventRouter = require("./routes/event-routes");
 const userRouter = require("./routes/user-routes");
 
-app.use("/", mainRouter);
-app.use("/Evento", eventRouter);
-app.use("/Usuario", userRouter);
-
 // Dependencia de node para el uso de los method Put&Delete
 const methodOverride = require("method-override");
 app.use(methodOverride("_method"));
+app.use("/", mainRouter);
+app.use("/Evento", eventRouter);
+app.use("/Usuario", userRouter);
 
 // view engine setup (Para renderizar ejs)
 app.set("views", path.join(__dirname, "views"));

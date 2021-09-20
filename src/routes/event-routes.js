@@ -14,7 +14,7 @@ const storage = multer.diskStorage({
 //el path.extname lo que hace es devolver la extensión desde el ultimo punto(si es un string jpg devuelve solo jpg, si no tiene extención devuelve un string vacío)
 const uploader = multer({ storage });
 
-const { body } = require("express-validator");
+router.get("/", eventController.index);
 
 // router para CreateEvent
 router.get("/CrearEvento", eventController.creatEvent);
@@ -24,12 +24,11 @@ router.post("/", uploader.single("banner"), eventController.storeEvent);
 router.get("/:id", eventController.detail);
 
 //routes para EditEvent
+//falta router.put para editar
 router.get("/:id/editar", eventController.edit);
+//router.put("/:id", uploader.single("banner"), eventController.update);
+router.put("/:id", uploader.single("banner"), eventController.update);
 
-//router para guardar la informacion editada
-router.put("/:id", eventController.updateEdit);
-
-//router de delete event
 router.delete("/:id", eventController.delete);
 
 // router para EventCart

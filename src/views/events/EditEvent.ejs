@@ -17,7 +17,7 @@
 
       <div class="contentbx">
         <div class="formbx">
-          <form class="forms" method="POST" action="/Evento/?_method=PUT">
+          <form class="forms" action="/Evento/<%= event.id %>?_method=PUT" method="POST" enctype=multipart/form-data>
             <div class="inputbx">
               <label for="">Nombre del evento: </label>
               <input type="text" value="<%=event.nombre%>" name="nombre" required />
@@ -29,31 +29,34 @@
 
             <div class="inputbx caja-options">
               <select class="selectores" name="provincia" id="provincia" required>
-                <option value="<%=event.provincia%>">Provincia</option>
-                <option value="1">Buenos Aires</option>
-                <option value="2">Capital Federal</option>
-                <option value="3">Catamarca</option>
-                <option value="4">Chaco</option>
-                <option value="5">Chubut</option>
-                <option value="6">Córdoba</option>
-                <option value="7">Corrientes</option>
-                <option value="8">Entre Ríos</option>
-                <option value="9">Formosa</option>
-                <option value="10">Jujuy</option>
-                <option value="11">La Pampa</option>
-                <option value="12">La Rioja</option>
-                <option value="13">Mendoza</option>
-                <option value="14">Misiones</option>
-                <option value="15">Neuquén</option>
-                <option value="16">Río Negro</option>
-                <option value="17">Salta</option>
-                <option value="18">San Juan</option>
-                <option value="19">San Luis</option>
-                <option value="20">Santa Cruz</option>
-                <option value="21">Santa Fé</option>
-                <option value="22">Santiago del Estero</option>
-                <option value="23">Tierra del Fuego</option>
-                <option value="24">Tucumán</option>
+                <option value="" disabled>Provincia</option>
+                <option value="Buenos Aires" <%event.provincia=="Buenos Aires" ? "selected" :""%> >Buenos Aires</option>
+                <option value="Capital Federal" <%event.provincia=="Capital Federal" ? "selected" :""%>>Capital Federal
+                </option>
+                <option value="Catamarca" <%event.provincia=="Catamarca" ? "selected" :""%>>Catamarca</option>
+                <option value="Chaco" <%event.provincia=="Chaco" ? "selected" :""%>>Chaco</option>
+                <option value="Chubut" <%event.provincia=="Chubut" ? "selected" :""%>>Chubut</option>
+                <option value="Córdoba" <%event.provincia=="Cordoba" ? "selected" :""%>>Córdoba</option>
+                <option value="Corrientes" <%event.provincia=="Corrientes" ? "selected" :""%>>Corrientes</option>
+                <option value="Entre Ríos" <%event.provincia=="Entrer Ríos" ? "selected" :""%>>Entre Ríos</option>
+                <option value="Formosa" <%event.provincia=="Formosa" ? "selected" :""%>>Formosa</option>
+                <option value="Jujuy" <%event.provincia=="Jujuy" ? "selected" :""%>>Jujuy</option>
+                <option value="La Pampa" <%event.provincia=="La Pampa" ? "selected" :""%>>La Pampa</option>
+                <option value="La Rioja" <%event.provincia=="La Rioja" ? "selected" :""%>>La Rioja</option>
+                <option value="Mendoza" <%event.provincia=="Mendoza" ? "selected" :""%>>Mendoza</option>
+                <option value="Misiones" <%event.provincia=="Misiones" ? "selected" :""%>>Misiones</option>
+                <option value="Neuquén" <%event.provincia=="Neuquén" ? "selected" :""%>>Neuquén</option>
+                <option value="Río Negro" <%event.provincia=="Río Negro" ? "selected" :""%>>Río Negro</option>
+                <option value="Salta" <%event.provincia=="Salta" ? "selected" :""%>>Salta</option>
+                <option value="San Juan" <%event.provincia=="San Juan" ? "selected" :""%>>San Juan</option>
+                <option value="San Luis" <%event.provincia=="San Luis" ? "selected" :""%>>San Luis</option>
+                <option value="Santa Cruz" <%event.provincia=="Santa Cruz" ? "selected" :""%>>Santa Cruz</option>
+                <option value="Santa Fé" <%event.provincia=="Santa Fé" ? "selected" :""%>>Santa Fé</option>
+                <option value="Santiago del Estero" <%event.provincia=="Santiago del Estero" ? "selected" :""%>>Santiago
+                  del Estero</option>
+                <option value="Tierra del Fuego" <%event.provincia=="Tierra del Fuego" ? "selected" :""%>>Tierra del
+                  Fuego</option>
+                <option value="Tucumán" <%event.provincia=="Tucumán" ? "selected" :""%>>Tucumán</option>
               </select>
             </div>
             <div class="inputbx">
@@ -81,8 +84,8 @@
             </div>
 
             <div class="inputbx">
-              <label for="">Precio de entradas: </label>
-              <input type="text" value="<%=event.precio%>" name="precio" required />
+              <p>Precio de entrada:</p>
+              <input type="text" id="precio" name="precio" value="<%=event.precio%>" required />
             </div>
 
             <div class="inputbx">
@@ -93,20 +96,19 @@
             </div>
 
             <div class="inputbx">
-              <label for="">Mas informacion: </label>
-              <input type="text" value="<%= event.masInformacion %>" name="mas-informacion" required />
+              <p>Mas informacion:</p>
+              <input type="text" value="<%= event.masInformacion %>" name="masInformacion" required />
             </div>
 
             <div class="inputbx">
-              <a href="#" class="botones-edicion">
-                <input type="submit" value="Guardar" name="" />
-              </a>
+              <input type="submit" value="Guardar" />
             </div>
-            <div class="inputbx">
-              <a href="#" class="botones-edicion">
-                <input type="submit" value="Eliminar Evento" name="" />
-              </a>
-            </div>
+          </form>
+          <div class="inputbx">
+            <form class="forms" action="/Evento/<%= event.id %>?_method=DELETE" method="POST"
+              enctype=multipart/form-data>
+              <input type="submit" value="Eliminar Evento" />
+          </div>
           </form>
         </div>
       </div>

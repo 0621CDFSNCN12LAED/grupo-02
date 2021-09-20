@@ -1,8 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 
-const usersFilePath = path.join(__dirname, "../data/userDataBase.json");
-const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
+//--------------DataBase.Json---------------------------//
+const productService = require("../services/events-services");
 
 module.exports = {
   login: (req, res) => {

@@ -2,15 +2,19 @@ const fs = require("fs");
 const path = require("path");
 
 //--------------DataBase.Json---------------------------//
-const eventsFilePath = path.join(__dirname, "../data/eventDataBase.json");
-const events = JSON.parse(fs.readFileSync(eventsFilePath, "utf-8"));
+const productService = require("../services/events-services");
 
 module.exports = {
+  index: (req, res) => {
+    //filterByStatus
+    const openEvents = productService.filterByStatus();
+    res.render("events", { openEvents });
+  },
+
   //controlador de EventDetail
   detail: (req, res) => {
-    const event = events.find((event) => {
-      return event.id == req.params.id;
-    });
+    //filterByID
+    const event = productService.filterByID(req.params.id);
     res.render("events/EventDetail", { event });
   },
 
@@ -20,58 +24,31 @@ module.exports = {
   },
 
   storeEvent: (req, res) => {
-    const lastEvent = events[events.length - 1];
-    const biggestEventId = events.length > 0 ? lastEvent.id : 1;
-    const event = {
-      ...req.body,
-      id: biggestEventId + 1,
-      precio: Number(req.body.precio),
-      banner: req.file.filename,
-      estado: "open",
-    };
-    events.push(event);
-    fs.writeFileSync(eventsFilePath, JSON.stringify(events));
-    res.redirect("/");
+    //CreatOneEvent
+    productService.CreatOneEvent(req.body, req.file);
+    res.redirect("/Evento");
   },
+
   //controladores de EditEvent
   edit: (req, res) => {
-    const event = events.find((event) => {
-      return event.id == req.params.id;
-    });
+    //filterByID
+    const event = productService.filterByID(req.params.id);
     res.render("events/EditEvent", { event });
   },
 
-  updateEdit: (req, res) => {
-    const event = events.find((event) => {
-      return event.id == req.params.id;
-    });
-
-    event.nombre = req.body.nombre;
-    event.provincia = req.body.provincia;
-    event.localidad = req.body.localidad;
-    event.direccion = req.body.direccion;
-    event.fecha = req.body.fecha;
-    event.horaI = req.body.horaI;
-    event.horaF = req.body.horaF;
-    event.precio = Number(req.body.precio);
-    event.banner = req.file ? req.file.filename : event.banner;
-    event.descripcion = req.body.descripcion;
-    event.masInformacion = req.body.masInformacion;
-
-    fs.writeFileSync(productsFilePath, JSON.stringify(products));
-    res.redirect("/");
+  update: (req, res) => {
+    productService.EditOneEvent(req.params.id, req.body, req.file);
+    res.redirect("/Evento");
   },
 
   delete: (req, res) => {
-    const event = events.find((event) => {
-      if (event.id == req.params.id) {
-        event.estado = "close";
-        return;
-      }
-    });
-
-    fs.writeFileSync(eventsFilePath, JSON.stringify(events));
-    res.redirect("/");
+    //filterByID
+    const event = productService.filterByID(req.params.id);
+    //DeleteOneEvent
+    event.estado = "close";
+    //Save
+    productService.save();
+    res.redirect("/Evento");
   },
   //controlador del EventCart
   carrito: (req, res) => {
