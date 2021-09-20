@@ -146,10 +146,6 @@ section .contentbx .formbx .inputbx p a {
     margin: 50px;
   }
 }
-.forms {
-  padding-top: 20px;
-}
-
 .caja-options {
   width: 100%;
   outline: none;
@@ -184,6 +180,10 @@ section .contentbx .formbx .inputbx p a {
   width: 30%;
   margin: 0px 8px 0px 0px;
   text-align: initial;
+}
+
+.forms {
+  width: 100%;
 }
 
 .botones-edit {
