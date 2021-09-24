@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 //--------------DataBase.Json---------------------------//
-const productService = require("../services/events-services");
+const userService = require("../services/users-services");
 
 module.exports = {
   login: (req, res) => {

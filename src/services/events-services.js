@@ -4,7 +4,7 @@ const path = require("path");
 let eventsFilePath = path.join(__dirname, "../data/eventDataBase.json");
 let events = JSON.parse(fs.readFileSync(eventsFilePath, "utf-8"));
 
-const productService = {
+const eventService = {
   filterByID(id) {
     const event = events.find((event) => {
       return event.id == id;
@@ -33,6 +33,7 @@ const productService = {
       banner: img ? img.filename : "evento1.jpg",
       estado: "open",
     };
+    console.log(img);
     events.push(event);
     this.save();
   },
@@ -55,4 +56,4 @@ const productService = {
   },
 };
 
-module.exports = productService;
+module.exports = eventService;
