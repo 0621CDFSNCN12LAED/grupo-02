@@ -15,6 +15,10 @@ module.exports = {
     res.render("users/register");
   },
 
+  profile: (req, res) => {
+    res.render("users/profile");
+  },
+
   createUser: (req, res) => {
     //const newUser = {
     // username: req.body.username,

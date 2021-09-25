@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const userController = require("../controllers/user-controller");
 const path = require("path");
+
 //Para tomar files y almacenarlos
 const multer = require("multer");
 const storage = multer.diskStorage({
@@ -21,6 +22,8 @@ const { body } = require("express-validator");
 router.get("/Login", userController.login);
 // router para que un usuario se registre
 router.get("/Registro", userController.register);
+//
+router.get("/perfil", userController.profile);
 // post enviar los datos del usuario
 router.post("/Registro", userController.createUser);
 

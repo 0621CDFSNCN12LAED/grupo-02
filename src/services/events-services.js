@@ -33,7 +33,7 @@ const eventService = {
       banner: img ? img.filename : "evento1.jpg",
       estado: "open",
     };
-    console.log(img);
+
     events.push(event);
     this.save();
   },

@@ -1,0 +1,41 @@
+.box {
+  background-color: blueviolet;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box-profile {
+  background-color: brown;
+  width: 30%;
+}
+
+.box-img {
+  background-color: cadetblue;
+  height: 50%;
+}
+
+img {
+  width: 100%;
+}
+
+.box-info {
+  background-color: chartreuse;
+  width: 100%;
+}
+
+.box-events {
+  background-color: darkgreen;
+  width: 70%;
+}
+
+.events-buy {
+  height: 50%;
+}
+
+.events-create {
+  height: 50%;
+}
+
+.title {
+  margin: 0px;
+}
