@@ -15,16 +15,16 @@ const storage = multer.diskStorage({
 //el path.extname lo que hace es devolver la extensión desde el ultimo punto(si es un string jpg devuelve solo jpg, si no tiene extención devuelve un string vacío)
 const uploader = multer({ storage });
 
-const { body } = require("express-validator");
+router.get("/", userController.index);
 
-//Falta mover Router a user-routes
 // router para que un usuiario inicie sesion
 router.get("/Login", userController.login);
 // router para que un usuario se registre
 router.get("/Registro", userController.register);
-//
-router.get("/perfil", userController.profile);
 // post enviar los datos del usuario
 router.post("/Registro", userController.createUser);
+
+//para mirar la pag de profile
+router.get("/perfil", userController.profile);
 
 module.exports = router;

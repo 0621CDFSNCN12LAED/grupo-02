@@ -7,11 +7,13 @@
 .box-profile {
   background-color: brown;
   width: 30%;
+  border-radius: 15px;
 }
 
 .box-img {
   background-color: cadetblue;
-  height: 50%;
+  width: 100%;
+  border-radius: 50%;
 }
 
 img {
@@ -21,11 +23,14 @@ img {
 .box-info {
   background-color: chartreuse;
   width: 100%;
+  border-radius: 7px;
 }
 
 .box-events {
   background-color: darkgreen;
-  width: 70%;
+  width: 68%;
+  margin: 0px 8px;
+  border-radius: 8px;
 }
 
 .events-buy {
@@ -37,5 +42,14 @@ img {
 }
 
 .title {
-  margin: 0px;
+  margin: 10px 0px;
+}
+
+.n {
+  padding: 0px 5px;
+}
+
+.edit {
+  width: 100%;
+  border-radius: 6px;
 }

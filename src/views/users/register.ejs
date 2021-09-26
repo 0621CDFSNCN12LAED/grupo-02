@@ -17,7 +17,7 @@
       <div class="formbx">
         <h2>Registrate</h2>
 
-        <form method="POST" action="/users/register">
+        <form action="/Usuario" method="POST" enctype="multipart/form-data">
           <div class="inputbx">
             <span>Nombre</span>
             <input type="text" name="nombre" required />
@@ -41,10 +41,10 @@
           <div class="inputbx">
             <span>Tipo de Usuario</span>
             <div class="flexCheck">
-              <input type="checkbox" name="tipoDeUsuario" value="Participante" checked required />
+              <input type="checkbox" name="tipoDeUsuario" value="Participante" checked />
               <label for="Participante">Participante</label>
 
-              <input type="checkbox" name="tipoDeUsuario" value="Organizador" required />
+              <input type="checkbox" name="tipoDeUsuario" value="Organizador" />
               <label for="Organizador">Organizador</label>
             </div>
           </div>
