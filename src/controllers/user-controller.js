@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const { validationResult } = require("express-validator");
 
 //--------------DataBase.Json---------------------------//
 const userService = require("../services/users-services");
@@ -27,7 +28,17 @@ module.exports = {
   },
 
   createUser: (req, res) => {
+    //validaciones del usuario al ingresar informacion
+    const resultValidation = validationResult(req);
+
+    if (resultValidation.errors.length > 0) {
+      return res.render("users/register", {
+        errors: resultValidation.mapped(),
+        oldData: req.body,
+      });
+    }
+
     userService.createUser(req.body);
-    res.redirect("events"); // falta el html
+    res.redirect("/Evento"); // falta el html
   },
 };

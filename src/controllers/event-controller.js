@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const { validationResult } = require("express-validator");
 
 //--------------DataBase.Json---------------------------//
 const eventService = require("../services/events-services");
@@ -24,6 +25,15 @@ module.exports = {
   },
 
   storeEvent: (req, res) => {
+    //validaciones del usuario al ingresar informacion
+    const resultValidation = validationResult(req);
+
+    if (resultValidation.errors.length > 0) {
+      return res.render("events/CreateEvent", {
+        errors: resultValidation.mapped(),
+        oldData: req.body,
+      });
+    }
     //CreatOneEvent
     eventService.CreatOneEvent(req.body, req.file);
     res.redirect("/Evento");

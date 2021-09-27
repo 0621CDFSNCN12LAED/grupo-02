@@ -20,11 +20,17 @@
         <div class="formbx">
           <form class="forms" action="/Evento" method="POST" enctype="multipart/form-data">
             <div class="inputbx">
-              <input type="text" placeholder="Nombre del evento" name="nombre" required />
+              <input type="text" placeholder="Nombre del evento" name="nombre"
+                value="<%= locals.oldData ? oldData.nombre : null %>" />
+              <% if (locals.errors && errors.nombre) { %>
+                <div class="error-msg">
+                  <%= errors.nombre.msg %>
+                </div>
+                <% } %>
             </div>
 
             <div class="inputbx caja-options">
-              <select class="selectores" name="provincia" id="provincia" required>
+              <select class="selectores" name="provincia" id="provincia">
                 <option value="">Provincia</option>
                 <option value="Buenos Aires">Buenos Aires</option>
                 <option value="Capital Federal">Capital Federal</option>
@@ -54,36 +60,82 @@
             </div>
 
             <div class="inputbx">
-              <input type="text" placeholder="Localidad" name="localidad" required />
+              <input type="text" placeholder="Localidad" name="localidad"
+                value="<%= locals.oldData ? oldData.localidad : null %>" />
+              <% if (locals.errors && errors.localidad) { %>
+                <div class="error-msg">
+                  <%= errors.localidad.msg %>
+                </div>
+                <% } %>
             </div>
 
             <div class="inputbx">
-              <input type="text" placeholder="Dirección" name="direccion" required />
+              <input type="text" placeholder="Dirección" name="direccion"
+                value="<%= locals.oldData ? oldData.direccion : null %>" />
+              <% if (locals.errors && errors.direccion) { %>
+                <div class="error-msg">
+                  <%= errors.direccion.msg %>
+                </div>
+                <% } %>
             </div>
 
             <div class="inputbx">
-              <input type="date" placeholder="Fecha" value="22/08/2022" name="fecha" required />
+              <input type="date" placeholder="Fecha" value="22/08/2022" name="fecha"
+                value="<%= locals.oldData ? oldData.fecha : null %>" />
+              <% if (locals.errors && errors.fecha) { %>
+                <div class="error-msg">
+                  <%= errors.fecha.msg %>
+                </div>
+                <% } %>
             </div>
 
             <div class="inputbx">
-              <input type="time" value="11:30" name="horaI" required />
+              <input type="time" value="11:30" name="horaI" value="<%= locals.oldData ? oldData.horaI : null %>" />
+              <% if (locals.errors && errors.horaI) { %>
+                <div class="error-msg">
+                  <%= errors.horaI.msg %>
+                </div>
+                <% } %>
             </div>
 
             <div class="inputbx">
-              <input type="time" placeholder="Hora de finalizacion" value="14:30" name="horaF" required />
+              <input type="time" placeholder="Hora de finalizacion" value="14:30" name="horaF"
+                value="<%= locals.oldData ? oldData.horaF : null %>" />
+              <% if (locals.errors && errors.horaF) { %>
+                <div class="error-msg">
+                  <%= errors.horaF.msg %>
+                </div>
+                <% } %>
             </div>
 
             <div class="inputbx">
-              <input type="number" placeholder="Precio de entrada" name="precio" required />
+              <input type="number" placeholder="Precio de entrada" name="precio"
+                value="<%= locals.oldData ? oldData.precio : null %>" />
+              <% if (locals.errors && errors.precio) { %>
+                <div class="error-msg">
+                  <%= errors.precio.msg %>
+                </div>
+                <% } %>
             </div>
 
             <div class="inputbx">
-              <textarea placeholder="Descripcion del evento" name="descripcion" required class="inputbx"></textarea>
+              <textarea placeholder="Descripcion del evento" name="descripcion" class="inputbx"
+                value="<%= locals.oldData ? oldData.descripcion : null %>"></textarea>
+              <% if (locals.errors && errors.descripcion) { %>
+                <div class="error-msg">
+                  <%= errors.descripcion.msg %>
+                </div>
+                <% } %>
             </div>
 
             <div class="inputbx">
-              <input type="text" placeholder="Mas informacion" name="masInformacion" required />
-
+              <input type="text" placeholder="Mas informacion" name="masInformacion"
+                value="<%= locals.oldData ? oldData.masInformacion : null %>" />
+              <% if (locals.errors && errors.masInformacion) { %>
+                <div class="error-msg">
+                  <%= errors.masInformacion.msg %>
+                </div>
+                <% } %>
             </div>
 
             <div class="inputbx">
