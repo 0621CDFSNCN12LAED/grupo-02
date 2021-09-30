@@ -10,6 +10,10 @@ const mainRouter = require("./routes/main-routes");
 const eventRouter = require("./routes/event-routes");
 const userRouter = require("./routes/user-routes");
 
+//Registro de datos de forma segura method POST
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
 // Dependencia de node para el uso de los method Put&Delete
 const methodOverride = require("method-override");
 app.use(methodOverride("_method"));
@@ -37,7 +41,3 @@ app.locals.toThousand = (n) =>
     .toString()
     .replace(".", ",")
     .replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
-//Registro de datos de forma segura method POST
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
