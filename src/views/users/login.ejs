@@ -16,10 +16,13 @@
         <div class="formbx">
           <h2>Iniciar Sesión</h2>
 
-          <form action="">
+          <form action="/Usuario" method="POST" enctype="multipart/form-data">
             <div class="inputbx">
-              <span>Nombre de usuario</span>
-              <input type="text" name="Username" id="Username" required />
+              <span>Email de Usuario</span>
+              <input type="text" name="email" id="email" required />
+              <% if (locals.errors && errors.email) { %>
+              <div class="error-msg"><%= errors.email.msg %></div>
+              <% } %>
             </div>
 
             <div class="inputbx">
@@ -32,11 +35,11 @@
             </div>
 
             <div class="inputbx">
-              <input type="submit" value="Aceptar" name="" />
+              <input type="submit" value="Aceptar" />
             </div>
 
             <div class="inputbx">
-              <p>No tienes cuenta ve <a href="/Registro"> Aqui</a></p>
+              <p>No tienes cuenta ve <a href="/Usuario/Registro"> Aqui</a></p>
               <p>No recuerdad tu contraseña? <a href="#"> Aprieta aqui</a></p>
             </div>
           </form>

@@ -6,9 +6,8 @@ const path = require("path");
 
 //Para tomar files y almacenarlos
 const multer = require("multer");
-const { equal } = require("assert");
 const storage = multer.diskStorage({
-  destination: path.join(__dirname, "../../public/imagenes"),
+  destination: path.join(__dirname, "../../public/imagenes/Users"),
   filename: (req, file, cb) => {
     cb(null, Date.now() + file.originalname);
   },
@@ -18,21 +17,23 @@ const storage = multer.diskStorage({
 const uploader = multer({ storage });
 const userFormValidation = require("../validations/user-form-validation");
 const checkValidation = require("../middlewares/check-validation");
+const { Router } = require("express");
+//para mirar la pag de profile
 
-//inicion
-router.get("/", userController.index);
-// router para que un usuiario inicie sesion
-router.get("/Login", userController.login);
+router.get("/", userController.profile);
 // router para que un usuario se registre
 router.get("/Registro", userController.register);
 // post enviar los datos del usuario
 router.post(
   "/",
+  uploader.single("avatar"),
   userFormValidation,
   checkValidation,
   userController.createUser
 );
-//para mirar la pag de profile
-router.get("/perfil", userController.profile);
+// router para que un usuiario inicie sesion
+router.get("/Login", userController.login);
+// post enviar los datos del login
+router.post("/", userController.loginProcess);
 
 module.exports = router;
