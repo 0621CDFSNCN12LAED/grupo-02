@@ -28,16 +28,6 @@ module.exports = {
   },
 
   createUser: (req, res) => {
-    //validaciones del usuario al ingresar informacion
-    const resultValidation = validationResult(req);
-
-    if (resultValidation.errors.length > 0) {
-      return res.render("users/register", {
-        errors: resultValidation.mapped(),
-        oldData: req.body,
-      });
-    }
-
     userService.createUser(req.body);
     res.redirect("/Evento"); // falta el html
   },
