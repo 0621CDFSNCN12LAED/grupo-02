@@ -1,12 +1,13 @@
 const express = require("express");
 const router = express.Router();
 const eventController = require("../controllers/event-controller");
+const eventValidations = require("../validations/event-form-validation");
 const path = require("path");
 
 //Para tomar files y almacenarlos
 const multer = require("multer");
 const storage = multer.diskStorage({
-  destination: path.join(__dirname, "../../public/imagenes"),
+  destination: path.join(__dirname, "../../public/imagenes/Eventos"),
   filename: (req, file, cb) => {
     cb(null, Date.now() + file.originalname);
   },
@@ -19,7 +20,12 @@ router.get("/", eventController.index);
 
 // router para CreateEvent
 router.get("/CrearEvento", eventController.creatEvent);
-router.post("/", uploader.single("banner"), eventController.storeEvent);
+router.post(
+  "/",
+  uploader.single("banner"),
+  eventValidations,
+  eventController.storeEvent
+);
 
 //router para EventDetail
 router.get("/:id", eventController.detail);
