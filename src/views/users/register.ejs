@@ -16,11 +16,7 @@
         <div class="formbx">
           <h2>Registrate</h2>
 
-          <form
-            action="/Usuario"
-            method="POST"
-            enctype="application/x-www-form-urlencoded"
-          >
+          <form action="/Usuario" method="POST" enctype="multipart/form-data">
             <div class="inputbx">
               <span>Nombre</span>
               <input
@@ -101,6 +97,15 @@
                 />
                 <label for="Organizador">Organizador</label>
               </div>
+            </div>
+            <div class="inputbx">
+              <span>Imagen del evento:</span>
+              <input
+                type="file"
+                name="avatar"
+                id="avatar"
+                accept="image/jpeg,image/png"
+              />
             </div>
 
             <div class="inputbx">

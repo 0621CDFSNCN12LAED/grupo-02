@@ -1,23 +1,46 @@
 const fs = require("fs");
 const path = require("path");
-
+const bcryptjs = require("bcryptjs");
 let userFilePath = path.join(__dirname, "../data/userDataBase.json");
 let users = JSON.parse(fs.readFileSync(userFilePath, "utf-8"));
 
 const userServices = {
-  save() {
-    fs.writeFileSync(userFilePath, JSON.stringify(users));
+  findAll: function () {
+    return users;
   },
-  createUser(payload) {
+  filterByID(id) {
+    const user = users.filter((user) => {
+      return user.id == id;
+    });
+    return user;
+  },
+  filterByEmail(payload) {
+    const user = users.filter((user) => {
+      return user.email == payload;
+    });
+    return user;
+  },
+  createUser(payload, img) {
     const lastUser = users[users.length - 1];
     const biggesUserId = users.length > 0 ? lastUser.id : 1;
     const user = {
       id: biggesUserId + 1,
       ...payload,
+      password: bcryptjs.hashSync(payload.password, 10),
+      Repeat_password: null,
+      avatar: img ? img.filename : "avatar3.png",
     };
     users.push(user);
     this.save();
+    return user;
+  },
+  deleteUser(payload) {
+    const userToDelete = this.filterByID(payload);
+    users.pop(userToDelete);
+    this.save();
+  },
+  save() {
+    fs.writeFileSync(userFilePath, JSON.stringify(users, null, "  "));
   },
 };
-
 module.exports = userServices;
