@@ -8,18 +8,21 @@ const userServices = {
   findAll: function () {
     return users;
   },
+
   filterByID(id) {
     const user = users.filter((user) => {
       return user.id == id;
     });
     return user;
   },
-  filterByEmail(payload) {
-    const user = users.filter((user) => {
+
+  findByEmail(payload) {
+    const user = users.find((user) => {
       return user.email == payload;
     });
     return user;
   },
+
   createUser(payload, img) {
     const lastUser = users[users.length - 1];
     const biggesUserId = users.length > 0 ? lastUser.id : 1;
@@ -34,11 +37,13 @@ const userServices = {
     this.save();
     return user;
   },
+
   deleteUser(payload) {
     const userToDelete = this.filterByID(payload);
     users.pop(userToDelete);
     this.save();
   },
+
   save() {
     fs.writeFileSync(userFilePath, JSON.stringify(users, null, "  "));
   },

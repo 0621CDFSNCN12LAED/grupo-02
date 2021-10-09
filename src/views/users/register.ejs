@@ -1,139 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include("../partials/head-login")%>
+
+<head>
+  <%- include("../partials/head-login")%>
 
     <title>Registrate</title>
-  </head>
+</head>
 
-  <body>
-    <section>
-      <div class="imgbox">
-        <img src="/imagenes/imagen-fondo-usuario-2.jpg" alt="" />
-      </div>
+<body>
+  <section>
+    <div class="imgbox">
+      <img src="/imagenes/imagen-fondo-usuario-2.jpg" alt="" />
+    </div>
 
-      <div class="contentbx">
-        <div class="formbx">
-          <h2>Registrate</h2>
+    <div class="contentbx">
+      <div class="formbx">
+        <h2>Registrate</h2>
 
-          <form action="/Usuario" method="POST" enctype="multipart/form-data">
-            <div class="inputbx">
-              <span>Nombre</span>
-              <input
-                type="text"
-                name="nombre"
-                id="nombre"
-                value="<%= locals.oldData ? oldData.nombre : null %>"
-              />
-              <% if (locals.errors && errors.nombre) { %>
-              <div class="error-msg"><%= errors.nombre.msg %></div>
-              <% } %>
-            </div>
-            <div class="inputbx">
-              <span>Apellido</span>
-              <input
-                type="text"
-                name="apellido"
-                id="apellido"
-                value="<%= locals.oldData ? oldData.apellido : null %>"
-              />
-              <% if (locals.errors && errors.apellido) { %>
-              <div class="error-msg"><%= errors.apellido.msg %></div>
-              <% } %>
-            </div>
-            <div class="inputbx">
-              <span>Fecha de Nacimiento</span>
-              <input
-                type="date"
-                name="nacimiento"
-                id="nacimiento"
-                value="<%= locals.oldData ? oldData.nacimiento : null %>"
-              />
-              <% if (locals.errors && errors.nacimiento) { %>
-              <div class="error-msg"><%= errors.nacimiento.msg %></div>
-              <% } %>
-            </div>
-            <div class="inputbx">
-              <span>E-mail</span>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                value="<%= locals.oldData ? oldData.email : null %>"
-              />
-              <% if (locals.errors && errors.email) { %>
-              <div class="error-msg"><%= errors.email.msg %></div>
-              <% } %>
-            </div>
-            <div class="inputbx">
-              <span>Genero</span>
-              <input
-                type="text"
-                name="genero"
-                id="genero"
-                value="<%= locals.oldData ? oldData.genero : null %>"
-              />
-              <% if (locals.errors && errors.genero) { %>
-              <div class="error-msg"><%= errors.genero.msg %></div>
-              <% } %>
-            </div>
-            <div class="inputbx">
-              <span>Tipo de Usuario</span>
-              <div class="flexCheck">
-                <input
-                  type="checkbox"
-                  name="tipoDeUsuario"
-                  id="tipoDeUsuario"
-                  value="Participante"
-                  checked
-                />
-                <label for="Participante">Participante</label>
-
-                <input
-                  type="checkbox"
-                  name="tipoDeUsuario"
-                  id="tipoDeUsuario"
-                  value="Organizador"
-                />
-                <label for="Organizador">Organizador</label>
+        <form action="/Usuario/Registro" method="POST" enctype="multipart/form-data">
+          <div class="inputbx">
+            <span>Nombre</span>
+            <input type="text" name="nombre" id="nombre" value="<%= locals.oldData ? oldData.nombre : null %>" />
+            <% if (locals.errors && errors.nombre) { %>
+              <div class="error-msg">
+                <%= errors.nombre.msg %>
               </div>
-            </div>
-            <div class="inputbx">
-              <span>Imagen del evento:</span>
-              <input
-                type="file"
-                name="avatar"
-                id="avatar"
-                accept="image/jpeg,image/png"
-              />
-            </div>
-
-            <div class="inputbx">
-              <span>Contraseña</span>
-              <input type="password" name="password" id="password" />
-              <% if (locals.errors && errors.password) { %>
-              <div class="error-msg"><%= errors.password.msg %></div>
               <% } %>
-            </div>
-
-            <div class="inputbx">
-              <span>Repita la contraseña</span>
-              <input
-                type="password"
-                name="Repeat_password"
-                id="Repeat_password"
-              />
-              <% if (locals.errors && errors.Repeat_password) { %>
-              <div class="error-msg"><%= errors.Repeat_passwordmsg %></div>
+          </div>
+          <div class="inputbx">
+            <span>Apellido</span>
+            <input type="text" name="apellido" id="apellido" value="<%= locals.oldData ? oldData.apellido : null %>" />
+            <% if (locals.errors && errors.apellido) { %>
+              <div class="error-msg">
+                <%= errors.apellido.msg %>
+              </div>
               <% } %>
-            </div>
+          </div>
+          <div class="inputbx">
+            <span>Fecha de Nacimiento</span>
+            <input type="date" name="nacimiento" id="nacimiento"
+              value="<%= locals.oldData ? oldData.nacimiento : null %>" />
+            <% if (locals.errors && errors.nacimiento) { %>
+              <div class="error-msg">
+                <%= errors.nacimiento.msg %>
+              </div>
+              <% } %>
+          </div>
+          <div class="inputbx">
+            <span>E-mail</span>
+            <input type="email" name="email" id="email" value="<%= locals.oldData ? oldData.email : null %>" />
+            <% if (locals.errors && errors.email) { %>
+              <div class="error-msg">
+                <%= errors.email.msg %>
+              </div>
+              <% } %>
+          </div>
+          <div class="inputbx">
+            <span>Genero</span>
+            <input type="text" name="genero" id="genero" value="<%= locals.oldData ? oldData.genero : null %>" />
+            <% if (locals.errors && errors.genero) { %>
+              <div class="error-msg">
+                <%= errors.genero.msg %>
+              </div>
+              <% } %>
+          </div>
+          <div class="inputbx">
+            <span>Tipo de Usuario</span>
+            <div class="flexCheck">
+              <input type="checkbox" name="tipoDeUsuario" id="tipoDeUsuario" value="Participante" checked />
+              <label for="Participante">Participante</label>
 
-            <div class="inputbx">
-              <input type="submit" value="Aceptar" />
+              <input type="checkbox" name="tipoDeUsuario" id="tipoDeUsuario" value="Organizador" />
+              <label for="Organizador">Organizador</label>
             </div>
-          </form>
-        </div>
+          </div>
+          <div class="inputbx">
+            <span>Imagen del evento:</span>
+            <input type="file" name="avatar" id="avatar" accept="image/jpeg,image/png" />
+          </div>
+
+          <div class="inputbx">
+            <span>Contraseña</span>
+            <input type="password" name="password" id="password" />
+            <% if (locals.errors && errors.password) { %>
+              <div class="error-msg">
+                <%= errors.password.msg %>
+              </div>
+              <% } %>
+          </div>
+
+          <div class="inputbx">
+            <span>Repita la contraseña</span>
+            <input type="password" name="Repeat_password" id="Repeat_password" />
+            <% if (locals.errors && errors.Repeat_password) { %>
+              <div class="error-msg">
+                <%= errors.Repeat_passwordmsg %>
+              </div>
+              <% } %>
+          </div>
+
+          <div class="inputbx">
+            <input type="submit" value="Aceptar" />
+          </div>
+        </form>
       </div>
-    </section>
-  </body>
+    </div>
+  </section>
+</body>
+
 </html>

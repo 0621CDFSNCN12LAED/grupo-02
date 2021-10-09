@@ -32,7 +32,4 @@ module.exports = [
       }
       return true;
     }),
-  //   body("Repeat_password")
-  //     .notEmpty()
-  //     .withMessage("Repita su contraseña por favor"),
 ];

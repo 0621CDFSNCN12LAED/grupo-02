@@ -12,7 +12,8 @@ module.exports = {
   },
 
   createUser: (req, res) => {
-    let userInDB = userServices.filterByEmail(req.body.email);
+    //check email
+    let userInDB = userServices.findByEmail(req.body.email);
     if (userInDB) {
       return res.render("users/register", {
         errors: {
@@ -23,6 +24,7 @@ module.exports = {
         oldData: req.body,
       });
     }
+
     userServices.createUser(req.body, req.file);
     res.redirect("../Evento"); // falta el html
   },
@@ -32,7 +34,7 @@ module.exports = {
   },
 
   loginProcess: (req, res) => {
-    const userToLogin = userServices.filterByEmail(req.body.email);
+    const userToLogin = userServices.findByEmail(req.body.email);
     //si hay usuario con mail
     if (userToLogin) {
       //chequea la contraseña
@@ -40,11 +42,12 @@ module.exports = {
         req.body.password,
         userToLogin.password
       );
+
       //si la contraseña está bien redirigilo a su perfil
       if (isOkThePassword) {
-        return res.redirect("/Perfil");
+        return res.redirect("./" + userToLogin.id);
       }
-      //si la contraseña está mal enviarle mensaje de error en la vista
+      //si la contraseña está mal enviarle mensaje de error en la vista y email renderizado
       return res.render("users/login", {
         errors: {
           password: {
@@ -64,7 +67,10 @@ module.exports = {
   },
 
   profile: (req, res) => {
-    res.render("users/profile", { user: userServices[1] });
+    /*const userperfil = userServices.filterByID(req.params.id);
+    res.render("users/profile", { userperfil });*/
+    const userperfil = userServices.filterByID(req.params.id);
+    res.render("users/profile", { userperfil });
   },
 
   delete: (req, res) => {
