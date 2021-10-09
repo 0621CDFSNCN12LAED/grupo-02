@@ -2200,5 +2200,17 @@
     "password": "$2a$10$GkZDhWA6h8AwTAwYer17Vun04488spw7IK46tgDWQPvOgWEIvbzY6",
     "Repeat_password": null,
     "avatar": "avatar3.png"
+  },
+  {
+    "id": 201,
+    "nombre": "Guido",
+    "apellido": "Ruiz",
+    "nacimiento": "1990-09-21",
+    "email": "guido-ruiz@hotmail.com",
+    "genero": "Masculino",
+    "tipoDeUsuario": "Participante",
+    "password": "$2a$10$yjjmLvyb7NZFkqtZPvC2yOCOuJf5oitVKApMxSbjjqh5/cgDp7DiK",
+    "Repeat_password": null,
+    "avatar": "1633754284428pp.jpg"
   }
 ]

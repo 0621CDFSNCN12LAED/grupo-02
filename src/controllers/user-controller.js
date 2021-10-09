@@ -70,7 +70,7 @@ module.exports = {
     /*const userperfil = userServices.filterByID(req.params.id);
     res.render("users/profile", { userperfil });*/
     const userperfil = userServices.filterByID(req.params.id);
-    res.render("users/profile", { userperfil });
+    res.render("users/profile2", { userperfil });
   },
 
   delete: (req, res) => {

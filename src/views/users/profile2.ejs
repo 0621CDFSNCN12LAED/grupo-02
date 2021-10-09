@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="/css/profile2.css" />
+    <%- include("../partials/head")%>
+    <title>Detalle del producto</title>
+  </head>
+  <body>
+    <!-- encabezado de la pagina -->
+    <%- include("../partials/header")%>
+    <main>
+      <div class="wrap">
+        <section class="contenedor p-50">
+          <article class="conteiner">
+            <h2 class="text-mobile">
+              "Bienvenido " <strong>Guido Ruiz</strong>!
+            </h2>
+            <p class="text-mobile">
+              Desde tu perfil podrás administrar tus datos, revisar tus eventos
+              comprados y crear tus propios eventos
+            </p>
+            <div class="action-user" style="position: relative">
+              <h3 class="text-mobile" style="font-weight: normal">
+                Perfil de Usuario
+              </h3>
+              <a href="">
+                <i class="fas fa-ticket-alt"></i>
+                " Mis Eventos "
+              </a>
+              <a href="">
+                <i class="fas fa-cog"></i>
+                " Datos Personales "
+              </a>
+              <a href="">
+                <i class="fas fa-key"></i>
+                " Editar Clave "
+              </a>
+              <a href="">
+                <i class="fas fa-sign-out-alt"></i>
+                " Cerrar sesión "
+              </a>
+            </div>
+          </article>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
