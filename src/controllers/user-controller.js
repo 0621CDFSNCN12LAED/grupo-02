@@ -26,7 +26,7 @@ module.exports = {
     }
 
     userServices.createUser(req.body, req.file);
-    res.redirect("../Evento"); // falta el html
+    res.redirect("./Login"); // falta el html
   },
 
   login: (req, res) => {
@@ -45,7 +45,18 @@ module.exports = {
 
       //si la contraseña está bien redirigilo a su perfil
       if (isOkThePassword) {
-        return res.redirect("./" + userToLogin.id);
+        // delete userToLogin.password;
+        // delete userToLogin.Repeat_Password;
+        req.session.userLogged = userToLogin;
+
+        if (req.body.remember) {
+          res.cookie("userEmail", req.body.email, {
+            maxAge: 1000 * 60,
+          });
+        }
+        return res.redirect(
+          "./" + req.session.userLogged.id /*userToLogin.id*/
+        );
       }
       //si la contraseña está mal enviarle mensaje de error en la vista y email renderizado
       return res.render("users/login", {
@@ -69,12 +80,18 @@ module.exports = {
   profile: (req, res) => {
     /*const userperfil = userServices.filterByID(req.params.id);
     res.render("users/profile", { userperfil });*/
-    const userperfil = userServices.filterByID(req.params.id);
-    res.render("users/profile2", { userperfil });
+    return res.render("users/profile2", { user: req.session.userLogged });
   },
-
+  logout: (req, res) => {
+    res.clearCookie("userEmail");
+    req.session.destroy();
+    return res.redirect("../Evento");
+  },
   delete: (req, res) => {
+    // userServices.deleteAvatar(req.body.avatar);
     userServices.deleteUser(req.body);
+    res.clearCookie("userEmail");
+    req.session.destroy();
     res.redirect("../Evento");
   },
 };

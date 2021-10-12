@@ -13,29 +13,34 @@
         <section class="contenedor p-50">
           <article class="conteiner">
             <h2 class="text-mobile">
-              "Bienvenido " <strong>Guido Ruiz</strong>!
+              "Bienvenido "
+              <strong><%=user.nombre + " " + user.apellido%></strong>!
             </h2>
             <p class="text-mobile">
               Desde tu perfil podrás administrar tus datos, revisar tus eventos
               comprados y crear tus propios eventos
             </p>
-            <div class="action-user" style="position: relative">
+            <div class="action-user" style="/*position: relative*/">
               <h3 class="text-mobile" style="font-weight: normal">
                 Perfil de Usuario
               </h3>
-              <a href="">
+              <a href="#">
                 <i class="fas fa-ticket-alt"></i>
                 " Mis Eventos "
               </a>
-              <a href="">
+              <a href="#">
                 <i class="fas fa-cog"></i>
                 " Datos Personales "
               </a>
-              <a href="">
+              <a href="#">
                 <i class="fas fa-key"></i>
                 " Editar Clave "
               </a>
-              <a href="">
+              <a href="/Usuario/Eliminar">
+                <i class="fas fa-ban"></i>
+                " Eliminar Cuenta "
+              </a>
+              <a href="/Usuario/Logout">
                 <i class="fas fa-sign-out-alt"></i>
                 " Cerrar sesión "
               </a>
@@ -44,5 +49,7 @@
         </section>
       </div>
     </main>
+    <!-- pie de pagina -->
+    <%- include("../partials/footer")%>
   </body>
 </html>

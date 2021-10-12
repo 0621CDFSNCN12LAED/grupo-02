@@ -9,23 +9,24 @@
       <div class="h-content-nav-sm">
       <nav class="display-none display-flex-sm navbar-sm">
         <ul>
-          <li>
-            <a href="/Usuario/Registro"
-              >Registrate</a>
-          </li>
-          <li>
-            <a href="/Usuario/Login">Inicias sesión</a>
-          </li>
-          <li>
-            <a href="/Carrito"
-              >Mi Carrito</a>
-          </li>
-          <li>
-            <img >
-          </li>
-          <li>
-            <a href="/Evento/CrearEvento" class="boton-menu">CREAR EVENTO</a>
-          </li>
+          <% if(locals.isLogged){ %> 
+            <li>
+              <img class="avatar" src="/imagenes/Users/<%= locals.userLogged.avatar%>" >
+              <a href="/Usuario/<%-locals.userLogged.id%> "> Hola <%= locals.userLogged.nombre + " " + locals.userLogged.apellido%>
+            </a>
+            </li>
+            <% } else { %> 
+            <li>
+                <a href="/Usuario/Registro"
+                >Registrate</a>
+             </li>
+            <li>
+                <a href="/Usuario/Login">Inicias sesión</a>
+            </li>
+              <% } %> 
+            <li>
+                <a href="/Evento/CrearEvento" class="boton-menu">CREAR EVENTO</a>
+            </li>
         </ul>
       </nav>
     </div>  

@@ -16,6 +16,13 @@ const userServices = {
     return user;
   },
 
+  findById(id) {
+    const user = users.find((user) => {
+      return user.id == id;
+    });
+    return user;
+  },
+
   findByEmail(payload) {
     const user = users.find((user) => {
       return user.email == payload;
@@ -43,7 +50,16 @@ const userServices = {
     users.pop(userToDelete);
     this.save();
   },
-
+  // deleteAvatar(payload) {
+  //   let avatarToDelete = this.findByID(payload);
+  //   console.log(avatarToDelete);
+  //   fs.unlinkSync(
+  //     path.join(
+  //       __dirname,
+  //       "../../public/imagenes/Users/" + avatarToDelete.avatar
+  //     )
+  //   );
+  // },
   save() {
     fs.writeFileSync(userFilePath, JSON.stringify(users, null, "  "));
   },

@@ -2,19 +2,20 @@ const express = require("express");
 const path = require("path");
 
 const app = express();
-const cookieParser = require("cookie-parser");
+const cookies = require("cookie-parser");
 const session = require("express-session");
 const publicPath = path.resolve(__dirname, "../public");
 
 const mainRouter = require("./routes/main-routes");
 const eventRouter = require("./routes/event-routes");
 const userRouter = require("./routes/user-routes");
+const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 app.use(express.static(publicPath));
 
 //Registro de datos de forma segura method POST
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(cookieParser());
+app.use(cookies());
 app.use(
   session({
     secret: "Deporteando andando",
@@ -22,6 +23,7 @@ app.use(
     saveUninitialized: true,
   })
 );
+app.use(userLoggedMiddleware);
 
 // Dependencia de node para el uso de los method Put&Delete
 const methodOverride = require("method-override");
