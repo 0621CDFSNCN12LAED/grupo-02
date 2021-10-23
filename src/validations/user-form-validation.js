@@ -15,8 +15,6 @@ module.exports = [
     .isEmail()
     .withMessage("Debes escribir un formato de correo valido"),
 
-  body("genero").notEmpty().withMessage("Ingrese su genero por favor"),
-
   body("tipoDeUsuario").isIn(["Participante", "Organizador"]),
 
   body("password")
