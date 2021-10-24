@@ -15,7 +15,7 @@ module.exports = (sequelize) => {
       end_time: DataTypes.TIME,
       price: DataTypes.DECIMAL,
       event_description: DataTypes.STRING,
-      more_info: DataTypes.start_time,
+      more_info: DataTypes.STRING,
       banner: DataTypes.STRING,
     },
     {
@@ -23,5 +23,26 @@ module.exports = (sequelize) => {
       timestamps: false /*por ahora -- ver la configuracion del underscored: true*/,
     }
   );
+
+  model.associate = function (models) {
+    model.hasMany(models.Province, {
+      as: "provinces",
+      foreignKey: "idProvince",
+    });
+
+    model.belongsTo(models.User, {
+      as: "Users",
+      foreignKey: "idUsers",
+    });
+
+    model.belongsToMany(models.User, {
+      as: "sales",
+      through: "Sale",
+      foreignKey: "idEvent",
+      otherKey: "idUser",
+      timestamps: false,
+    });
+  };
+
   return model;
 };

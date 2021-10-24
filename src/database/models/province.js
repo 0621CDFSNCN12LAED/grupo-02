@@ -11,5 +11,18 @@ module.exports = (sequelize) => {
       timestamps: false,
     }
   );
+
+  model.associate = function (models) {
+    model.belongsTo(models.Location, {
+      as: "locations",
+      foreignKey: "idProvinces",
+    });
+
+    model.belongsTo(models.Event, {
+      as: "Events",
+      foreignKey: "idProvinces",
+    });
+  };
+
   return model;
 };

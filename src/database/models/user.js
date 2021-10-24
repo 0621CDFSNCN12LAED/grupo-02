@@ -16,5 +16,28 @@ module.exports = (sequelize) => {
       timestamps: false,
     }
   );
+
+  model.associate = function (models) {
+    model.belongsToMany(models.Categorie, {
+      as: "categories",
+      through: "user_categorie",
+      foreignKey: "idUser",
+      otherKey: "idCategorie",
+      timestamps: false,
+    });
+
+    model.hasMany(models.Event, {
+      as: "events",
+      foreignKey: "idUsers",
+    });
+
+    model.belongsToMany(models.Event, {
+      as: "sales",
+      through: "Sale",
+      foreignKey: "idUser",
+      otherKey: "idEvent",
+      timestamps: false,
+    });
+  };
   return model;
 };

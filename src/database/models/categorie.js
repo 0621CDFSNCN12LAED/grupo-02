@@ -11,5 +11,15 @@ module.exports = (sequelize) => {
       timestamps: false,
     }
   );
+
+  model.associate = function (models) {
+    model.belongsToMany(models.User, {
+      as: "users",
+      through: "user_categorie",
+      foreignKey: "idCategorie",
+      otherKey: "idUser",
+      timestamps: false,
+    });
+  };
   return model;
 };
