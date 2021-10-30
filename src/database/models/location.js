@@ -12,9 +12,9 @@ module.exports = (sequelize) => {
     }
   );
   model.associate = function (models) {
-    model.hasMany(models.Province, {
+    model.belongsTo(models.Province, {
       as: "provinces",
-      foreignKey: "idProvinces",
+      foreignKey: "idProvince",
     });
   };
   return model;

@@ -1,44 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include("partials/head")%>
+
+<head>
+  <%- include("partials/head")%>
     <title>Deporteando</title>
-  </head>
-  <body>
-    <!-- encabezado de la pagina -->
-    <%- include("partials/header")%>
+</head>
+
+<body>
+  <!-- encabezado de la pagina -->
+  <%- include("partials/header")%>
 
     <!-- carrusel de la pagina -->
     <%- include("partials/banner")%>
 
-    <!-- productos de la pagina -->
-    <%- include("partials/search")%>
+      <!-- productos de la pagina -->
+      <%- include("partials/search")%>
 
-    <main>
-      <section class="B-muestra-ticket display-flex">
-        <% for (event of openEvents){%>
-        <a href="/Evento/<%=event.id%>">
-        <div class="product-wrapper">
-          <article class="product">
-            <img
-              class="product-img"
-              src="/imagenes/Eventos/<%=event.banner%>"
-              alt=""
-              width="100%"
-            />
+        <main>
+          <section class="B-muestra-ticket display-flex">
+            <% for (event of events){%>
+              <a href="/Evento/<%=event.id%>">
+                <div class="product-wrapper">
+                  <article class="product">
+                    <img class="product-img" src="/imagenes/Eventos/<%=event.banner%>" alt="" width="100%" />
 
-            <div class="product-content">
-              <h3><%=event.nombre%></h3>
-              <p><%=event.localidad%> <%=event.precio%></p>
-        </a>
+                    <div class="product-content">
+                      <h3>
+                        <%=event.event_name%>
+                      </h3>
+                      <p>
+                        <%=event.event_address%>
+                          <%=event.price%>
+                      </p>
+              </a>
               <button class="m-botton-compra">
                 <a href="/Evento/Carrito/<%=event.id%>"><i class="fas fa-ticket-alt ticket"></i>Comprar</a>
               </button>
-            </div>
-          </article>
-        </div>
-        <% } %>
-<!-- pie de pagina -->
-    <%- include("partials/footer")%>
-  </body>
+              </div>
+              </article>
+              </div>
+              <% } %>
+                <!-- pie de pagina -->
+                <%- include("partials/footer")%>
+</body>
+
 </html>

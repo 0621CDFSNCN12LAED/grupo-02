@@ -13,14 +13,14 @@ module.exports = (sequelize) => {
   );
 
   model.associate = function (models) {
-    model.belongsTo(models.Location, {
+    model.hasMany(models.Location, {
       as: "locations",
-      foreignKey: "idProvinces",
+      foreignKey: "idProvince",
     });
 
-    model.belongsTo(models.Event, {
+    model.hasMany(models.Event, {
       as: "Events",
-      foreignKey: "idProvinces",
+      foreignKey: "idProvince",
     });
   };
 

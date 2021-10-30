@@ -1,12 +1,12 @@
 const { DataTypes } = require("Sequelize");
 
-module.exports = (sequelize) => {
+module.exports = (sequelize, DataTypes) => {
   const model = sequelize.define(
     "Event",
     {
-      creared_at: DataTypes.timestamps,
-      updated_at: DataTypes.timestamps,
-      deleted_at: DataTypes.timestamps,
+      //created_at: DataTypes.timestamps,
+      //updated_at: DataTypes.timestamps,
+      //deleted_at: DataTypes.timestamps,
       eventOpen: DataTypes.TINYINT({}),
       event_name: DataTypes.STRING,
       event_address: DataTypes.STRING,
@@ -25,14 +25,14 @@ module.exports = (sequelize) => {
   );
 
   model.associate = function (models) {
-    model.hasMany(models.Province, {
+    model.belongsTo(models.Province, {
       as: "provinces",
       foreignKey: "idProvince",
     });
 
     model.belongsTo(models.User, {
-      as: "Users",
-      foreignKey: "idUsers",
+      as: "users",
+      foreignKey: "idUser",
     });
 
     model.belongsToMany(models.User, {

@@ -7,7 +7,6 @@
 </head>
 
 <body>
-
   <!-- encabezado de la pagina -->
   <%- include("../partials/header")%>
 
@@ -20,120 +19,129 @@
         <div class="formbx">
           <form class="forms" action="/Evento" method="POST" enctype="multipart/form-data">
             <div class="inputbx">
-              <input type="text" placeholder="Nombre del evento" name="nombre"
-                value="<%= locals.oldData ? oldData.nombre : null %>" />
-              <% if (locals.errors && errors.nombre) { %>
+              <input type="text" placeholder="Nombre del evento" name="event_name"
+                value="<%= locals.oldData ? oldData.event_name: null %>" />
+              <% if (locals.errors && errors.event_name) { %>
                 <div class="error-msg">
-                  <%= errors.nombre.msg %>
+                  <%= errors.event_name.msg %>
                 </div>
                 <% } %>
             </div>
 
             <div class="inputbx caja-options">
-              <select class="selectores" name="provincia" id="provincia">
+              <select class="selectores" name="province" id="province">
                 <option value="">Provincia</option>
-                <option value="Buenos Aires">Buenos Aires</option>
-                <option value="Capital Federal">Capital Federal</option>
-                <option value="Catamarca">Catamarca</option>
-                <option value="Chaco">Chaco</option>
-                <option value="Chubut">Chubut</option>
-                <option value="Córdoba">Córdoba</option>
-                <option value="Corrientes">Corrientes</option>
-                <option value="Entre Ríos">Entre Ríos</option>
-                <option value="Formosa">Formosa</option>
-                <option value="Jujuy">Jujuy</option>
-                <option value="La Pampa">La Pampa</option>
-                <option value="La Rioja">La Rioja</option>
-                <option value="Mendoza">Mendoza</option>
-                <option value="Misiones">Misiones</option>
-                <option value="Neuquén">Neuquén</option>
-                <option value="Río Negro">Río Negro</option>
-                <option value="Salta">Salta</option>
-                <option value="San Juan">San Juan</option>
-                <option value="San Luis">San Luis</option>
-                <option value="Santa Cruz">Santa Cruz</option>
-                <option value="Santa Fé">Santa Fé</option>
-                <option value="Santiago del Estero">Santiago del Estero</option>
-                <option value="Tierra del Fuego">Tierra del Fuego</option>
-                <option value="Tucumán">Tucumán</option>
+                <!-- Aplicar el For -->
+                <% for (province of provinces){ %>
+                  <option value="<%=province.id%>">
+                    <%= province.province %>
+                  </option>
+                  <% } %>
               </select>
             </div>
+            <!-- 
+                <option value="1">Buenos Aires</option>
+                <option value="2">Buenos Aires-GBA</option>
+                <option value="3">Capital Federal</option>
+                <option value="4">Catamarca</option>
+                <option value="5">Chaco</option>
+                <option value="6">Chubut</option>
+                <option value="7">Córdoba</option>
+                <option value="8">Corrientes</option>
+                <option value="9">Entre Ríos</option>
+                <option value="10">Formosa</option>
+                <option value="11">Jujuy</option>
+                <option value="12">La Pampa</option>
+                <option value="13">La Rioja</option>
+                <option value="14">Mendoza</option>
+                <option value="15">Misiones</option>
+                <option value="16">Neuquén</option>
+                <option value="17">Río Negro</option>
+                <option value="18">Salta</option>
+                <option value="19">San Juan</option>
+                <option value="20">San Luis</option>
+                <option value="21">Santa Cruz</option>
+                <option value="22">Santa Fé</option>
+                <option value="23">Santiago del Estero</option>
+                <option value="24">Tierra del Fuego</option>
+                <option value="25">Tucumán</option> -->
 
             <div class="inputbx">
-              <input type="text" placeholder="Localidad" name="localidad"
-                value="<%= locals.oldData ? oldData.localidad : null %>" />
-              <% if (locals.errors && errors.localidad) { %>
+              <input type="text" placeholder="Localidad" name="location"
+                value="<%= locals.oldData ? oldData.location : null %>" />
+              <% if (locals.errors && errors.location) { %>
                 <div class="error-msg">
-                  <%= errors.localidad.msg %>
+                  <%= errors.location.msg %>
                 </div>
                 <% } %>
             </div>
 
             <div class="inputbx">
-              <input type="text" placeholder="Dirección" name="direccion"
-                value="<%= locals.oldData ? oldData.direccion : null %>" />
-              <% if (locals.errors && errors.direccion) { %>
+              <input type="text" placeholder="Dirección" name="event_address"
+                value="<%= locals.oldData ? oldData.event_address : null %>" />
+              <% if (locals.errors && errors.event_address) { %>
                 <div class="error-msg">
-                  <%= errors.direccion.msg %>
+                  <%= errors.event_address.msg %>
                 </div>
                 <% } %>
             </div>
 
             <div class="inputbx">
-              <input type="date" placeholder="Fecha" value="22/08/2022" name="fecha"
-                value="<%= locals.oldData ? oldData.fecha : null %>" />
-              <% if (locals.errors && errors.fecha) { %>
+              <input type="date" placeholder="Fecha" value="22/08/2022" name="event_date"
+                value="<%= locals.oldData ? oldData.event_date : null %>" />
+              <% if (locals.errors && errors.event_date) { %>
                 <div class="error-msg">
-                  <%= errors.fecha.msg %>
+                  <%= errors.event_date.msg %>
                 </div>
                 <% } %>
             </div>
 
             <div class="inputbx">
-              <input type="time" value="11:30" name="horaI" value="<%= locals.oldData ? oldData.horaI : null %>" />
-              <% if (locals.errors && errors.horaI) { %>
+              <input type="time" value="11:30" name="start_time"
+                value="<%= locals.oldData ? oldData.start_time : null %>" />
+              <% if (locals.errors && errors.start_time) { %>
                 <div class="error-msg">
-                  <%= errors.horaI.msg %>
+                  <%= errors.start_time.msg %>
                 </div>
                 <% } %>
             </div>
 
             <div class="inputbx">
-              <input type="time" placeholder="Hora de finalizacion" value="14:30" name="horaF"
-                value="<%= locals.oldData ? oldData.horaF : null %>" />
-              <% if (locals.errors && errors.horaF) { %>
+              <input type="time" placeholder="Hora de finalizacion" value="14:30" name="end_time"
+                value="<%= locals.oldData ? oldData.end_time : null %>" />
+              <% if (locals.errors && errors.end_time) { %>
                 <div class="error-msg">
-                  <%= errors.horaF.msg %>
+                  <%= errors.end_time.msg %>
                 </div>
                 <% } %>
             </div>
 
             <div class="inputbx">
-              <input type="number" placeholder="Precio de entrada" name="precio"
-                value="<%= locals.oldData ? oldData.precio : null %>" />
-              <% if (locals.errors && errors.precio) { %>
+              <input type="number" placeholder="Precio de entrada" name="price"
+                value="<%= locals.oldData ? oldData.price : null %>" />
+              <% if (locals.errors && errors.price) { %>
                 <div class="error-msg">
-                  <%= errors.precio.msg %>
+                  <%= errors.price.msg %>
                 </div>
                 <% } %>
             </div>
 
             <div class="inputbx">
-              <textarea placeholder="Descripcion del evento" name="descripcion" class="inputbx"
-                value="<%= locals.oldData ? oldData.descripcion : null %>"></textarea>
-              <% if (locals.errors && errors.descripcion) { %>
+              <textarea placeholder="Descripcion del evento" name="event_description" class="inputbx"
+                value="<%= locals.oldData ? oldData.event_description : null %>"></textarea>
+              <% if (locals.errors && errors.event_description) { %>
                 <div class="error-msg">
-                  <%= errors.descripcion.msg %>
+                  <%= errors.event_description.msg %>
                 </div>
                 <% } %>
             </div>
 
             <div class="inputbx">
-              <input type="text" placeholder="Mas informacion" name="masInformacion"
-                value="<%= locals.oldData ? oldData.masInformacion : null %>" />
-              <% if (locals.errors && errors.masInformacion) { %>
+              <input type="text" placeholder="Mas informacion" name="more_info"
+                value="<%= locals.oldData ? oldData.more_info : null %>" />
+              <% if (locals.errors && errors.more_info) { %>
                 <div class="error-msg">
-                  <%= errors.masInformacion.msg %>
+                  <%= errors.more_info.msg %>
                 </div>
                 <% } %>
             </div>

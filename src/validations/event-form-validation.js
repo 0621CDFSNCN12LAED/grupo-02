@@ -1,21 +1,23 @@
 const { body } = require("express-validator");
 
 const eventValidations = [
-  body("nombre").notEmpty().withMessage("ingrese el nombre del evento"),
+  body("event_name").notEmpty().withMessage("ingrese el nombre del evento"),
 
-  body("localidad").notEmpty().withMessage("ingrese la localidad"),
+  body("event_address")
+    .notEmpty()
+    .withMessage("Ingrese la direccion del evento"),
 
-  body("direccion").notEmpty().withMessage("Ingrese la direccion del evento"),
+  body("event_date").notEmpty().withMessage("Ingrese la fecha del evento"),
 
-  body("fecha").notEmpty().withMessage("Ingrese la fecha del evento"),
+  body("start_time")
+    .notEmpty()
+    .withMessage("Ingrese la hora de inicio del evento"),
 
-  body("horaI").notEmpty().withMessage("Ingrese la hora de inicio del evento"),
+  body("end_time").notEmpty().withMessage("Ingrese la hora de finalizacion"),
 
-  body("horaF").notEmpty().withMessage("Ingrese la hora de finalizacion"),
+  body("price").notEmpty().withMessage("Ingrese el precio de entrada"),
 
-  body("precio").notEmpty().withMessage("Ingrese el precio de entrada"),
-
-  body("descripcion")
+  body("event_description")
     .notEmpty()
     .withMessage("Ingrese una descripcion del evento"),
 ];

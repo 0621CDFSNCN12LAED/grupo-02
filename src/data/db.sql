@@ -164,13 +164,13 @@ INSERT INTO provinces (id, province) VALUES
 (24, 'Tierra del Fuego'),
 (25, 'Tucumán');
 
-CREATE TABLE location(
+CREATE TABLE locations(
 id INT PRIMARY KEY AUTO_INCREMENT,
 idProvince INT NOT NULL, FOREIGN KEY(idProvince) REFERENCES provinces(id),
-location VARCHAR(255) NOT NULL
+locations VARCHAR(255) NOT NULL
 );
 
-INSERT INTO location (id, idProvince, location) VALUES
+INSERT INTO locations (id, idProvince, locations) VALUES
 (1, 1, '25 de Mayo'),
 (2, 1, '3 de febrero'),
 (3, 1, 'A. Alsina'),
@@ -2245,7 +2245,7 @@ INSERT INTO location (id, idProvince, location) VALUES
 (2072, 22, 'Pavón'),
 (2073, 22, 'Pavón Arriba');
 
-INSERT INTO location (id, idProvince, location) VALUES
+INSERT INTO locations (id, idProvince, locations) VALUES
 (2074, 22, 'Pedro Gómez Cello'),
 (2075, 22, 'Pérez'),
 (2076, 22, 'Peyrano'),
