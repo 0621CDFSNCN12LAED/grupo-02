@@ -15,36 +15,31 @@
 
       <!-- productos de la pagina -->
       <%- include("partials/search")%>
+    <main>
+      <section class="B-muestra-ticket display-flex">
+        <% for (event of events){%>
+        <a href="/Evento/<%=event.id%>">
+        <div class="product-wrapper">
+          <article class="product">
+            <img
+              class="product-img"
+              src="/imagenes/Eventos/<%=event.banner%>"
+              alt=""
+              width="100%"
+            />
 
-        <main>
-          <section class="B-muestra-ticket display-flex">
-            <% for (event of event){%>
-              <% if (event.eventOpen==1) { %>
-                <a href="/Evento/<%=event.id%>">
-                  <div class="product-wrapper">
-                    <article class="product">
-                      <img class="product-img" src="/imagenes/Eventos/<%=event.banner%>" alt="" width="100%" />
-
-                      <div class="product-content">
-                        <h3>
-                          <%=event.event_name%>
-                        </h3>
-                        <p>
-                          <!-- pie de pagina 
-                        %=event.location%>-->
-                          <%=event.price%>
-                        </p>
-                </a>
-                <button class="m-botton-compra">
-                  <a href="/Evento/Carrito/<%=event.id%>"><i class="fas fa-ticket-alt ticket"></i>Comprar</a>
-                </button>
-                </div>
-                </article>
-                </div>
-                <% } %>
-                  <% } %>
-                    <!-- pie de pagina -->
-                    <%- include("partials/footer")%>
-</body>
-
+            <div class="product-content">
+              <h3><%=event.event_name%></h3>
+              <!-- <p>%=event.location%</p> --> <%=event.price%>
+        </a>
+              <button class="m-botton-compra">
+                <a href="/Evento/Carrito/<%=event.id%>"><i class="fas fa-ticket-alt ticket"></i>Comprar</a>
+              </button>
+            </div>
+          </article>
+        </div>
+        <% } %>
+<!-- pie de pagina -->
+    <%- include("partials/footer")%>
+  </body>
 </html>

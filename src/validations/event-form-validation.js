@@ -6,6 +6,10 @@ const eventValidations = [
   body("event_address")
     .notEmpty()
     .withMessage("Ingrese la direccion del evento"),
+  //agregar validacion de provincia y location
+  body("idProvince").notEmpty().withMessage("Debe Seleccionar una provincia"),
+
+  body("idLocations").notEmpty().withMessage("Debe Seleccionar una localidad"),
 
   body("event_date").notEmpty().withMessage("Ingrese la fecha del evento"),
 

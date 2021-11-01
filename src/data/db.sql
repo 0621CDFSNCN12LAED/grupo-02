@@ -2573,10 +2573,10 @@ event_description VARCHAR(200) NOT NULL, /*Se podría cambiar a TEXT en vez de V
 more_info VARCHAR(100) NOT NULL,
 banner VARCHAR(100) NOT NULL,
 idUser INT NOT NULL, FOREIGN KEY(idUser) REFERENCES users(id),
-idProvince INT NOT NULL, FOREIGN KEY(idProvince) REFERENCES provinces(id)
+idLocations INT NOT NULL, FOREIGN KEY(idLocations) REFERENCES locations(id)
 );
 
-insert into events (id, created_at, updated_at, deleted_at, eventOpen, event_name, event_address, event_date, start_time, end_time, price, event_description, more_info, banner, idUser, idProvince)
+insert into events (id, created_at, updated_at, deleted_at, eventOpen, event_name, event_address, event_date, start_time, end_time, price, event_description, more_info, banner, idUser, idLocations)
 values (1, '2021-07-19', '2021-08-16', '10:23 PM', 1, 'TrackDay', '3499 Golden Leaf Plaza', '2023-03-19', '10:46 AM', '9:10 AM', 14011, 'Unspecified injury of femoral artery, unspecified leg, sequela', 'jgagen0@hostgator.com', 'evento5.jpg', 50, 6),
 (2, '2021-08-10', '2021-09-13', '7:52 AM', 1, 'Running 10K', '050 Service Street', '2023-04-23', '7:54 AM', '2:20 AM', 3187, 'Poisoning by unspecified fibrinolysis-affecting drugs, assault, subsequent encounter', 'swatchorn1@prweb.com', 'evento3.jpg', 49, 15),
 (3, '2021-08-13', '2021-07-08', '9:25 PM', 1, 'Cross Country', '7 Pearson Street', '2023-10-27', '7:24 PM', '8:17 AM', 10079, 'Burn of mouth and pharynx, subsequent encounter', 'cshirland2@com.com', 'evento4.jpg', 49, 7),

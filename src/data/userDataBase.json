@@ -1965,9 +1965,12 @@
     "apellido": "Ruiz",
     "nacimiento": "1990-09-21",
     "email": "guido-ruiz@hotmail.com",
-    "tipoDeUsuario": ["Participante", "Organizador"],
-    "password": "$2a$10$B38Rj210rQZ3hg4cqrb4x.g7Ud2B.TlVm493vnAS.hNS3c4eRAQjC",
+    "tipoDeUsuario": [
+      "Participante",
+      "Organizador"
+    ],
+    "password": "$2a$10$pajlYWD6Ae7S98cC49GdsuiT.M/WVmvpI.3tOQCj9FP69O64Yv.a6",
     "Repeat_password": null,
-    "avatar": "1634171027704Oso.jpg"
+    "avatar": "1635556515163Perro.jpg"
   }
 ]

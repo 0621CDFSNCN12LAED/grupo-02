@@ -17,11 +17,6 @@ module.exports = (sequelize) => {
       as: "locations",
       foreignKey: "idProvince",
     });
-
-    model.hasMany(models.Event, {
-      as: "Events",
-      foreignKey: "idProvince",
-    });
   };
 
   return model;

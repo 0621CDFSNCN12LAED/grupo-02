@@ -4,6 +4,9 @@ const path = require("path");
 let eventsFilePath = path.join(__dirname, "../data/eventDataBase.json");
 let events = JSON.parse(fs.readFileSync(eventsFilePath, "utf-8"));
 
+//Importar DB como importabamos el json
+// const db = require("../database/models");
+
 const eventService = {
   filterByID(id) {
     const event = events.find((event) => {
@@ -23,20 +26,20 @@ const eventService = {
     fs.writeFileSync(eventsFilePath, JSON.stringify(events));
   },
 
-  CreatOneEvent(payload, img) {
-    const lastEvent = events[events.length - 1];
-    const biggestEventId = events.length > 0 ? lastEvent.id : 1;
-    const event = {
-      ...payload,
-      id: biggestEventId + 1,
-      precio: Number(payload.precio),
-      banner: img ? img.filename : "evento1.jpg",
-      estado: "open",
-    };
+  // CreatOneEvent(payload, img) {
+  //   const lastEvent = events[events.length - 1];
+  //   const biggestEventId = events.length > 0 ? lastEvent.id : 1;
+  //   const event = {
+  //     ...payload,
+  //     id: biggestEventId + 1,
+  //     precio: Number(payload.precio),
+  //     banner: img ? img.filename : "evento1.jpg",
+  //     estado: "open",
+  //   };
 
-    events.push(event);
-    this.save();
-  },
+  //   events.push(event);
+  //   this.save();
+  // },
 
   EditOneEvent(id, payload, img) {
     const editEvent = this.filterByID(id);

@@ -7,6 +7,8 @@ const { Op } = require("sequelize");
 const eventService = require("../services/events-services");
 const db = require("../database/models");
 
+const db = require("../database/models");
+
 module.exports = {
   search: async (req, res) => {
     const provinces = await db.Province.findAll();
@@ -27,26 +29,41 @@ module.exports = {
       res.send("eventos no encontrados");
     }
   },
-
   index: async (req, res) => {
-    const events = await db.Event.findAll({ where: { eventOpen: 1 } });
-    res.render("events", { events });
     //filterByStatus
-    //const openEvents = eventService.filterByStatus();
-    //res.render("events", { openEvents });
+    // const openEvents = eventService.filterByStatus();
+    // res.render("events", { openEvents });
+    const events = await db.Event.findAll(
+      {
+        include: [{ association: "location" }],
+      },
+      {
+        where: {
+          eventOpen: 1,
+        },
+      }
+    );
+
+    res.render("events", { events });
   },
 
   //controlador de EventDetail
   detail: async (req, res) => {
     //filterByID
-    const event = await db.Event.findByPk(req.params.id);
+    // const event = eventService.filterByID(req.params.id);
+
+    const event = await db.Event.findByPk(req.params.id, {
+      include: [{ association: "location" }],
+    });
     res.render("events/EventDetail", { event });
   },
 
   //controladores de CreateEvent
   creatEvent: async (req, res) => {
-    const provinces = await db.Province.findAll();
-    res.render("events/CreateEvent", { provinces });
+    const provinces = await db.Province.findAll({ include: ["locations"] });
+    const locations = await db.Location.findAll();
+
+    res.render("events/CreateEvent", { provinces, locations });
   },
 
   storeEvent: (req, res) => {
@@ -59,8 +76,16 @@ module.exports = {
         oldData: req.body,
       });
     }
+    console.log(req.body);
     //CreatOneEvent
-    eventService.CreatOneEvent(req.body, req.file);
+    // eventService.CreatOneEvent(req.body, req.file);
+    db.Event.create({
+      ...req.body,
+      eventOpen: 1,
+      banner: req.file.banner ? img.filename : "evento1.jpg",
+      idUser: 49,
+    });
+
     res.redirect("/Evento");
   },
 

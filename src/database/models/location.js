@@ -4,7 +4,7 @@ module.exports = (sequelize) => {
   const model = sequelize.define(
     "Location",
     {
-      location: DataTypes.STRING,
+      locations: DataTypes.STRING,
     },
     {
       tableName: "locations",
@@ -13,8 +13,12 @@ module.exports = (sequelize) => {
   );
   model.associate = function (models) {
     model.belongsTo(models.Province, {
-      as: "provinces",
+      as: "province",
       foreignKey: "idProvince",
+    });
+    model.hasMany(models.Event, {
+      as: "events",
+      foreignKey: "idLocations",
     });
   };
   return model;
