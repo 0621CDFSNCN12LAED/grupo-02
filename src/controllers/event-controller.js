@@ -16,7 +16,7 @@ module.exports = {
         where: {
           event_name: { [Op.like]: `%${req.query.event_name}%` },
           //province: { [Op.like]: `%${req.query.provincia}%` },
-          locations: { [Op.like]: `%${req.query.locations}%` },
+          //locations: { [Op.like]: `%${req.query.event.location.locations}%` },
           event_date: { [Op.like]: `%${req.query.event_date}%` },
         },
       }
@@ -32,6 +32,7 @@ module.exports = {
     //filterByStatus
     // const openEvents = eventService.filterByStatus();
     // res.render("events", { openEvents });
+    const locations = await db.Location.findAll();
     const events = await db.Event.findAll(
       {
         include: [{ association: "location" }],
@@ -43,7 +44,7 @@ module.exports = {
       }
     );
 
-    res.render("events", { events });
+    res.render("events", { events, locations });
   },
 
   //controlador de EventDetail
