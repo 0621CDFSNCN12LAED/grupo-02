@@ -1,12 +1,12 @@
 <div class="B-categoria">
   <form action="/Evento/buscar" method="GET" class="buscador2">
     <input type="text" name="event_name" placeholder="Buscar un evento en Deporteando" />
-    <select name="province" id="provincia">
-      <option value="">Provincia</option>
+    <select name="locations" id="locations">
+      <option value="">localidad</option>
       <!-- Aplicar el For -->
-      <% for (province of provinces){ %>
-        <option value="<%=province.id%>">
-          <%= province.province %>
+      <% for (location of locations){ %>
+        <option value="<%=location.id%>">
+          <%= location.locations %>
         </option>
         <% } %>
     </select>

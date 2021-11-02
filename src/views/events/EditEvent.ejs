@@ -28,17 +28,18 @@
             </div>
             <!-- mirar lineas ERROR-->
             <div class="inputbx caja-options">
-              <select class="selectores" name="province" id="province">
+              <select class="selectores" name="idProvince" id="idProvince">
                 <option value="">Provincia</option>
-             
+
                 <% for (province of provinces){ %>
-                <option value="<%=province.id%>">
-                  <%= province.province %>
-                </option>
-                <% } %>
+                  <option value="<%=province.id%>">
+                    <%= province.province %>
+                  </option>
+                  <% } %>
 
               </select>
             </div>
+
 
             <!-- <div class="inputbx caja-options">
               <select class="selectores" name="provincia" id="provincia" required>
@@ -72,11 +73,18 @@
                   Fuego</option>
                 <option value="Tucumán" %event.provincia=="Tucumán" ? "selected" :""%>>Tucumán</option>
               </select> -->
-            </div>
-            <div class="inputbx">
-              <!-- mirar lineas ERROR-->
-              <label for="">Localidad del evento: </label>
-              <input type="text" placeholder="Localidad" name="localidad" value="<%=event.localidad%>" required />
+
+            <div class="inputbx caja-options">
+              <select class="selectores" name="idLocation" id="idLocation">
+                <option value="">localidades</option>
+
+                <% for (location of locations){ %>
+                  <option value="<%=location.id%>">
+                    <%= location.locations %>
+                  </option>
+                  <% } %>
+
+              </select>
             </div>
 
             <div class="inputbx">

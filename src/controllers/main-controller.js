@@ -5,8 +5,6 @@ const path = require("path");
 const productService = require("../services/events-services");
 const db = require("../database/models");
 
-const db = require("../database/models");
-
 module.exports = {
   //////////////////////VISUALIZAR LAS PAGINAS PEDIDAS////////////////////////
   index: async (req, res) => {

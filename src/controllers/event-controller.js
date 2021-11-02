@@ -7,24 +7,23 @@ const { Op } = require("sequelize");
 const eventService = require("../services/events-services");
 const db = require("../database/models");
 
-const db = require("../database/models");
-
 module.exports = {
   search: async (req, res) => {
-    const provinces = await db.Province.findAll();
+    const locations = await db.Location.findAll();
     const events = await db.Event.findAll(
-      { include: ["provinces"] },
+      { include: ["location"] },
       {
         where: {
           event_name: { [Op.like]: `%${req.query.event_name}%` },
-          province: { [Op.like]: `%${req.query.provincia}%` },
+          //province: { [Op.like]: `%${req.query.provincia}%` },
+          locations: { [Op.like]: `%${req.query.locations}%` },
           event_date: { [Op.like]: `%${req.query.event_date}%` },
         },
       }
     );
 
     if (events.length > 0) {
-      res.render("events", { events, provinces });
+      res.render("events", { events, locations });
     } else {
       res.send("eventos no encontrados");
     }
@@ -93,21 +92,24 @@ module.exports = {
   edit: async (req, res) => {
     //filterByID
     const event = await db.Event.findByPk(req.params.id);
-    res.render("events/EditEvent", { event });
+    const provinces = await db.Province.findAll();
+    const locations = await db.Location.findAll();
+    res.render("events/EditEvent", { event, provinces, locations });
   },
 
   update: (req, res) => {
     //eventService.EditOneEvent(req.params.id, req.body, req.file);
     db.Event.update(
       {
-        event_name: req.body.event_name,
-        event_address: req.body.event_address,
-        event_date: req.body.event_date,
-        start_time: req.body.start_time,
-        end_time: req.body.end_time,
-        price: req.body.price,
-        event_description: req.body.event_description,
-        more_info: req.body.more_info,
+        ...req.body,
+        //event_name: req.body.event_name,
+        //event_address: req.body.event_address,
+        //event_date: req.body.event_date,
+        //start_time: req.body.start_time,
+        //end_time: req.body.end_time,
+        //price: req.body.price,
+        //event_description: req.body.event_description,
+        //more_info: req.body.more_info,
       },
       { where: { id: req.params.id } }
     );
