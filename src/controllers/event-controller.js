@@ -103,14 +103,6 @@ module.exports = {
     db.Event.update(
       {
         ...req.body,
-        //event_name: req.body.event_name,
-        //event_address: req.body.event_address,
-        //event_date: req.body.event_date,
-        //start_time: req.body.start_time,
-        //end_time: req.body.end_time,
-        //price: req.body.price,
-        //event_description: req.body.event_description,
-        //more_info: req.body.more_info,
       },
       { where: { id: req.params.id } }
     );

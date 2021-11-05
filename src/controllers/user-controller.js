@@ -4,6 +4,7 @@ const bcryptjs = require("bcryptjs");
 
 //--------------DataBase.Json---------------------------//
 const userServices = require("../services/users-services");
+const db = require("../database/models");
 
 module.exports = {
   //////////////////////REGISTRACION Y VALIDACION DE DATOS (BACK)////////////////////////
@@ -11,9 +12,11 @@ module.exports = {
     res.render("users/register");
   },
 
-  createUser: (req, res) => {
+  createUser: async (req, res) => {
     //check email
-    let userInDB = userServices.findByEmail(req.body.email);
+    //let userInDB = userServices.findByEmail(req.body.email);
+
+    userInDB = await db.User.findOne({ where: { email: req.body.email } });
     if (userInDB) {
       return res.render("users/register", {
         errors: {
@@ -25,7 +28,15 @@ module.exports = {
       });
     }
 
-    userServices.createUser(req.body, req.file);
+    db.User.create(
+      //en la tabla user_categorie no suma el iduser
+      {
+        ...req.body,
+        user_password: bcryptjs.hashSync(req.body.user_password, 10),
+        avatar: req.file ? req.file.filename : "avatar3.png", //img?? o avatar.filename
+      }
+    );
+
     res.redirect("./Login"); // falta el html
   },
 
@@ -33,14 +44,16 @@ module.exports = {
     res.render("users/login");
   },
 
-  loginProcess: (req, res) => {
-    const userToLogin = userServices.findByEmail(req.body.email);
+  loginProcess: async (req, res) => {
+    const userToLogin = await db.User.findOne({
+      where: { email: req.body.email },
+    });
     //si hay usuario con mail
     if (userToLogin) {
       //chequea la contraseña
       const isOkThePassword = bcryptjs.compareSync(
-        req.body.password,
-        userToLogin.password
+        req.body.user_password,
+        userToLogin.user_password
       );
 
       //si la contraseña está bien redirigilo a su perfil
@@ -61,7 +74,7 @@ module.exports = {
       //si la contraseña está mal enviarle mensaje de error en la vista y email renderizado
       return res.render("users/login", {
         errors: {
-          password: {
+          user_password: {
             msg: "Las contraseña es incorrecta",
           },
         },
@@ -89,7 +102,10 @@ module.exports = {
   },
   delete: (req, res) => {
     // userServices.deleteAvatar(req.body.avatar);
-    userServices.deleteUser(req.body);
+    //userServices.deleteUser(req.body);
+    db.User.destroy({
+      where: { id: req.params.id },
+    });
     res.clearCookie("userEmail");
     req.session.destroy();
     res.redirect("../Evento");

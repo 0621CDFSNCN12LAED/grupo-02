@@ -7,7 +7,9 @@ const loginValidations = [
     .bail()
     .isEmail()
     .withMessage("Debes escribir un formato de correo valido"),
-  body("password").notEmpty().withMessage("Ingrese una contrseña por favor"),
+  body("user_password")
+    .notEmpty()
+    .withMessage("Ingrese una contrseña por favor"),
 ];
 
 module.exports = loginValidations;

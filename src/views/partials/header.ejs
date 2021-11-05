@@ -12,8 +12,8 @@
           <% if(locals.isLogged){ %>
             <li>
               <img class="avatar" src="/imagenes/Users/<%= locals.userLogged.avatar%>">
-              <a href="/Usuario/<%-locals.userLogged.id%> "> Hola <%= locals.userLogged.nombre + " " +
-                  locals.userLogged.apellido%>
+              <a href="/Usuario/<%-locals.userLogged.id%> "> Hola <%= locals.userLogged.first_name + " " +
+                  locals.userLogged.last_name%>
               </a>
             </li>
             <% } else { %>

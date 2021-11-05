@@ -1,9 +1,10 @@
 const { body } = require("express-validator");
 
 const userServices = require("../services/users-services");
+const db = require("../database/models");
 
-module.exports = function emailValidation(req, res, next) {
-  let userInDB = userServices.findByEmail(req.body.email);
+module.exports = async function emailValidation(req, res, next) {
+  let userInDB = await db.User.findOne({ where: { email: req.body.email } });
   if (userInDB) {
     return res.render("users/register", {
       errors: {

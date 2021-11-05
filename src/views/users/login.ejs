@@ -1,64 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include("../partials/head-login")%>
+
+<head>
+  <%- include("../partials/head-login")%>
 
     <title>Ingresar</title>
-  </head>
+</head>
 
-  <body>
-    <section>
-      <div class="imgbox">
-        <img src="/imagenes/imagen-fondo-usuario.jpg" alt="" />
-      </div>
+<body>
+  <section>
+    <div class="imgbox">
+      <img src="/imagenes/imagen-fondo-usuario.jpg" alt="" />
+    </div>
 
-      <div class="contentbx">
-        <div class="formbx">
-          <h2>Iniciar Sesión</h2>
+    <div class="contentbx">
+      <div class="formbx">
+        <h2>Iniciar Sesión</h2>
 
-          <form action="/Usuario/Login" method="POST">
-            <div class="inputbx">
-              <span>Email de Usuario</span>
-              <input
-                type="text"
-                name="email"
-                id="email"
-                value="<%= locals.oldData ? oldData.email : null %>"
-              />
-              <% if (locals.errors && errors.email) { %>
-              <div class="error-msg"><%= errors.email.msg %></div>
+        <form action="/Usuario/Login" method="POST">
+          <div class="inputbx">
+            <span>Email de Usuario</span>
+            <input type="text" name="email" id="email" value="<%= locals.oldData ? oldData.email : null %>" />
+            <% if (locals.errors && errors.email) { %>
+              <div class="error-msg">
+                <%= errors.email.msg %>
+              </div>
               <% } %>
-            </div>
+          </div>
 
-            <div class="inputbx">
-              <span>Contraseña</span>
-              <input type="password" name="password" id="password" />
-              <% if (locals.errors && errors.password) { %>
-              <div class="error-msg"><%= errors.password.msg %></div>
+          <div class="inputbx">
+            <span>Contraseña</span>
+            <input type="password" name="user_password" id="user_password" />
+            <% if (locals.errors && errors.user_password) { %>
+              <div class="error-msg">
+                <%= errors.user_password.msg %>
+              </div>
               <% } %>
-            </div>
+          </div>
 
-            <div class="remember">
-              <label for="">
-                <input
-                  type="checkbox"
-                  name="remember"
-                  id="remember"
-                />Recordar</label
-              >
-            </div>
+          <div class="remember">
+            <label for="">
+              <input type="checkbox" name="remember" id="remember" />Recordar</label>
+          </div>
 
-            <div class="inputbx">
-              <input type="submit" value="Aceptar" />
-            </div>
+          <div class="inputbx">
+            <input type="submit" value="Aceptar" />
+          </div>
 
-            <div class="inputbx">
-              <p>No tienes cuenta ve <a href="/Usuario/Registro"> Aqui</a></p>
-              <p>No recuerdad tu contraseña? <a href="#"> Aprieta aqui</a></p>
-            </div>
-          </form>
-        </div>
+          <div class="inputbx">
+            <p>No tienes cuenta ve <a href="/Usuario/Registro"> Aqui</a></p>
+            <p>No recuerdad tu contraseña? <a href="#"> Aprieta aqui</a></p>
+          </div>
+        </form>
       </div>
-    </section>
-  </body>
+    </div>
+  </section>
+</body>
+
 </html>

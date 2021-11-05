@@ -2,11 +2,11 @@ const { body } = require("express-validator");
 
 //la validaciones del usuario que debe cumplir para poder susbcribirse a la pagina
 module.exports = [
-  body("nombre").notEmpty().withMessage("Ingrese su nombre por favor"),
+  body("first_name").notEmpty().withMessage("Ingrese su nombre por favor"),
 
-  body("apellido").notEmpty().withMessage("Ingrese un apellido por favor"),
+  body("last_name").notEmpty().withMessage("Ingrese un apellido por favor"),
 
-  body("nacimiento").notEmpty().withMessage("Ingrese su fecha de nacimiento"),
+  body("birth_date").notEmpty().withMessage("Ingrese su fecha de nacimiento"),
 
   body("email")
     .notEmpty()
@@ -15,9 +15,9 @@ module.exports = [
     .isEmail()
     .withMessage("Debes escribir un formato de correo valido"),
 
-  body("tipoDeUsuario").isIn(["Participante", "Organizador"]),
+  body("idCategorie").isIn(["1", "2"]),
 
-  body("password")
+  body("user_password")
     .notEmpty()
     .withMessage("Ingrese una contrseña por favor")
     .bail()

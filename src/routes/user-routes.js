@@ -35,7 +35,7 @@ router.post(
 );
 
 //Elimina Usuario
-router.get("/Eliminar", userController.delete);
+router.delete("/Eliminar/:id", userController.delete);
 
 //LOGOUT
 router.get("/Logout", userController.logout);
