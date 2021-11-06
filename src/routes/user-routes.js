@@ -9,7 +9,11 @@ const checkValidation = require("../middlewares/check-validation");
 const authMiddleware = require("../middlewares/authMiddleware");
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const checkLogin = require("../middlewares/check-login");
+const checkPass = require("../middlewares/check-pass");
+const checkProfile = require("../middlewares/check-profile");
 const emailValidation = require("../middlewares/email-validation");
+const editValidation = require("../validations/editValidation");
+const passValidation = require("../validations/passValidation");
 
 //REGISTER GET
 router.get("/Registro", guestMiddleware, userController.register);
@@ -39,6 +43,22 @@ router.delete("/Eliminar/:id", userController.delete);
 
 //LOGOUT
 router.get("/Logout", userController.logout);
+
+//Cambiar Pass
+router.get("/Cambiar/:id", userController.passwordEdit);
+
+//Falta EL Post para actualizar la contraseña
+router.put("/Cambiar/:id", userController.updatePassword);
+
+//Editar Perfil
+router.get("/Editar/:id", userController.editProfile);
+
+//Falta EL Post para actualizar los datos del Perfil
+router.put(
+  "/Editar/:id",
+  uploader.single("avatar"),
+  userController.updateProfile
+);
 
 //PROFILE GET
 router.get("/:id", authMiddleware, userController.profile);

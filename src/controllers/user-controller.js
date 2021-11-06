@@ -33,7 +33,7 @@ module.exports = {
       {
         ...req.body,
         user_password: bcryptjs.hashSync(req.body.user_password, 10),
-        avatar: req.file ? req.file.filename : "avatar3.png", //img?? o avatar.filename
+        avatar: req.file ? req.file.filename : "avatar3.jpg", //img?? o avatar.filename
       }
     );
 
@@ -109,5 +109,33 @@ module.exports = {
     res.clearCookie("userEmail");
     req.session.destroy();
     res.redirect("../Evento");
+  },
+  passwordEdit: (req, res) => {
+    return res.render("users/editPassword", { user: req.session.userLogged });
+  },
+
+  //chequear UpdatePassword
+  updatePassword: (req, res) => {
+    console.log(req.body.user_password);
+    db.User.update(
+      {
+        user_password: req.body.user_password,
+      },
+      { where: { id: req.params.id } }
+    );
+    return res.redirect("/Usuario/:id");
+  },
+  editProfile: (req, res) => {
+    return res.render("users/editProfile", { user: req.session.userLogged });
+  },
+  updateProfile: (req, res) => {
+    db.User.update(
+      {
+        ...req.body,
+        avatar: req.file ? req.file.filename : "avatar3.jpg",
+      },
+      { where: { id: req.params.id } }
+    );
+    return res.redirect("/Usuario/:id");
   },
 };

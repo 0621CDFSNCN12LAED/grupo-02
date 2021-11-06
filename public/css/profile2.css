@@ -51,6 +51,19 @@ h2 {
   color: #fff;
   position: relative;
 }
+
+.action-user button {
+  display: inline-table;
+  width: 96%;
+  padding: 1%;
+  margin: 1%;
+  border-radius: 5px;
+  text-align: center;
+  background: #0bb475;
+  color: #fff;
+  position: relative;
+}
+
 .action-user a i {
   float: left;
   font-size: 40px;
@@ -58,12 +71,32 @@ h2 {
   width: 100%;
   margin-bottom: 10px;
 }
+
+.action-user button i {
+  float: left;
+  font-size: 40px;
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
 a {
   text-decoration: none !important;
   font-size: 1em;
   color: #0bb475;
 }
+
+button {
+  text-decoration: none !important;
+  font-size: 1em;
+  color: #0bb475;
+}
+
 a:hover {
+  color: #eb2055;
+  transition: 0.3s;
+}
+button:hover {
   color: #eb2055;
   transition: 0.3s;
 }

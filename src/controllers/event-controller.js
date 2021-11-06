@@ -34,9 +34,7 @@ module.exports = {
     // res.render("events", { openEvents });
     const locations = await db.Location.findAll();
     const events = await db.Event.findAll(
-      {
-        include: [{ association: "location" }],
-      },
+      { include: [{ association: "location", include: "province" }] },
       {
         where: {
           eventOpen: 1,

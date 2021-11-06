@@ -1,6 +1,6 @@
 const { body } = require("express-validator");
 
-const userServices = require("../services/users-services");
+// const userServices = require("../services/users-services");
 const db = require("../database/models");
 
 module.exports = async function emailValidation(req, res, next) {
