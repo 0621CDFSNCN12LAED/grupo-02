@@ -74,7 +74,7 @@ module.exports = {
         oldData: req.body,
       });
     }
-    console.log(req.body);
+
     //CreatOneEvent
     // eventService.CreatOneEvent(req.body, req.file);
     db.Event.create({
