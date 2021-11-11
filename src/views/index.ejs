@@ -27,7 +27,13 @@
                     <h3>
                       <%=event.event_name%>
                     </h3>
-                    <!-- <p>%=event.location%</p> -->
+                    <p>
+                      <%=event.location.province.province%>
+                    </p>
+                    <p>
+                      <%=event.location.locations%>
+                    </p>
+                    
                     <%=event.price%>
             </a>
             <button class="m-botton-compra">

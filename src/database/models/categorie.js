@@ -4,6 +4,11 @@ module.exports = (sequelize) => {
   const model = sequelize.define(
     "Categorie",
     {
+      id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+      },
       categorie: DataTypes.STRING,
     },
     {

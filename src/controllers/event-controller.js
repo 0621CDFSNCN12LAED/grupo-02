@@ -2,28 +2,31 @@ const fs = require("fs");
 const path = require("path");
 const { validationResult } = require("express-validator");
 const { Op } = require("sequelize");
+const userLoggedMiddleware = require("../middlewares/userLoggedMiddleware");
 
 //--------------DataBase.Json---------------------------//
-const eventService = require("../services/events-services");
+// const eventService = require("../services/events-services");
 const db = require("../database/models");
 
 module.exports = {
   search: async (req, res) => {
-    const locations = await db.Location.findAll();
     const events = await db.Event.findAll(
-      { include: ["location"] },
-      {
-        where: {
-          event_name: { [Op.like]: `%${req.query.event_name}%` },
-          //province: { [Op.like]: `%${req.query.provincia}%` },
-          //locations: { [Op.like]: `%${req.query.event.location.locations}%` },
-          event_date: { [Op.like]: `%${req.query.event_date}%` },
-        },
-      }
+      { include: [{ association: "location", include: "province" }] }
+      // {
+      //   // where: {
+      //   //   event_name: { [Op.like]: `%${req.query.event_name}%` },
+      //   //   // province: {
+      //   //   //   [Op.like]: `%${req.query.event.location.province.province}%`,
+      //   //   // },
+      //   //   locations: { [Op.like]: `%${req.query.event.location.locations}%` },
+      //   //   event_date: { [Op.like]: `%${req.query.event_date}%` },
+      //   // },
+      // }
     );
 
     if (events.length > 0) {
-      res.render("events", { events, locations });
+      console.log(events);
+      res.render("events", { events });
     } else {
       res.send("eventos no encontrados");
     }
@@ -32,7 +35,6 @@ module.exports = {
     //filterByStatus
     // const openEvents = eventService.filterByStatus();
     // res.render("events", { openEvents });
-    const locations = await db.Location.findAll();
     const events = await db.Event.findAll(
       { include: [{ association: "location", include: "province" }] },
       {
@@ -42,7 +44,7 @@ module.exports = {
       }
     );
 
-    res.render("events", { events, locations });
+    res.render("events", { events });
   },
 
   //controlador de EventDetail
@@ -51,16 +53,16 @@ module.exports = {
     // const event = eventService.filterByID(req.params.id);
 
     const event = await db.Event.findByPk(req.params.id, {
-      include: [{ association: "location" }],
+      include: [{ association: "location", include: "province" }],
     });
     res.render("events/EventDetail", { event });
   },
 
   //controladores de CreateEvent
   creatEvent: async (req, res) => {
-    const provinces = await db.Province.findAll({ include: ["locations"] });
+    const provinces = await db.Province.findAll();
     const locations = await db.Location.findAll();
-
+    console.log(provinces);
     res.render("events/CreateEvent", { provinces, locations });
   },
 
@@ -74,7 +76,7 @@ module.exports = {
         oldData: req.body,
       });
     }
-    console.log(req.body);
+
     //CreatOneEvent
     // eventService.CreatOneEvent(req.body, req.file);
     db.Event.create({

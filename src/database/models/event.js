@@ -4,7 +4,12 @@ module.exports = (sequelize, DataTypes) => {
   const model = sequelize.define(
     "Event",
     {
-      // created_at: DataTypes.timestamps,
+      id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+      },
+      // created_at: DataTypes.timestams esta mal,
       // updated_at: DataTypes.timestamps,
       // deleted_at: DataTypes.timestamps,
       eventOpen: DataTypes.TINYINT({}),
@@ -20,7 +25,11 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       tableName: "events",
-      timestamps: false /*por ahora -- ver la configuracion del underscored: true*/,
+      timestamps: true,
+      createdAt: "created_at",
+      updatedAt: "updated_at",
+      // deletedAt: null,
+      // paranoid: true /*por ahora -- ver la configuracion del underscored: true*/,
     }
   );
 
