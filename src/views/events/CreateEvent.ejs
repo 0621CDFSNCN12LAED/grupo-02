@@ -41,12 +41,13 @@
                 </option>
                 <!-- Aplicar el For -->
                 <% for (province of provinces){ %>
-                <option value="<%=province.id%>">
+                <option value="<%= province.id %>">
                   <%= province.province %>
                 </option>
                 <% } %>
               </select>
             </div>
+
             <!-- 
                 <option value="1">Buenos Aires</option>
                 <option value="2">Buenos Aires-GBA</option>
@@ -75,7 +76,7 @@
                 <option value="25">Tucumán</option> -->
 
             <div class="inputbx caja-options">
-              <select class="selectores" name="idLocation" id="idLocation">
+              <select class="selectores" name="idLocations" id="idLocations">
                 <option
                   value="<%= locals.oldData ? oldData.locations : null %>"
                 >

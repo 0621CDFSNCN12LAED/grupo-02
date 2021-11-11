@@ -28,7 +28,7 @@ module.exports = {
       });
     }
 
-    db.User.create(
+    const user = await db.User.create(
       //en la tabla user_categorie no suma el iduser
       {
         ...req.body,
@@ -36,6 +36,7 @@ module.exports = {
         avatar: req.file ? req.file.filename : "avatar3.jpg", //img?? o avatar.filename
       }
     );
+    await user.setCategories(req.body.idCategorie);
 
     res.redirect("./Login"); // falta el html
   },
@@ -115,9 +116,9 @@ module.exports = {
   },
 
   //chequear UpdatePassword
-  updatePassword: (req, res) => {
+  updatePassword: async (req, res) => {
     console.log(req.body.user_password);
-    db.User.update(
+    await db.User.update(
       {
         user_password: req.body.user_password,
       },
@@ -128,8 +129,8 @@ module.exports = {
   editProfile: (req, res) => {
     return res.render("users/editProfile", { user: req.session.userLogged });
   },
-  updateProfile: (req, res) => {
-    db.User.update(
+  updateProfile: async (req, res) => {
+    await db.User.update(
       {
         ...req.body,
         avatar: req.file ? req.file.filename : "avatar3.jpg",
