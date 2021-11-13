@@ -10,19 +10,18 @@ const db = require("../database/models");
 
 module.exports = {
   search: async (req, res) => {
-    const events = await db.Event.findAll(
-      { include: [{ association: "location", include: "province" }] }
-      // {
-      //   // where: {
-      //   //   event_name: { [Op.like]: `%${req.query.event_name}%` },
-      //   //   // province: {
-      //   //   //   [Op.like]: `%${req.query.event.location.province.province}%`,
-      //   //   // },
-      //   //   locations: { [Op.like]: `%${req.query.event.location.locations}%` },
-      //   //   event_date: { [Op.like]: `%${req.query.event_date}%` },
-      //   // },
-      // }
-    );
+    const events = await db.Event.findAll({
+      include: [{ association: "location", include: "province" }],
+      where: {
+        event_name: { [Op.like]: `%${req.query.event_name}%` },
+        // province: {
+        //   [Op.like]: `%${req.query.event.location.province.province}%`,
+        // },
+        //Ver documentacion de los operadores para buscar por fecha y la relacion de las tablas
+        // location.locations: { [Op.like]: `%${req.query.locations}%` },
+        // event_date: { [Op.like]: `%${req.query.event_date}%` },
+      },
+    });
 
     if (events.length > 0) {
       console.log(events);
@@ -35,14 +34,10 @@ module.exports = {
     //filterByStatus
     // const openEvents = eventService.filterByStatus();
     // res.render("events", { openEvents });
-    const events = await db.Event.findAll(
-      { include: [{ association: "location", include: "province" }] },
-      {
-        where: {
-          eventOpen: 1,
-        },
-      }
-    );
+    const events = await db.Event.findAll({
+      include: [{ association: "location", include: "province" }],
+      where: { eventOpen: 1 },
+    });
 
     res.render("events", { events });
   },

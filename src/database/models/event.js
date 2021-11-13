@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
       // created_at: DataTypes.timestams esta mal,
       // updated_at: DataTypes.timestamps,
       // deleted_at: DataTypes.timestamps,
-      eventOpen: DataTypes.TINYINT({}),
+      eventOpen: DataTypes.INTEGER,
       event_name: DataTypes.STRING,
       event_address: DataTypes.STRING,
       event_date: DataTypes.DATEONLY,

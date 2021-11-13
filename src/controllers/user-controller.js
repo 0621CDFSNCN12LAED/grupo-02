@@ -120,7 +120,8 @@ module.exports = {
     console.log(req.body.user_password);
     await db.User.update(
       {
-        user_password: req.body.user_password,
+        user_password: bcryptjs.hashSync(req.body.user_password, 10),
+        // user_password: req.body.user_password,
       },
       { where: { id: req.params.id } }
     );
