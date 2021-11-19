@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <%- include("../partials/head-login")%>
-
     <title>Registrate</title>
+    <script defer src="/java/registerValidation.js"></script>
   </head>
 
   <body>
@@ -15,11 +15,14 @@
       <div class="contentbx">
         <div class="formbx">
           <h2>Registrate</h2>
-
+          <div class="errores">
+            <ul></ul>
+          </div>
           <form
             action="/Usuario/Registro"
             method="POST"
             enctype="multipart/form-data"
+            class="reservation"
           >
             <div class="inputbx">
               <span>Nombre</span>
