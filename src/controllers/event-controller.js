@@ -12,20 +12,19 @@ module.exports = {
   search: async (req, res) => {
     const events = await db.Event.findAll(
       { include: [{ association: "location", include: "province" }] }
-      // {
-      //   // where: {
-      //   //   event_name: { [Op.like]: `%${req.query.event_name}%` },
-      //   //   // province: {
-      //   //   //   [Op.like]: `%${req.query.event.location.province.province}%`,
-      //   //   // },
-      //   //   locations: { [Op.like]: `%${req.query.event.location.locations}%` },
-      //   //   event_date: { [Op.like]: `%${req.query.event_date}%` },
-      //   // },
-      // }
+      //{
+      // where: {
+      //event_name: { [Op.like]: `%${req.query.event_name}%` },
+      // province: {
+      //   [Op.like]: `%${req.query.event.location.province.province}%`,
+      // },
+      // locations: { [Op.like]: `%${req.query.event.location.locations}%` },
+      //event_date: { [Op.like]: `%${req.query.event_date}%` },
+      // },
+      //}
     );
 
     if (events.length > 0) {
-      console.log(events);
       res.render("events", { events });
     } else {
       res.send("eventos no encontrados");
@@ -62,11 +61,10 @@ module.exports = {
   creatEvent: async (req, res) => {
     const provinces = await db.Province.findAll();
     const locations = await db.Location.findAll();
-    console.log(provinces);
     res.render("events/CreateEvent", { provinces, locations });
   },
 
-  storeEvent: (req, res) => {
+  storeEvent: async (req, res) => {
     //validaciones del usuario al ingresar informacion
     const resultValidation = validationResult(req);
 
@@ -79,7 +77,7 @@ module.exports = {
 
     //CreatOneEvent
     // eventService.CreatOneEvent(req.body, req.file);
-    db.Event.create({
+    await db.Event.create({
       ...req.body,
       eventOpen: 1,
       banner: req.file.banner ? img.filename : "evento1.jpg",
@@ -98,9 +96,9 @@ module.exports = {
     res.render("events/EditEvent", { event, provinces, locations });
   },
 
-  update: (req, res) => {
+  update: async (req, res) => {
     //eventService.EditOneEvent(req.params.id, req.body, req.file);
-    db.Event.update(
+    await db.Event.update(
       {
         ...req.body,
       },
@@ -109,14 +107,14 @@ module.exports = {
     res.redirect("/Evento");
   },
 
-  delete: (req, res) => {
+  delete: async (req, res) => {
     //filterByID
     //const event = eventService.filterByID(req.params.id);
     //DeleteOneEvent
     //event.estado = "close";
     //Save
     //eventService.save();
-    db.Event.update(
+    await db.Event.update(
       {
         eventOpen: 0,
       },
