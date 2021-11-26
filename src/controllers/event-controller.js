@@ -8,6 +8,8 @@ const userLoggedMiddleware = require("../middlewares/userLoggedMiddleware");
 // const eventService = require("../services/events-services");
 const db = require("../database/models");
 
+const db = require("../database/models");
+
 module.exports = {
   search: async (req, res) => {
     const events = await db.Event.findAll({
@@ -66,7 +68,7 @@ module.exports = {
     res.render("events/CreateEvent", { provinces, locations });
   },
 
-  storeEvent: (req, res) => {
+  storeEvent: async (req, res) => {
     //validaciones del usuario al ingresar informacion
     const resultValidation = validationResult(req);
 
@@ -79,7 +81,7 @@ module.exports = {
 
     //CreatOneEvent
     // eventService.CreatOneEvent(req.body, req.file);
-    db.Event.create({
+    await db.Event.create({
       ...req.body,
       eventOpen: 1,
       banner: req.file.banner ? img.filename : "evento1.jpg",
@@ -98,9 +100,9 @@ module.exports = {
     res.render("events/EditEvent", { event, provinces, locations });
   },
 
-  update: (req, res) => {
+  update: async (req, res) => {
     //eventService.EditOneEvent(req.params.id, req.body, req.file);
-    db.Event.update(
+    await db.Event.update(
       {
         ...req.body,
       },
@@ -109,14 +111,14 @@ module.exports = {
     res.redirect("/Evento");
   },
 
-  delete: (req, res) => {
+  delete: async (req, res) => {
     //filterByID
     //const event = eventService.filterByID(req.params.id);
     //DeleteOneEvent
     //event.estado = "close";
     //Save
     //eventService.save();
-    db.Event.update(
+    await db.Event.update(
       {
         eventOpen: 0,
       },

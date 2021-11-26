@@ -18,6 +18,7 @@
       <main>
         <section class="B-muestra-ticket display-flex">
           <% for (event of events){%>
+
             <a href="/Evento/<%=event.id%>">
               <div class="product-wrapper">
                 <article class="product">
@@ -33,7 +34,7 @@
                     <p>
                       <%=event.location.locations%>
                     </p>
-                    
+
                     <%=event.price%>
             </a>
             <button class="m-botton-compra">
@@ -42,6 +43,7 @@
             </div>
             </article>
             </div>
+
             <% } %>
               <!-- pie de pagina -->
               <%- include("partials/footer")%>
