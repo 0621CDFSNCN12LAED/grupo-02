@@ -473,3 +473,24 @@ a {
   background: #55acee;
   color: white;
 }
+
+/* forms valid */
+.is-valid {
+  border-color: rgb(19, 230, 19);
+}
+
+.is-invalid {
+  border-color: rgb(228, 19, 19);
+}
+
+.hidden {
+  display: none;
+}
+
+#errors li {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: red;
+  font-weight: bold;
+  list-style: none;
+  padding: 5px 0px;
+}

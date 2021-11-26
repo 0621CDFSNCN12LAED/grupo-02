@@ -76,7 +76,6 @@ section .contentbx .formbx .inputbx input {
   padding: 10px 20px;
   outline: none;
   font-weight: 400;
-  border: 1px solid #000000;
   font-size: 16px;
   letter-spacing: 1px;
   color: #000000;
@@ -89,7 +88,7 @@ section .contentbx .formbx .inputbx textarea {
   padding: 10px 20px;
   outline: none;
   font-weight: 400;
-  border: 1px solid #000000;
+
   font-size: 16px;
   letter-spacing: 1px;
   color: #000000;
