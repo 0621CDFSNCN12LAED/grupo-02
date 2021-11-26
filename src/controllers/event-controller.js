@@ -8,8 +8,6 @@ const userLoggedMiddleware = require("../middlewares/userLoggedMiddleware");
 // const eventService = require("../services/events-services");
 const db = require("../database/models");
 
-const db = require("../database/models");
-
 module.exports = {
   search: async (req, res) => {
     const events = await db.Event.findAll({
@@ -23,10 +21,7 @@ module.exports = {
         // location.locations: { [Op.like]: `%${req.query.locations}%` },
         // event_date: { [Op.like]: `%${req.query.event_date}%` },
         event_date: {
-          [Op.between]: [
-            req.query.event_date,
-            req.query.event_date + "aa-mm-31",
-          ],
+          [Op.startsWith]: `%${req.query.event_date}`,
         },
       },
     });
