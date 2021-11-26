@@ -117,7 +117,6 @@ module.exports = {
 
   //chequear UpdatePassword
   updatePassword: async (req, res) => {
-    console.log(req.body.user_password);
     await db.User.update(
       {
         user_password: bcryptjs.hashSync(req.body.user_password, 10),

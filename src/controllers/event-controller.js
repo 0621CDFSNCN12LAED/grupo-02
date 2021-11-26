@@ -20,11 +20,16 @@ module.exports = {
         //Ver documentacion de los operadores para buscar por fecha y la relacion de las tablas
         // location.locations: { [Op.like]: `%${req.query.locations}%` },
         // event_date: { [Op.like]: `%${req.query.event_date}%` },
+        event_date: {
+          [Op.between]: [
+            req.query.event_date,
+            req.query.event_date + "aa-mm-31",
+          ],
+        },
       },
     });
 
     if (events.length > 0) {
-      console.log(events);
       res.render("events", { events });
     } else {
       res.send("eventos no encontrados");
@@ -57,7 +62,7 @@ module.exports = {
   creatEvent: async (req, res) => {
     const provinces = await db.Province.findAll();
     const locations = await db.Location.findAll();
-    console.log(provinces);
+
     res.render("events/CreateEvent", { provinces, locations });
   },
 

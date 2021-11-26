@@ -8,6 +8,7 @@ const publicPath = path.resolve(__dirname, "../public");
 
 const mainRouter = require("./routes/main-routes");
 const eventRouter = require("./routes/event-routes");
+const apiRouter = require("./routes/api");
 const userRouter = require("./routes/user-routes");
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 app.use(express.static(publicPath));
@@ -31,6 +32,7 @@ app.use(methodOverride("_method"));
 app.use("/", mainRouter);
 app.use("/Evento", eventRouter);
 app.use("/Usuario", userRouter);
+app.use("/api", apiRouter);
 
 // view engine setup (Para renderizar ejs)
 app.set("views", path.join(__dirname, "views"));
