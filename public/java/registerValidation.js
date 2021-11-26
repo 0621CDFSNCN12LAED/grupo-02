@@ -95,7 +95,7 @@ function dataIsValid() {
       "*La contraseña debe tener un minimo de ocho caracteres"
     )
   );
-
+  //VALIDACIONES DE REPETIR CONTRASEÑA Y LARGO
   errors.push(
     dataConfirm(
       Repeat_password,
@@ -106,6 +106,8 @@ function dataIsValid() {
 
   return errors.filter((msg) => msg != null);
 }
+
+/////////////////// FUNCIONES DE VALIDACIONES ////////////////////////
 
 //AVERIGUA SI EL VALOR DE LOS INPUT ESTAN VACIOS
 function isEmpty(input) {
@@ -121,6 +123,7 @@ function maxLength(input, min, msg) {
     input.style.border = "1px solid #00ff00";
   }
 }
+
 //AVERIGUA SI CUMPLE CON LOS REQUISITOS O NO
 function dataConfirm(input, validationFunction, msg) {
   if (validationFunction(input)) {
@@ -130,7 +133,8 @@ function dataConfirm(input, validationFunction, msg) {
     input.style.border = "1px solid #00ff00";
   }
 }
-//AVERIGUA SI LO QUE HAY EN EL EMAIL ES UN EMAIL (mirar)
+
+//AVERIGUA SI LO QUE HAY EN EL EMAIL ES UN EMAIL
 function confirmEmail(input, msg) {
   if (
     input.value ==
@@ -147,9 +151,9 @@ function confirmIMG(avatar, msg) {
   }
 }
 
-//VALIDACION CHECKBOX DE CATEGORIA
+//VALIDACION CHECKBOX DE CATEGORIA (mirar)
 function confirmCheck(input, msg) {
-  if (!(input.value == 1 || input.value == 2 || (input.value == 1 && 2))) {
+  if (input.value != 1 || input.value != 2 || (input.value != 1 && 2)) {
     return msg;
   }
 }
