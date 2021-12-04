@@ -17,10 +17,13 @@
 
       <div class="contentbx">
         <div class="formbx">
+          <ul id="errors" class="hidden">
+            lista de errores:
+          </ul>
           <form class="forms" action="/Evento/<%= event.id %>?_method=PUT" method="POST" enctype=multipart/form-data>
             <div class="inputbx">
               <label for="">Nombre del evento: </label>
-              <input type="text" value="<%=event.event_name%>" name="event_name" required />
+              <input type="text" value="<%=event.event_name%>" name="event_name" />
             </div>
             <div class="inputbx">
               <label for="">imagene del evento: </label>
@@ -41,7 +44,7 @@
 
 
             <!-- <div class="inputbx caja-options">
-              <select class="selectores" name="provincia" id="provincia" required>
+              <select class="selectores" name="provincia" id="provincia">
                 <option value="" disabled>Provincia</option>
                  Aplicar el For                 
                 <option value="Buenos Aires" %event.provincia=="Buenos Aires" ? "selected" :""%> >Buenos Aires</option>
@@ -88,39 +91,38 @@
 
             <div class="inputbx">
               <label for="">Direccion del evento: </label>
-              <input type="text" value="<%=event.event_address%>" required name="event_address" />
+              <input type="text" value="<%=event.event_address%>" name="event_address" />
             </div>
 
             <div class="inputbx">
               <label for="">Fecha del evento: </label>
-              <input type="date" value="<%=event.event_date%>" name="event_date" required />
+              <input type="date" value="<%=event.event_date%>" name="event_date" />
             </div>
 
             <div class="inputbx">
               <label for="">Hora de inicio: </label>
-              <input type="time" value="<%=event.start_time%>" name="start_time" required />
+              <input type="time" value="<%=event.start_time%>" name="start_time" />
             </div>
             <div class="inputbx">
               <label for="">Hora de finalizacion: </label>
-              <input type="time" placeholder="Hora de finalizacion" value="<%=event.end_time%>" name="end_time"
-                required />
+              <input type="time" placeholder="Hora de finalizacion" value="<%=event.end_time%>" name="end_time" />
             </div>
 
             <div class="inputbx">
               <label for="">Precio de entrada: </label>
-              <input type="text" id="precio" name="price" value="<%=event.price%>" required />
+              <input type="text" id="precio" name="price" value="<%=event.price%>" />
             </div>
 
             <div class="inputbx">
               <label for="">Descripcion del evento: </label>
-              <textarea name="event_description" required class="inputbx">
+              <textarea name="event_description" class="inputbx">
 <%= event.event_description %>
               </textarea>
             </div>
 
             <div class="inputbx">
               <label for="">Mas informacion: </label>
-              <input type="text" value="<%= event.more_info %>" name="more_info" required />
+              <input type="text" value="<%= event.more_info %>" name="more_info" />
             </div>
 
             <div class="inputbx">

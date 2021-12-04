@@ -9,7 +9,10 @@ const loginValidations = [
     .withMessage("Debes escribir un formato de correo valido"),
   body("user_password")
     .notEmpty()
-    .withMessage("Ingrese una contrseña por favor"),
+    .withMessage("Ingrese una contrseña por favor")
+    .bail()
+    .isLength({ min: 8 })
+    .withMessage("La contraseña debe tener un minimo de ocho caracteres"),
 ];
 
 module.exports = loginValidations;

@@ -4,7 +4,7 @@
 <head>
   <%- include("../partials/head-login")%>
     <title>Registrate</title>
-    <script defer src="/java/registerValidation.js"></script>
+    <script defer src="/JS/registerValidation.js"></script>
 </head>
 
 <body>
@@ -77,6 +77,7 @@
 
           <div class="inputbx">
             <span>Contraseña</span>
+            <h4 class="recordatorio">*La contraseña debe tener un minimo de una letra mayuscula,numero y signo.</h4>
             <input type="password" name="user_password" id="user_password" />
             <% if (locals.errors && errors.user_password) { %>
               <div class="error-msg">

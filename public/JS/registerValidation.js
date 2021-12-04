@@ -62,7 +62,7 @@ function dataIsValid() {
   );
 
   //VALIDACION DE CATEGORIA
-  errors.push(confirmCheck(idCategorie, "*Seleccione una o mas categorias"));
+  //errors.push(confirmCheck(idCategorie, "*Seleccione una o mas categorias"));
 
   //VALIDACION DEL CUMPLEAÑOS
   errors.push(
@@ -80,9 +80,9 @@ function dataIsValid() {
   errors.push(confirmEmail(email, "*El email debe de ser valido"));
 
   //VALIDACION DE FORMATO DE IMAGEN
-  errors.push(
-    confirmIMG(avatar, "*Su avatar debe ser en formato JPG, JPEG, PNG, GIF")
-  );
+  // errors.push(
+  //   confirmIMG(avatar, "*Su avatar debe ser en formato JPG, JPEG, PNG, GIF")
+  // );
 
   //VALIDACIONES DEL CONTRASEÑA Y LARGO
   errors.push(
