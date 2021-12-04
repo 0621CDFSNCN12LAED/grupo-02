@@ -3,7 +3,6 @@ const router = express.Router();
 const eventController = require("../controllers/event-controller");
 const eventValidations = require("../validations/event-form-validation");
 const uploader = require("../middlewares/event-multer");
-const { Router } = require("express");
 
 router.get("/", eventController.index);
 

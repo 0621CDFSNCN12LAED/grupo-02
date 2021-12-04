@@ -2,7 +2,11 @@ const { Event } = require("../../database/models");
 
 module.exports = {
   list: async (req, res) => {
-    const events = await Event.findAll();
+    const events = await Event.findAll({
+      order: [["id", "ASC"]],
+      offset: 0,
+      limit: 10,
+    });
     res.json({
       meta: {
         status: 200,
@@ -28,7 +32,7 @@ module.exports = {
           status: 404,
           url: "http://localhost:3000/api/events/" + req.params.id,
         },
-        data: `No se ecnontró el evento con id: ${req.params.id}`,
+        data: `No se encontró el evento con id: ${req.params.id}`,
       });
     }
   },

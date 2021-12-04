@@ -14,20 +14,6 @@ const banner = document.querySelector("#banner");
 
 const errorList = document.querySelector("#errors");
 
-const requiredInputs = [
-  event_name,
-  idProvince,
-  idLocations,
-  event_address,
-  event_date,
-  start_time,
-  end_time,
-  price,
-  event_description,
-  more_info,
-  banner,
-];
-
 const form = document.querySelector("#formulario form");
 
 form.addEventListener("submit", (e) => {
