@@ -21,10 +21,7 @@ module.exports = {
         // location.locations: { [Op.like]: `%${req.query.locations}%` },
         // event_date: { [Op.like]: `%${req.query.event_date}%` },
         event_date: {
-          [Op.between]: [
-            req.query.event_date,
-            req.query.event_date + "aa-mm-31",
-          ],
+          [Op.startsWith]: `%${req.query.event_date}`,
         },
       },
     });

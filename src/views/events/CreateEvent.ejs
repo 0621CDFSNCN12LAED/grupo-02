@@ -19,7 +19,7 @@
       <div class="contentbx">
         <div class="formbx">
           <ul id="errors" class="hidden">
-            lista de errores:
+            Lista de errores:
           </ul>
           <form class="forms" action="/Evento" method="POST" enctype="multipart/form-data">
             <div class="inputbx">
@@ -45,39 +45,13 @@
                   <% } %>
               </select>
             </div>
-            <!-- 
-                <option value="1">Buenos Aires</option>
-                <option value="2">Buenos Aires-GBA</option>
-                <option value="3">Capital Federal</option>
-                <option value="4">Catamarca</option>
-                <option value="5">Chaco</option>
-                <option value="6">Chubut</option>
-                <option value="7">Córdoba</option>
-                <option value="8">Corrientes</option>
-                <option value="9">Entre Ríos</option>
-                <option value="10">Formosa</option>
-                <option value="11">Jujuy</option>
-                <option value="12">La Pampa</option>
-                <option value="13">La Rioja</option>
-                <option value="14">Mendoza</option>
-                <option value="15">Misiones</option>
-                <option value="16">Neuquén</option>
-                <option value="17">Río Negro</option>
-                <option value="18">Salta</option>
-                <option value="19">San Juan</option>
-                <option value="20">San Luis</option>
-                <option value="21">Santa Cruz</option>
-                <option value="22">Santa Fé</option>
-                <option value="23">Santiago del Estero</option>
-                <option value="24">Tierra del Fuego</option>
-                <option value="25">Tucumán</option> -->
 
             <div class="inputbx caja-options">
               <select class="selectores" name="idLocations" id="idLocations">
                 <option value="<%= locals.oldData ? oldData.locations : null %>">
                   Localidad
                 </option>
-                <!-- Aplicar el For -->
+
                 <% for (location of locations){ %>
                   <option value="<%=location.id%>">
                     <%= location.locations %>
@@ -85,18 +59,6 @@
                   <% } %>
               </select>
             </div>
-
-            <!-- <div class="inputbx">
-              <input
-                type="text"
-                placeholder="Localidad"
-                name="location"
-                value="%= locals.oldData ? oldData.location : null %>"
-              />
-              % if (locals.errors && errors.location) { %>
-              <div class="error-msg">%= errors.location.msg %></div>
-              % } %>
-            </div> -->
 
             <div class="inputbx">
               <input type="text" placeholder="Dirección" name="event_address" id="event_address"
@@ -109,7 +71,7 @@
             </div>
 
             <div class="inputbx">
-              <input type="date" placeholder="Fecha" value="22/08/2022" name="event_date" id="event_date"
+              <input type="date" placeholder="Fecha del Evento" value="22/08/2022" name="event_date" id="event_date"
                 value="<%= locals.oldData ? oldData.event_date : null %>" />
               <% if (locals.errors && errors.event_date) { %>
                 <div class="error-msg">

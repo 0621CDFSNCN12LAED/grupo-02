@@ -1,4 +1,5 @@
 document.querySelector("#event_name").focus();
+const form = document.querySelector("#formulario form");
 
 const event_name = document.querySelector("#event_name");
 const idProvince = document.querySelector("#idProvince");
@@ -14,7 +15,19 @@ const banner = document.querySelector("#banner");
 
 const errorList = document.querySelector("#errors");
 
-const form = document.querySelector("#formulario form");
+const requiredInputs = [
+  event_name,
+  idProvince,
+  idLocations,
+  event_address,
+  event_date,
+  start_time,
+  end_time,
+  price,
+  event_description,
+  more_info,
+  banner,
+];
 
 form.addEventListener("submit", (e) => {
   const errors = formIsInvalid();

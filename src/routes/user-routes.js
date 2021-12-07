@@ -9,11 +9,7 @@ const checkValidation = require("../middlewares/check-validation");
 const authMiddleware = require("../middlewares/authMiddleware");
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const checkLogin = require("../middlewares/check-login");
-const checkPass = require("../middlewares/check-pass");
-const checkProfile = require("../middlewares/check-profile");
 const emailValidation = require("../middlewares/email-validation");
-const editValidation = require("../validations/editValidation");
-const passValidation = require("../validations/passValidation");
 
 //REGISTER GET
 router.get("/Registro", guestMiddleware, userController.register);

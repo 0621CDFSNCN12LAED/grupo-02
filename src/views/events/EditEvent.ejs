@@ -4,13 +4,14 @@
 <head>
   <%- include("../partials/head-createProduct")%>
     <title>Edicion de un producto</title>
+    <script defer src="/JS/eventEditValidation.js"></script>
 </head>
 
 <body>
   <!-- encabezado de la pagina -->
   <%- include("../partials/header")%>
 
-    <section>
+    <section id="formulario">
       <div class="imgbox">
         <img src="/imagenes/Eventos/<%=event.banner%>" alt="" />
       </div>
@@ -18,16 +19,16 @@
       <div class="contentbx">
         <div class="formbx">
           <ul id="errors" class="hidden">
-            lista de errores:
           </ul>
-          <form class="forms" action="/Evento/<%= event.id %>?_method=PUT" method="POST" enctype=multipart/form-data>
+          <!-- ?_method=PUT -->
+          <form class="forms" action="/Evento/<%= event.id %> ?_method=PUT" method="POST" enctype="multipart/form-data">
             <div class="inputbx">
               <label for="">Nombre del evento: </label>
-              <input type="text" value="<%=event.event_name%>" name="event_name" />
+              <input type="text" value="<%=event.event_name%>" name="event_name" id="event_name" />
             </div>
             <div class="inputbx">
               <label for="">imagene del evento: </label>
-              <input type="file" name="banner" />
+              <input type="file" name="banner" id="banner" />
             </div>
             <!-- mirar lineas ERROR-->
             <div class="inputbx caja-options">
@@ -42,42 +43,8 @@
               </select>
             </div>
 
-
-            <!-- <div class="inputbx caja-options">
-              <select class="selectores" name="provincia" id="provincia">
-                <option value="" disabled>Provincia</option>
-                 Aplicar el For                 
-                <option value="Buenos Aires" %event.provincia=="Buenos Aires" ? "selected" :""%> >Buenos Aires</option>
-                <option value="Capital Federal" %event.provincia=="Capital Federal" ? "selected" :""%>>Capital Federal
-                </option>
-                <option value="Catamarca" %event.provincia=="Catamarca" ? "selected" :""%>>Catamarca</option>
-                <option value="Chaco" %event.provincia=="Chaco" ? "selected" :""%>>Chaco</option>
-                <option value="Chubut" %event.provincia=="Chubut" ? "selected" :""%>>Chubut</option>
-                <option value="Córdoba" %event.provincia=="Cordoba" ? "selected" :""%>>Córdoba</option>
-                <option value="Corrientes" %event.provincia=="Corrientes" ? "selected" :""%>>Corrientes</option>
-                <option value="Entre Ríos" %event.provincia=="Entrer Ríos" ? "selected" :""%>>Entre Ríos</option>
-                <option value="Formosa" %event.provincia=="Formosa" ? "selected" :""%>>Formosa</option>
-                <option value="Jujuy" %event.provincia=="Jujuy" ? "selected" :""%>>Jujuy</option>
-                <option value="La Pampa" %event.provincia=="La Pampa" ? "selected" :""%>>La Pampa</option>
-                <option value="La Rioja" %event.provincia=="La Rioja" ? "selected" :""%>>La Rioja</option>
-                <option value="Mendoza" %event.provincia=="Mendoza" ? "selected" :""%>>Mendoza</option>
-                <option value="Misiones" %event.provincia=="Misiones" ? "selected" :""%>>Misiones</option>
-                <option value="Neuquén" %event.provincia=="Neuquén" ? "selected" :""%>>Neuquén</option>
-                <option value="Río Negro" %event.provincia=="Río Negro" ? "selected" :""%>>Río Negro</option>
-                <option value="Salta" %event.provincia=="Salta" ? "selected" :""%>>Salta</option>
-                <option value="San Juan" %event.provincia=="San Juan" ? "selected" :""%>>San Juan</option>
-                <option value="San Luis" %event.provincia=="San Luis" ? "selected" :""%>>San Luis</option>
-                <option value="Santa Cruz" %event.provincia=="Santa Cruz" ? "selected" :""%>>Santa Cruz</option>
-                <option value="Santa Fé" %event.provincia=="Santa Fé" ? "selected" :""%>>Santa Fé</option>
-                <option value="Santiago del Estero" %event.provincia=="Santiago del Estero" ? "selected" :""%>>Santiago
-                  del Estero</option>
-                <option value="Tierra del Fuego" %event.provincia=="Tierra del Fuego" ? "selected" :""%>>Tierra del
-                  Fuego</option>
-                <option value="Tucumán" %event.provincia=="Tucumán" ? "selected" :""%>>Tucumán</option>
-              </select> -->
-
             <div class="inputbx caja-options">
-              <select class="selectores" name="idLocation" id="idLocation">
+              <select class="selectores" name="idLocations" id="idLocations">
                 <option value="">localidades</option>
 
                 <% for (location of locations){ %>
@@ -91,38 +58,39 @@
 
             <div class="inputbx">
               <label for="">Direccion del evento: </label>
-              <input type="text" value="<%=event.event_address%>" name="event_address" />
+              <input type="text" value="<%=event.event_address%>" name="event_address" id="event_address" />
             </div>
 
             <div class="inputbx">
               <label for="">Fecha del evento: </label>
-              <input type="date" value="<%=event.event_date%>" name="event_date" />
+              <input type="date" value="<%=event.event_date%>" name="event_date" id="event_date" />
             </div>
 
             <div class="inputbx">
               <label for="">Hora de inicio: </label>
-              <input type="time" value="<%=event.start_time%>" name="start_time" />
+              <input type="time" value="<%=event.start_time%>" name="start_time" id="start_time" />
             </div>
             <div class="inputbx">
               <label for="">Hora de finalizacion: </label>
-              <input type="time" placeholder="Hora de finalizacion" value="<%=event.end_time%>" name="end_time" />
+              <input type="time" placeholder="Hora de finalizacion" value="<%=event.end_time%>" name="end_time"
+                id="end_time" />
             </div>
 
             <div class="inputbx">
               <label for="">Precio de entrada: </label>
-              <input type="text" id="precio" name="price" value="<%=event.price%>" />
+              <input type="text" id="precio" name="price" value="<%=event.price%>" id="price" />
             </div>
 
             <div class="inputbx">
               <label for="">Descripcion del evento: </label>
-              <textarea name="event_description" class="inputbx">
+              <textarea name="event_description" id="event_description" class="inputbx">
 <%= event.event_description %>
               </textarea>
             </div>
 
             <div class="inputbx">
               <label for="">Mas informacion: </label>
-              <input type="text" value="<%= event.more_info %>" name="more_info" />
+              <input type="text" value="<%= event.more_info %>" name="more_info" id="more_info" />
             </div>
 
             <div class="inputbx">

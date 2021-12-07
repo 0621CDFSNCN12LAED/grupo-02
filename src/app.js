@@ -8,7 +8,7 @@ const publicPath = path.resolve(__dirname, "../public");
 
 const mainRouter = require("./routes/main-routes");
 const eventRouter = require("./routes/event-routes");
-const apiRouter = require("./routes/api");
+const apiRouter = require("../api/routerAPI/index");
 const userRouter = require("./routes/user-routes");
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
 app.use(express.static(publicPath));
