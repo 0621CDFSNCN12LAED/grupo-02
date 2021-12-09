@@ -4,18 +4,36 @@ import ListUsers from "./ListUsers";
 class EmpleadoApp extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { users: "" };
+    this.state = {
+      users: [],
+    };
   }
 
   componentDidMount() {
+    //ERROR CON EL FETCH
     fetch("http://localhost:3000/api/users")
       .then((response) => {
-        return response.json();
+        response.json();
+        console.log(response);
       })
+
       .then((data) => {
-        this.setState({ users: data.data.avatar });
+        this.setState({ users: data.data.email });
       });
+    //.catch((e) => {
+    //  console.log(e);
+    // });
   }
+  //prueba
+  //render() {
+  // let contenido;
+
+  // if (this.state.users == "") {
+  //   return (contenido = <p className="text-center">Cargando empleados...</p>);
+  // } else {
+  //   return (contenido = <p className="text-center">{this.state.users}</p>);
+  // }
+  //}
 
   render() {
     if (this.state.users.length > 0) {
@@ -29,5 +47,9 @@ class EmpleadoApp extends React.Component {
     }
   }
 }
+//ERROR DE CONSOLA
+//localhost /: 1
+
+//El acceso para buscar en 'http: // localhost: 3000 / api / users' desde el origen 'http: // localhost: 3001' ha sido bloqueado por la política de CORS: No hay un encabezado 'Access-Control-Allow-Origin' presente en el recurso solicitado. Si una respuesta opaca satisface sus necesidades, configure el modo de la solicitud en 'no-cors' para obtener el recurso con CORS deshabilitado.
 
 export default EmpleadoApp;

@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-
+const cors = require("cors");
 const app = express();
 const cookies = require("cookie-parser");
 const session = require("express-session");
@@ -37,6 +37,13 @@ app.use("/api", apiRouter);
 // view engine setup (Para renderizar ejs)
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
+
+//cors
+app.use(
+  cors({
+    origin: "http://localhost:3001",
+  })
+);
 
 //aviso de servidor funcionando
 app.listen(3000, () => {
