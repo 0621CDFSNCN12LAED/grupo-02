@@ -1,4 +1,3 @@
-import "./components/css/app.css";
 import WelcomeTitle from "./components/welcomeTitle";
 import Information from "./components/information";
 import UsersAndEvent from "./components/UsersAndEvent";
