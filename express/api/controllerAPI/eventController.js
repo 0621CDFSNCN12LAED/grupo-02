@@ -1,19 +1,37 @@
 const { Event } = require("../../src/database/models");
 
+const PAGE_SIZE = 10;
+
 module.exports = {
   list: async (req, res) => {
-    const events = await Event.findAll({
+    const page = Number(req.query.page) || 0;
+    const offset = page * PAGE_SIZE;
+    const { count, rows } = await Event.findAndCountAll({
       order: [["id", "ASC"]],
-      offset: 0,
-      limit: 10,
+      offset: offset,
+      limit: PAGE_SIZE,
     });
+
+    rows.map((event) => {
+      event.dataValues.Url = "http://localhost:3000/api/events/" + event.id;
+      event.dataValues.BannerUrl =
+        "http://localhost:3000/Evento/img/" + event.banner;
+    });
+
     res.json({
       meta: {
         status: 200,
-        total: events.length,
-        url: "http://localhost:3000/api/events/",
+        total: count,
+        page: page,
+        pageSize: PAGE_SIZE,
+        nextUrl:
+          offset + PAGE_SIZE < count
+            ? `http://localhost:3000/api/events?page=${page + 1}`
+            : null,
+        prevUrl:
+          page > 0 ? `http://localhost:3000/api/events?page=${page - 1}` : null,
       },
-      data: events,
+      data: rows,
     });
   },
   detail: async (req, res) => {
