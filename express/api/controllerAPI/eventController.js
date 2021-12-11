@@ -6,16 +6,26 @@ module.exports = {
   list: async (req, res) => {
     const page = Number(req.query.page) || 0;
     const offset = page * PAGE_SIZE;
-    const { count, rows } = await Event.findAndCountAll({
-      order: [["id", "ASC"]],
-      offset: offset,
-      limit: PAGE_SIZE,
-    });
+    const { count, rows } = await Event.findAndCountAll(
+      { include: [{ association: "location", include: "province" }] },
+      {
+        order: [["id", "ASC"]],
+        offset: offset,
+        limit: PAGE_SIZE,
+      }
+    );
 
     rows.map((event) => {
+      event.dataValues.Location = event.location.locations;
+      event.dataValues.Province = event.location.province.province;
       event.dataValues.Url = "http://localhost:3000/api/events/" + event.id;
       event.dataValues.BannerUrl =
         "http://localhost:3000/Evento/img/" + event.banner;
+      delete event.dataValues.idLocations;
+      delete event.dataValues.location;
+      delete event.dataValues.idUser;
+      delete event.dataValues.created_at;
+      delete event.dataValues.updated_at;
     });
 
     res.json({
@@ -35,7 +45,18 @@ module.exports = {
     });
   },
   detail: async (req, res) => {
-    const event = await Event.findByPk(req.params.id);
+    const event = await Event.findByPk(req.params.id, {
+      include: [{ association: "location", include: "province" }],
+    });
+
+    event.dataValues.Location = event.location.locations;
+    event.dataValues.Province = event.location.province.province;
+    delete event.dataValues.idLocations;
+    delete event.dataValues.location;
+    delete event.dataValues.idUser;
+    delete event.dataValues.created_at;
+    delete event.dataValues.updated_at;
+
     if (event) {
       res.json({
         meta: {
