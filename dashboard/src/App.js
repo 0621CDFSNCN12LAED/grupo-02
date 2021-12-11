@@ -2,7 +2,6 @@ import WelcomeTitle from "./components/welcomeTitle";
 import Information from "./components/information";
 import UsersAndEvent from "./components/UsersAndEvent";
 import EventsInfo from "./components/EventsInfo";
-import EmpleadoApp from "./components/prueba";
 
 function App() {
   return (
@@ -14,7 +13,6 @@ function App() {
       />
       <UsersAndEvent />
       <EventsInfo />
-      <EmpleadoApp />
     </div>
   );
 }

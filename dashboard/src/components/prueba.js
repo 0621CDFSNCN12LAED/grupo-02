@@ -1,32 +1,39 @@
-import React from "react";
-import ListUsers from "./ListUsers";
+import React, { Component } from "react";
 
-class EmpleadoApp extends React.Component {
+//const URL = "http://localhost:3000/api/users";
+const URL = "/api/users";
+
+class EmpleadoApp extends Component {
   constructor(props) {
     super(props);
-    this.state = { users: "" };
-  }
-
-  componentDidMount() {
-    fetch("http://localhost:3000/api/users")
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        this.setState({ users: data.data.avatar });
-      });
+    this.state = { users: [] };
   }
 
   render() {
-    if (this.state.users.length > 0) {
-      return (
-        <div className="container-fluid">
-          <ListUsers listado={this.state.users} />
-        </div>
-      );
-    } else {
+    if (!this.state.users) {
       return <p className="text-center">Cargando empleados...</p>;
     }
+
+    return (
+      <div className="container-fluid">
+        {this.state.users.map((user) => {
+          return <p>{user.first_name}</p>;
+        })}
+      </div>
+    );
+  }
+
+  async componentDidMount() {
+    this.fetchUsers();
+  }
+
+  async fetchUsers() {
+    const result = await fetch(URL);
+    const response = await result.json();
+    const users = response.data;
+
+    this.setState({ users: users });
+    console.log(users);
   }
 }
 

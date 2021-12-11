@@ -1,6 +1,6 @@
 const express = require("express");
 const path = require("path");
-
+const cors = require("cors");
 const app = express();
 const cookies = require("cookie-parser");
 const session = require("express-session");
@@ -11,6 +11,11 @@ const eventRouter = require("./routes/event-routes");
 const apiRouter = require("../api/routerAPI/index");
 const userRouter = require("./routes/user-routes");
 const userLoggedMiddleware = require("./middlewares/userLoggedMiddleware");
+app.use(
+  cors({
+    origin: "http://localhost:3001/",
+  })
+);
 app.use(express.static(publicPath));
 
 //Registro de datos de forma segura method POST
