@@ -10,12 +10,14 @@ const authMiddleware = require("../middlewares/authMiddleware");
 const guestMiddleware = require("../middlewares/guestMiddleware");
 const checkLogin = require("../middlewares/check-login");
 const emailValidation = require("../middlewares/email-validation");
+const { route } = require("./event-routes");
 
 //REGISTER GET
 router.get("/Registro", guestMiddleware, userController.register);
 
 //LOGIN GET
 router.get("/Login", guestMiddleware, userController.login);
+router.get("/img/:id", userController.avatar);
 
 //CREATEUSER POST
 router.post(

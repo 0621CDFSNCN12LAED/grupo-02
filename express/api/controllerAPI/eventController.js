@@ -1,23 +1,62 @@
 const { Event } = require("../../src/database/models");
 
+const PAGE_SIZE = 10;
+
 module.exports = {
   list: async (req, res) => {
-    const events = await Event.findAll({
-      order: [["id", "ASC"]],
-      offset: 0,
-      limit: 10,
+    const page = Number(req.query.page) || 0;
+    const offset = page * PAGE_SIZE;
+    const { count, rows } = await Event.findAndCountAll(
+      { include: [{ association: "location", include: "province" }] },
+      {
+        order: [["id", "ASC"]],
+        offset: offset,
+        limit: PAGE_SIZE,
+      }
+    );
+
+    rows.map((event) => {
+      event.dataValues.Location = event.location.locations;
+      event.dataValues.Province = event.location.province.province;
+      event.dataValues.Url = "http://localhost:3000/api/events/" + event.id;
+      event.dataValues.BannerUrl =
+        "http://localhost:3000/Evento/img/" + event.banner;
+      delete event.dataValues.idLocations;
+      delete event.dataValues.location;
+      delete event.dataValues.idUser;
+      delete event.dataValues.created_at;
+      delete event.dataValues.updated_at;
     });
+
     res.json({
       meta: {
         status: 200,
-        total: events.length,
-        url: "http://localhost:3000/api/events/",
+        total: count,
+        page: page,
+        pageSize: PAGE_SIZE,
+        nextUrl:
+          offset + PAGE_SIZE < count
+            ? `http://localhost:3000/api/events?page=${page + 1}`
+            : null,
+        prevUrl:
+          page > 0 ? `http://localhost:3000/api/events?page=${page - 1}` : null,
       },
-      data: events,
+      data: rows,
     });
   },
   detail: async (req, res) => {
-    const event = await Event.findByPk(req.params.id);
+    const event = await Event.findByPk(req.params.id, {
+      include: [{ association: "location", include: "province" }],
+    });
+
+    event.dataValues.Location = event.location.locations;
+    event.dataValues.Province = event.location.province.province;
+    delete event.dataValues.idLocations;
+    delete event.dataValues.location;
+    delete event.dataValues.idUser;
+    delete event.dataValues.created_at;
+    delete event.dataValues.updated_at;
+
     if (event) {
       res.json({
         meta: {

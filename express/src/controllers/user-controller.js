@@ -139,4 +139,7 @@ module.exports = {
     );
     return res.redirect("/Usuario/:id");
   },
+  avatar: async (req, res) => {
+    res.render("img");
+  },
 };

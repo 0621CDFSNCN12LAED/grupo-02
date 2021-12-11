@@ -1,25 +1,46 @@
 const { User } = require("../../src/database/models");
+const PAGE_SIZE = 20;
 
 module.exports = {
   list: async (req, res) => {
-    const users = await User.findAll({
+    const page = Number(req.query.page) || 0;
+    const offset = page * PAGE_SIZE;
+    let { count, rows } = await User.findAndCountAll({
       order: [["id", "ASC"]],
-      offset: 0,
-      limit: 10,
+      offset: offset,
+      limit: PAGE_SIZE,
     });
+
+    rows.map((user) => {
+      delete user.dataValues.user_password;
+      user.dataValues.Url = "http://localhost:3000/api/users/" + user.id;
+      user.dataValues.AvatarUrl =
+        "http://localhost:3000/Usuario/img/" + user.avatar;
+    });
+
     res.json({
       meta: {
         status: 200,
-        total: users.length,
-        url: "http://localhost:3000/api/users/",
+        total: count,
+        page: page,
+        pageSize: PAGE_SIZE,
+        nextUrl:
+          offset + PAGE_SIZE < count
+            ? `http://localhost:3000/api/users?page=${page + 1}`
+            : null,
+        prevUrl:
+          page > 0 ? `http://localhost:3000/api/users?page=${page - 1}` : null,
       },
-      data: users,
+      data: rows,
     });
     // res.send("API DETAIL")
   },
   detail: async (req, res) => {
-    const user = await User.findByPk(req.params.id);
+    let user = await User.findByPk(req.params.id);
     if (user) {
+      delete user.dataValues.user_password;
+      user.dataValues.AvatarUrl =
+        "http://localhost:3000/Usuario/img/" + user.avatar;
       res.json({
         meta: {
           status: 200,
@@ -53,6 +74,6 @@ module.exports = {
     const deleteUser = await User.destroy({
       where: { id: req.params.id },
     });
-    res.send("Se está eliminando un usuario");
+    res.send("Se eliminó el usuario");
   },
 };

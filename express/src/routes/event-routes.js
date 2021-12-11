@@ -5,6 +5,7 @@ const eventValidations = require("../validations/event-form-validation");
 const uploader = require("../middlewares/event-multer");
 
 router.get("/", eventController.index);
+router.get("/img/:id");
 
 // router para CreateEvent
 router.get("/CrearEvento", eventController.creatEvent);

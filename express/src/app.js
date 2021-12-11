@@ -43,6 +43,13 @@ app.use("/api", apiRouter);
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
+//cors
+app.use(
+  cors({
+    origin: "http://localhost:3001",
+  })
+);
+
 //aviso de servidor funcionando
 app.listen(3000, () => {
   console.log("servidor corriendo en el puerto 3000");
