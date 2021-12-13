@@ -6,7 +6,7 @@ import EventsInfo from "./components/EventsInfo";
 function App() {
   return (
     <div className="secion_info">
-      <WelcomeTitle title="Bienvenido al panel de informacion" />
+      <WelcomeTitle title="Bienvenido al panel de información" />
       <Information />
       <UsersAndEvent />
       <EventsInfo />
