@@ -19,7 +19,7 @@ class EventsCards extends Component {
           return (
             <div className="tarjeta_evento">
               <div className="img_lista_event">
-                <img className="img_e" src={events.banner} alt="" />
+                <img className="img_e" src={events.BannerUrl} alt="" />
               </div>
               <div className="info_e">
                 <p className="tarjeta_info_e">Nombre: {events.event_name}</p>

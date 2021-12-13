@@ -20,12 +20,12 @@ class information extends Component {
         <div className="cuadrado_total">
           <div className="contenedor_usuarios">
             <p className="lec_info">
-              actualmente hay : {this.state.users.total} usuarios
+              Actualmente hay : {this.state.users.total} usuarios
             </p>
           </div>
           <div className="contenedor_eventos">
             <p className="lec_info">
-              actualmente hay : {this.state.events.total} eventos
+              Actualmente hay : {this.state.events.total} eventos
             </p>
           </div>
         </div>

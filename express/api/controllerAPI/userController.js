@@ -15,7 +15,7 @@ module.exports = {
       delete user.dataValues.user_password;
       user.dataValues.Url = "http://localhost:3000/api/users/" + user.id;
       user.dataValues.AvatarUrl =
-        "http://localhost:3000/Usuario/img/" + user.avatar;
+        "http://localhost:3000/imagenes/Users/" + user.avatar;
     });
 
     res.json({
@@ -40,7 +40,7 @@ module.exports = {
     if (user) {
       delete user.dataValues.user_password;
       user.dataValues.AvatarUrl =
-        "http://localhost:3000/Usuario/img/" + user.avatar;
+        "http://localhost:3000/imagenes/Users/" + user.avatar;
       res.json({
         meta: {
           status: 200,

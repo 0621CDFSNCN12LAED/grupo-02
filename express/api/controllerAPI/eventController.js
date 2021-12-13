@@ -20,7 +20,7 @@ module.exports = {
       event.dataValues.Province = event.location.province.province;
       event.dataValues.Url = "http://localhost:3000/api/events/" + event.id;
       event.dataValues.BannerUrl =
-        "http://localhost:3000/Evento/img/" + event.banner;
+        "http://localhost:3000/imagenes/Eventos/" + event.banner;
       delete event.dataValues.idLocations;
       delete event.dataValues.location;
       delete event.dataValues.idUser;
@@ -51,6 +51,8 @@ module.exports = {
 
     event.dataValues.Location = event.location.locations;
     event.dataValues.Province = event.location.province.province;
+    event.dataValues.BannerUrl =
+      "http://localhost:3000/imagenes/Eventos/" + event.banner;
     delete event.dataValues.idLocations;
     delete event.dataValues.location;
     delete event.dataValues.idUser;

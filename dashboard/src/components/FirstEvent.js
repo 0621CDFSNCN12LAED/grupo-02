@@ -19,40 +19,40 @@ class FirstEvent extends Component {
           <div className="imagen_evento">
             <img
               className="imagen_de_evento"
-              src={this.state.events.banner}
+              src={this.state.events.BannerUrl}
               alt=""
             />
           </div>
           <div className="infromacion_evento">
             <p className="info_evento">
-              nombre : {this.state.events.event_name}
+              Nombre : {this.state.events.event_name}
             </p>
             <p className="info_evento">
-              provincia : {this.state.events.Province}
+              Provincia : {this.state.events.Province}
             </p>
             <p className="info_evento">
-              localidad : {this.state.events.Location}
+              Localidad : {this.state.events.Location}
             </p>
             <p className="info_evento">
-              direccion : {this.state.events.event_address}
+              Direccion : {this.state.events.event_address}
             </p>
             <p className="info_evento">
-              fecha : {this.state.events.event_date}
+              Fecha : {this.state.events.event_date}
             </p>
             <p className="info_evento">
-              hora de inicio : {this.state.events.start_time}
+              Hora de inicio : {this.state.events.start_time}
             </p>
             <p className="info_evento">
-              hora de finalizacion : {this.state.events.end_time}
+              Hora de finalizacion : {this.state.events.end_time}
             </p>
             <p className="info_evento">
-              precio de entrada : {this.state.events.price}
+              Precio de entrada : {this.state.events.price}
             </p>
             <p className="info_evento">
-              descripcion del evento : {this.state.events.event_description}
+              Descripcion del evento : {this.state.events.event_description}
             </p>
             <p className="info_evento">
-              mas informacion : {this.state.events.more_info}
+              Mas informacion : {this.state.events.more_info}
             </p>
           </div>
         </div>

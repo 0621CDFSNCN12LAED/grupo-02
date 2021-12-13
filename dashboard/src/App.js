@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="secion_info">
       <WelcomeTitle title="Bienvenido al panel de informacion" />
-      <Information events="Actualmente hay 200 eventos creados" />
+      <Information />
       <UsersAndEvent />
       <EventsInfo />
     </div>

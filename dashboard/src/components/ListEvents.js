@@ -18,17 +18,16 @@ class ListEvents extends Component {
         {this.state.events.map((events) => {
           return (
             <p className="p_event">
-              <p className="p_info">numero : {events.id}</p>
-              <p className="p_info">nombre : {events.event_name}</p>
-              <p className="p_info">direccion : {events.event_address}</p>
-              <p className="p_info">fecha : {events.event_date}</p>
-              <p className="p_info">hora de inicio : {events.start_time}</p>
-              <p className="p_info">hora de finalizacion : {events.end_time}</p>
-              <p className="p_info">precio de entrada : {events.price}</p>
+              <p className="p_info">Nombre : {events.event_name}</p>
+              <p className="p_info">Direccion : {events.event_address}</p>
+              <p className="p_info">Fecha : {events.event_date}</p>
+              <p className="p_info">Hora de inicio : {events.start_time}</p>
+              <p className="p_info">Hora de finalizacion : {events.end_time}</p>
+              <p className="p_info">Precio de entrada : {events.price}</p>
               <p className="p_info">
-                descripcion del evento : {events.event_description}
+                Descripcion del evento : {events.event_description}
               </p>
-              <p className="p_info">mas informacion : {events.more_info}</p>
+              <p className="p_info">Mas informacion : {events.more_info}</p>
             </p>
           );
         })}

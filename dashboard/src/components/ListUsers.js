@@ -20,9 +20,9 @@ class ListUsers extends Component {
           return (
             <p className="info_user">
               <p className="p_user">Usuario numero : {users.id}</p>
-              <p className="p_user">nombre : {users.first_name}</p>
-              <p className="p_user">apellido : {users.last_name}</p>
-              <p className="p_user">email : {users.email}</p>
+              <p className="p_user">Nombre : {users.first_name}</p>
+              <p className="p_user">Apellido : {users.last_name}</p>
+              <p className="p_user">Email : {users.email}</p>
             </p>
           );
         })}
