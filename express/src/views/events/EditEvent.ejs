@@ -21,7 +21,7 @@
           <ul id="errors" class="hidden">
           </ul>
           <!-- ?_method=PUT -->
-          <form class="forms" action="/Evento/<%= event.id %> ?_method=PUT" method="POST" enctype="multipart/form-data">
+          <form class="forms" action="/Evento/<%= event.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
             <div class="inputbx">
               <label for="">Nombre del evento: </label>
               <input type="text" value="<%=event.event_name%>" name="event_name" id="event_name" />

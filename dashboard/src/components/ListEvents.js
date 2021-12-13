@@ -46,7 +46,6 @@ class ListEvents extends Component {
     const events = response.data;
 
     this.setState({ events: events });
-    console.log(events);
   }
 }
 export default ListEvents;

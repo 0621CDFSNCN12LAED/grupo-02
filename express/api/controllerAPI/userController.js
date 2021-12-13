@@ -1,5 +1,5 @@
 const { User } = require("../../src/database/models");
-const PAGE_SIZE = 20;
+const PAGE_SIZE = 10;
 
 module.exports = {
   list: async (req, res) => {

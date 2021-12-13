@@ -125,7 +125,6 @@ body {
 
 .contenedero_de_listaEvento {
   width: 100%;
-  display: flex;
   flex-wrap: wrap;
 }
 
@@ -191,6 +190,18 @@ body {
   border-radius: 10px;
 }
 
+.cuadrado_total {
+  width: 100%;
+  border: 2px solid #8ad4de;
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: #cffcfa;
+}
+
 @media (max-width: 768px) {
   .contenedor_usuarios_eventos {
     display: block;
@@ -198,7 +209,7 @@ body {
   }
 
   .tarjeta_evento {
-    width: 45%;
+    width: 40%;
   }
 
   .contenedor_evento {

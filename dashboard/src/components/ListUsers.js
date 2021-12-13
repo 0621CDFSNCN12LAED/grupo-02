@@ -38,7 +38,6 @@ class ListUsers extends Component {
     const result = await fetch(URL);
     const response = await result.json();
     const users = response.data;
-
     this.setState({ users: users });
   }
 }
