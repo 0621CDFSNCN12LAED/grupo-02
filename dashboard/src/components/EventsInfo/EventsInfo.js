@@ -1,5 +1,5 @@
-import EventsCards from "./EventsCards";
-import ListEvents from "./ListEvents";
+import EventsCards from "../EventsCards";
+import ListEvents from "../ListEvents";
 
 function EventsInfo() {
   return (

@@ -1,5 +1,5 @@
-import FirstEvent from "./FirstEvent";
-import ListUsers from "./ListUsers";
+import FirstEvent from "../FirstEvent";
+import ListUsers from "../ListUsers";
 
 function UsersAndEvent() {
   return (
