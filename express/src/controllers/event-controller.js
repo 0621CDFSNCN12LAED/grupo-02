@@ -2,7 +2,6 @@ const fs = require("fs");
 const path = require("path");
 const { validationResult } = require("express-validator");
 const { Op } = require("sequelize");
-const userLoggedMiddleware = require("../middlewares/userLoggedMiddleware");
 
 //--------------DataBase.Json---------------------------//
 // const eventService = require("../services/events-services");
@@ -79,7 +78,7 @@ module.exports = {
     await db.Event.create({
       ...req.body,
       eventOpen: 1,
-      banner: req.file.banner ? img.filename : "evento1.jpg",
+      banner: req.file ? req.file.filename : "evento1.jpg",
       idUser: 49,
     });
 
@@ -100,6 +99,7 @@ module.exports = {
     await db.Event.update(
       {
         ...req.body,
+        banner: req.file ? req.file.filename : "evento1.jpg",
       },
       { where: { id: req.params.id } }
     );
